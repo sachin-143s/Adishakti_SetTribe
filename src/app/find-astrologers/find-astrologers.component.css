@@ -1,0 +1,54 @@
+.find-astrologers-container {
+    padding: 20px;
+    background-color: #8393a3;
+    /* background-image: url('./assets/background.jpg'); */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+  }
+
+
+.find-astrologers {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(129, 145, 145);
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .astrologer-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .astrologer {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .astrologer-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .astrologer-details {
+    padding: 10px 0;
+  }
+  
+  .astrologer-details h3 {
+    margin: 5px 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .astrologer-list {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
+  
