@@ -1,0 +1,19 @@
+.top-rated-astrologers {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.astrologer-slider {
+  display: flex;
+  overflow-x: auto;
+}
+
+.astrologer {
+  flex: 0 0 auto;
+  margin: 10px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}

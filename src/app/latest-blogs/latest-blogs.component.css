@@ -1,0 +1,14 @@
+.latest-blogs {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.blog {
+  margin: 10px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
