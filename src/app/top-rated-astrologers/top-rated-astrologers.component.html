@@ -1,0 +1,10 @@
+<div class="top-rated-astrologers">
+  <h2>Top Rated Astrologers</h2>
+  <div class="astrologer-slider">
+    <div class="astrologer" *ngFor="let astrologer of astrologers">
+      <img [src]="astrologer.image" alt="{{astrologer.name}}">
+      <h3>{{astrologer.name}}</h3>
+      <p>{{astrologer.skills}}</p>
+    </div>
+  </div>
+</div>
