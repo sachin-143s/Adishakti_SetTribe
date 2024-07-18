@@ -41,7 +41,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
