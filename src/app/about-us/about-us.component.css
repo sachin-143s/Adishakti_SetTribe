@@ -89,67 +89,140 @@ a:hover {
 }
 
 /* Services Section */
-.hs_service_wrapper {
-  background-color: #f9f9f9;
-  padding: 50px 0;
-}
-
-.hs_about_heading_main_wrapper h2 span {
-  color: #007bff;
-}
-
-.hs_about_heading_main_wrapper h4 {
-  border-bottom: 2px solid #007bff;
-  width: 50px;
-  margin: 20px 0;
-}
-
-.hs_about_heading_main_wrapper p {
-  font-size: 18px;
-  color: #666;
-  line-height: 1.8;
-  margin-bottom: 20px;
+.hs_service_main_wrapper {
+  float: left;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .hs_service_main_box_wrapper {
-  background-color: #fff;
-  padding: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  float: left;
+  width: 100%;
   text-align: center;
-  transition: box-shadow 0.3s ease;
+  -webkit-box-shadow: 0px 0px 35px -20px;
+  box-shadow: 0px 0px 35px -20px;
+  border: 1px solid #ebebeb;
+  padding: 0px 30px 40px 30px;
+  margin-top: 83px;
+  transition: all 0.5s;
+}
+
+.hs_service_icon_wrapper {
+  display: inline-block;
+  position: relative;
+  margin-top: -50px;
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  line-height: 90px;
+  background: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(206, 206, 206);
+  border-image: initial;
+  border-radius: 100%;
+  transition: all 0.5s ease 0s;
+}
+
+.hs_service_icon_wrapper i:before {
+  color: #75429c;
+  margin-left: 0;
+  font-size: 40px;
+  transition: all 0.5s;
+}
+
+.hs_service_icon_cont_wrapper {
+  width: 100%;
+  display: inline-block;
+}
+
+/* If float left is necessary for some reason */
+.hs_service_icon_cont_wrapper > div {
+  float: left;
+}
+
+
+.hs_service_icon_cont_wrapper h2 {
+  font-size: 20px;
+  color: #000000;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  transition: all 0.5s;
+}
+
+.hs_service_icon_cont_wrapper h5 a {
+  font-size: 16px;
+  color: #75429c;
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.hs_service_icon_cont_wrapper h5 a i {
+  position: relative;
+  top: 2px;
+  transition: all 0.5s;
+}
+
+.btc_step_overlay {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  opacity: 0;
+  padding: 10px;
+  border-radius: 100%;
+  transition: all 0.5s;
 }
 
 .hs_service_main_box_wrapper:hover {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  background: #75429c;
+  transition: all 0.5s;
 }
 
-.hs_service_icon_wrapper img {
-  max-width: 100px;
+.hs_service_main_box_wrapper:hover .hs_service_icon_wrapper {
+  border-color: #75429c;
+  transition: all 0.5s;
 }
 
-.hs_service_icon_cont_wrapper h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 10px;
+.hs_service_main_box_wrapper:hover .btc_step_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ee8722;
+  opacity: 1;
+  transition: all 0.5s;
 }
 
-.hs_service_icon_cont_wrapper p {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 15px;
+.hs_service_main_box_wrapper:hover .hs_service_icon_wrapper i:before {
+  color: #ffffff;
+  z-index: 100;
+  transition: all 0.5s;
 }
 
-.hs_service_icon_cont_wrapper a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
+.hs_service_main_box_wrapper:hover .hs_service_icon_cont_wrapper h2 {
+  color: #fff;
+  transition: all 0.5s;
 }
 
-.hs_service_icon_cont_wrapper a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+.hs_service_main_box_wrapper:hover .hs_service_icon_cont_wrapper p {
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.hs_service_main_box_wrapper:hover .hs_service_icon_cont_wrapper h5 a {
+  color: #fff;
+  transition: all 0.5s;
+}
+
+.hs_service_main_box_wrapper:hover .hs_service_icon_cont_wrapper h5 a i {
+  color: #fff;
+  transition: all 0.5s;
 }
 
 /* Team Section */
