@@ -8,14 +8,24 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   isLoggedIn = false;
   showDropdown = false;
-  
+  currentTab = ''; 
 
   toggleDropdown() {
     this.showDropdown = !this.showDropdown;
   }
 
   logout() {
-    // Implement logout functionality as needed
+    
     this.isLoggedIn = false;
+    this.showDropdown = false; 
+   
+  }
+
+  setActiveTab(tabName: string) {
+    this.currentTab = tabName;
+  }
+
+  closeDropdown() {
+    this.showDropdown = false;
   }
 }
