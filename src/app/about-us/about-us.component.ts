@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-us.component.css']
 })
 export class AboutUsComponent {
-  services = [
+  /* services = [
     { title: 'Career', image: 'career.jpg', description: 'Proin gravida nibh vel velit auctor aliquet. Aenean .' },
     { title: 'Pregnancy', image: 'pregnancy.jpg', description: 'Proin gravida nibh vel velit auctor aliquet. Aenean .' },
     { title: 'Marriage', image: 'marriage.jpg', description: 'Proin gravida nibh vel velit auctor aliquet. Aenean .' },
@@ -22,5 +22,5 @@ export class AboutUsComponent {
     { name: 'Jane Smith', role: 'Astrologer', image: 'jane_smith.jpg', charges: '$45' },
     { name: 'Michael Johnson', role: 'Astrologer', image: 'michael_johnson.jpg', charges: '$55' }
     // Add more team members as needed
-  ];
+  ]; */
 }
