@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   isLoggedIn = false;
   showDropdown = false;
+  
 
   toggleDropdown() {
     this.showDropdown = !this.showDropdown;
