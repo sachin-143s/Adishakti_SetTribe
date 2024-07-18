@@ -1,56 +1,254 @@
-/* Global styles */
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
 
-.about-us-banner {
-    text-align: center;
-    margin-bottom: 40px;
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* About Us Section */
+/* About Us Section */
+.hs_about_us_main_wrapper {
+  padding: 50px 0;
+}
+
+.hs_about_img_main_wrapper {
+  text-align: center;
+}
+
+.hs_about_img_main_wrapper img {
+  max-width: 100%;
+  display: block; /* Ensure image is displayed as a block element */
+  margin: 0 auto; /* Center image horizontally */
+}
+
+.hs_about_us_cont_main_wrapper {
+  padding-left: 30px; /* Adjust as needed for spacing */
+}
+
+.hs_about_us_cont_main_wrapper h2,
+.hs_about_us_cont_main_wrapper h3,
+.hs_about_us_cont_main_wrapper p {
+  text-align: left; /* Align text to the left */
+}
+
+.hs_about_us_cont_main_wrapper h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hs_about_us_cont_main_wrapper h3 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.hs_about_us_cont_main_wrapper p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.hs_about_us_cont_main_wrapper a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hs_about_us_cont_main_wrapper a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .hs_about_us_main_wrapper .row {
+    display: flex;
+    flex-direction: column-reverse;
   }
   
-  .about-us-banner img {
-    max-width: 100%;
-    height: auto;
+  .hs_about_img_main_wrapper img {
+    margin: 20px auto; /* Adjust margin for better spacing */
   }
   
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+  .hs_about_us_cont_main_wrapper {
+    padding-left: 0;
+    padding-top: 20px; /* Add padding on top for better spacing on mobile */
   }
-  
-  .section {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-  }
-  
-  .section h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .section p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #666;
-    text-align: justify;
-  }
-  
-  /* Specific section styles */
-  
-  .who-we-are {
-    background-color: #fafafa;
-  }
-  
-  .what-we-do {
-    background-color: #f0f0f0;
-  }
-  
-  .mission-vision {
-    background-color: #e5e5e5;
-  }
-  
-  .why-adishakti {
-    background-color: #dddddd;
-  }
-  
+}
+
+/* Services Section */
+.hs_service_wrapper {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.hs_about_heading_main_wrapper h2 span {
+  color: #007bff;
+}
+
+.hs_about_heading_main_wrapper h4 {
+  border-bottom: 2px solid #007bff;
+  width: 50px;
+  margin: 20px 0;
+}
+
+.hs_about_heading_main_wrapper p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.hs_service_main_box_wrapper {
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.hs_service_main_box_wrapper:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hs_service_icon_wrapper img {
+  max-width: 100px;
+}
+
+.hs_service_icon_cont_wrapper h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hs_service_icon_cont_wrapper p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.hs_service_icon_cont_wrapper a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hs_service_icon_cont_wrapper a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Team Section */
+.hs_astrology_team_main_wrapper {
+  padding: 50px 0;
+}
+
+.hs_about_heading_main_wrapper h2 span {
+  color: #007bff;
+}
+
+.hs_about_heading_main_wrapper h4 {
+  border-bottom: 2px solid #007bff;
+  width: 50px;
+  margin: 20px 0;
+}
+
+.hs_about_heading_main_wrapper p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.hs_team_slider_wrapper .owl-carousel .owl-item {
+  margin-right: 15px;
+}
+
+.hs_astro_team_img_main_wrapper {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.hs_astro_team_img_main_wrapper:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hs_astro_team_img_main_wrapper img {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.hs_astro_img_cont_wrapper h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.hs_astro_img_cont_wrapper p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.hs_astro_img_bottom_wrapper ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hs_astro_img_bottom_wrapper ul li {
+  font-size: 16px;
+  color: #666;
+}
+
+.hs_astro_img_bottom_wrapper ul li:first-child {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.hs_astro_img_bottom_wrapper ul li:last-child {
+  font-weight: bold;
+}
+
+/* Owl Carousel Navigation Arrows */
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #007bff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+  color: #0056b3;
+}
+
+.owl-prev {
+  left: 0;
+}
+
+.owl-next {
+  right: 0;
+}
