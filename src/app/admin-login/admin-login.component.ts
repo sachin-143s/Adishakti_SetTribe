@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-interface User {
+interface Admin {
   email: string;
   password: string;
 }
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrl: './admin-login.component.css'
 })
-export class LoginComponent {
+export class AdminLoginComponent {
+  
   email: string = '';
   password: string = '';
-  user: User | null = null;
+  user: Admin | null = null;
   errorMessage: string = '';
 
   apiUrl = 'http://localhost:8080/';
@@ -24,12 +25,12 @@ export class LoginComponent {
 
   validateCredentials() {
     this.errorMessage = '';
-    this.http.get<User>(this.apiUrl + "api/users/email/" + this.email).subscribe(
+    this.http.get<Admin>(this.apiUrl + "api/admins/email/" + this.email).subscribe(
       success => {
         this.user = success;
         if (this.user) {
           if (this.user.password === this.password) {
-            // Store user data in localStorage
+            // Store Admin data in localStorage
             localStorage.setItem('currentUser', JSON.stringify(this.user));
             this.router.navigateByUrl("/");
           } else {
@@ -45,7 +46,9 @@ export class LoginComponent {
       }
 
     );
-
+    this.router.navigate(['/login']);
   
   }
+
+
 }
