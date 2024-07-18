@@ -16,7 +16,7 @@ export class AdminLoginComponent {
   
   email: string = '';
   password: string = '';
-  user: Admin | null = null;
+  admin: Admin | null = null;
   errorMessage: string = '';
 
   apiUrl = 'http://localhost:8080/';
@@ -27,22 +27,22 @@ export class AdminLoginComponent {
     this.errorMessage = '';
     this.http.get<Admin>(this.apiUrl + "api/admins/email/" + this.email).subscribe(
       success => {
-        this.user = success;
-        if (this.user) {
-          if (this.user.password === this.password) {
+        this.admin = success;
+        if (this.admin) {
+          if (this.admin.password === this.password) {
             // Store Admin data in localStorage
-            localStorage.setItem('currentUser', JSON.stringify(this.user));
+            localStorage.setItem('currentUser', JSON.stringify(this.admin));
             this.router.navigateByUrl("/");
           } else {
             this.errorMessage = 'Password does not match.';
           }
         } else {
-          this.errorMessage = 'user with this email not found.';
+          this.errorMessage = 'admin with this email not found.';
         }
       },
       error => {
-        console.error('Error fetching user:', error);
-        this.errorMessage = 'Error fetching user data.';
+        console.error('Error fetching admin:', error);
+        this.errorMessage = 'Error fetching admin data.';
       }
 
     );
