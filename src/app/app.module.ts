@@ -18,7 +18,6 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +34,7 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
     BlogsComponent,
     LoginComponent,
     SignupComponent,
-    AdminLoginComponent,
-    FeedbackFormComponent
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
