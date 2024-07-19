@@ -1,19 +1,94 @@
 .top-rated-astrologers {
+  position: relative;
+  padding: 50px 0;
+  background: #e0e5ec; /* Soft, light background color */
   text-align: center;
-  margin: 20px 0;
 }
 
-.astrologer-slider {
+.heading {
+  font-size: 28px;
+  font-family: 'Poppins', sans-serif;
+  color: #2e3a59; /* Darker shade for the heading */
+  margin-bottom: 30px;
+}
+
+.slider-container {
+  position: relative;
   display: flex;
-  overflow-x: auto;
+  align-items: center;
+  justify-content: center;
 }
 
-.astrologer {
-  flex: 0 0 auto;
-  margin: 10px;
-  background-color: #f1f1f1;
+.slider {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 25%; /* Show 4 slides at a time */
+  box-sizing: border-box;
   padding: 20px;
-  border-radius: 10px;
-  width: 200px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
   text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  border-bottom: 2px solid #f0f0f0; /* Slightly darker border for better separation */
+}
+
+.info {
+  padding: 20px;
+  background: #f9f9f9; /* Light background for the info section */
+}
+
+.info h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #2e3a59; /* Matching the heading color */
+}
+
+.info p {
+  font-size: 16px;
+  color: #555555; /* Slightly darker gray for better readability */
+}
+
+.slider-prev, .slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e3a59; /* Darker background for navigation buttons */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 18px; /* Slightly larger icons */
+}
+
+.slider-prev:hover, .slider-next:hover {
+  background: #1e2a41; /* Even darker on hover */
+}
+
+.slider-prev {
+  left: 20px;
+}
+
+.slider-next {
+  right: 20px;
 }

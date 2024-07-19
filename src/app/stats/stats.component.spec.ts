@@ -1,25 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { StatsService } from '../stats.service';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-@Component({
-  selector: 'app-stats',
-  templateUrl: './stats.component.html',
-  styleUrls: ['./stats.component.css']
-})
-export class StatsComponent implements OnInit {
-  stats: any = {
-    totalAstrologers: 0,
-    minutesConsulted: 0,
-    happyCustomers: 0
-  };
+import { StatsComponent } from './stats.component';
 
-  constructor(private statsService: StatsService) {}
+describe('StatsComponent', () => {
+  let component: StatsComponent;
+  let fixture: ComponentFixture<StatsComponent>;
 
-  ngOnInit(): void {
-    this.statsService.getStats().subscribe(data => {
-      this.stats.totalAstrologers = data.totalAstrologers;
-      this.stats.minutesConsulted = data.minutesConsulted;
-      this.stats.happyCustomers = data.happyCustomers;
-    });
-  }
-}
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [StatsComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(StatsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
