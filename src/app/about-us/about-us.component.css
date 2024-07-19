@@ -22,24 +22,16 @@ a:hover {
   padding: 50px 0;
 }
 
-.hs_about_img_main_wrapper {
-  text-align: center;
-}
-
 .hs_about_img_main_wrapper img {
-  max-width: 100%;
-  display: block; /* Ensure image is displayed as a block element */
-  margin: 0 auto; /* Center image horizontally */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
 }
 
 .hs_about_us_cont_main_wrapper {
-  padding-left: 30px; /* Adjust as needed for spacing */
-}
-
-.hs_about_us_cont_main_wrapper h2,
-.hs_about_us_cont_main_wrapper h3,
-.hs_about_us_cont_main_wrapper p {
-  text-align: left; /* Align text to the left */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hs_about_us_cont_main_wrapper h2 {
@@ -51,40 +43,47 @@ a:hover {
 .hs_about_us_cont_main_wrapper h3 {
   font-size: 24px;
   color: #007bff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .hs_about_us_cont_main_wrapper p {
-  font-size: 18px;
+  font-size: 16px;
   color: #666;
   line-height: 1.8;
   margin-bottom: 20px;
 }
 
 .hs_about_us_cont_main_wrapper a {
+  font-size: 16px;
   color: #007bff;
   text-decoration: none;
   font-weight: bold;
 }
 
-.hs_about_us_cont_main_wrapper a:hover {
-  color: #0056b3;
-  text-decoration: underline;
+.hs_about_us_cont_main_wrapper a i {
+  margin-left: 5px;
 }
 
-@media (max-width: 768px) {
+/* Responsive Layout */
+@media (min-width: 992px) { /* Large screens */
   .hs_about_us_main_wrapper .row {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
   }
-  
-  .hs_about_img_main_wrapper img {
-    margin: 20px auto; /* Adjust margin for better spacing */
+
+  .hs_about_us_main_wrapper .col-lg-6 {
+    flex: 1 0 50%;
   }
-  
-  .hs_about_us_cont_main_wrapper {
-    padding-left: 0;
-    padding-top: 20px; /* Add padding on top for better spacing on mobile */
+}
+
+@media (max-width: 991px) { /* Medium screens and below */
+  .hs_about_us_main_wrapper .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hs_about_us_main_wrapper .col-lg-6 {
+    flex: 1 0 100%;
   }
 }
 
