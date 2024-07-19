@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -10,15 +10,21 @@ export class NavbarComponent {
   showDropdown = false;
   currentTab = ''; 
 
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event): void {
+    const clickedInside = (event.target as HTMLElement).closest('.dropdown');
+    if (!clickedInside) {
+      this.showDropdown = false;
+    }
+  }
+
   toggleDropdown() {
     this.showDropdown = !this.showDropdown;
   }
 
   logout() {
-    
     this.isLoggedIn = false;
     this.showDropdown = false; 
-   
   }
 
   setActiveTab(tabName: string) {

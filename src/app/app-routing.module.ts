@@ -8,14 +8,12 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'find-astrologers', component: FindAstrologersComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
-
+  { path: 'signup', component: SignupComponent }
 
 ];
 
