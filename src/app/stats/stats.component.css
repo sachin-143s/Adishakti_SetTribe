@@ -1,17 +1,73 @@
-.stats {
+.statistics-section {
   display: flex;
   justify-content: space-around;
-  margin: 20px 0;
+  align-items: center;
+  margin: 50px 0;
+  padding: 20px;
+  background: url('/assets/background-image.jpg') no-repeat center center; /* Background image */
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #fff; /* Text color for contrast */
+  position: relative;
+  overflow: hidden;
+}
+
+.statistics-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text visibility */
+  border-radius: 10px;
+  z-index: 1;
 }
 
 .stat-item {
   text-align: center;
-  background-color: #f1f1f1;
   padding: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
   border-radius: 10px;
-  width: 30%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  position: relative;
+  z-index: 2;
 }
 
-.stat-item h3 {
+.stat-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.stat-item:hover:nth-child(1) {
+  background-color: #b2ebf2; /* Slightly darker cyan for the first item */
+}
+
+.stat-item:hover:nth-child(2) {
+  background-color: #ffe0b2; /* Slightly darker orange for the second item */
+}
+
+.stat-item:hover:nth-child(3) {
+  background-color: #f8bbd0; /* Slightly darker pink for the third item */
+}
+
+.stat-item i {
+  font-size: 40px;
+  color: #007bff;
   margin-bottom: 10px;
+}
+
+.stat-item h2 {
+  font-size: 36px;
+  margin: 10px 0;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.stat-item p {
+  font-size: 18px;
+  color: #666;
+  font-family: 'Poppins', sans-serif;
 }
