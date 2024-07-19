@@ -1,1 +1,14 @@
-<p>blogs works!</p>
+<div class="latest-blogs">
+    <h2 class="heading">Latest from Blogs</h2>
+    <div class="blogs-container">
+      <div *ngFor="let blog of blogs" class="blog-card">
+        <img [src]="blog.featuredImage" alt="{{ blog.title }}" class="blog-image">
+        <div class="blog-info">
+          <h3>{{ blog.title }}</h3>
+          <p>{{ blog.content | slice:0:100 }}...</p>
+          <button (click)="readMore(blog.id)">Read more</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
