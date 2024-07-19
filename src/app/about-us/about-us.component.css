@@ -4,6 +4,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: #333;
+  
 }
 
 a {
@@ -20,6 +21,7 @@ a:hover {
 /* About jyotish Section */
 .hs_about_us_main_wrapper {
   padding: 50px 0;
+  background: linear-gradient(135deg, #e3e6f3, #f7f9fc);
 }
 
 .hs_about_img_main_wrapper img {
@@ -88,12 +90,11 @@ a:hover {
 }
 
 /* Services Section */
-/* Services Section */
 .hs_service_wrapper {
   padding-top: 100px;
   padding-bottom: 100px;
-    text-align: center; /* Center text for the whole section */
-
+  background: linear-gradient(135deg, #e3e6f3, #f7f9fc);
+  text-align: center;
 }
 
 .hs_about_heading_main_wrapper h2 span {
@@ -120,8 +121,12 @@ a:hover {
   border: 1px solid #ebebeb;
   background: #dbb6b6;
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 50px; /* Increase the margin to create more gap between rows */
   transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .hs_service_icon_wrapper {
@@ -150,12 +155,14 @@ a:hover {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 10px;
+  min-height: 48px; /* Add min-height to align headings */
 }
 
 .hs_service_icon_cont_wrapper p {
   font-size: 16px;
   color: #666;
   margin-bottom: 20px;
+  flex-grow: 1; /* Allow the paragraph to grow and take available space */
 }
 
 .hs_service_icon_cont_wrapper h5 a {
@@ -192,6 +199,8 @@ a:hover {
   .hs_service_wrapper .row {
     display: flex;
     flex-wrap: wrap;
+    row-gap: 30px; /* Adjust this value to set the gap between rows */
+
   }
 
   .hs_service_wrapper .col-lg-3 {
@@ -216,6 +225,8 @@ a:hover {
   .hs_service_wrapper .row {
     display: flex;
     flex-direction: column;
+    row-gap: 300px; /* Adjust this value to set the gap between rows */
+
   }
 
   .hs_service_wrapper .col-xs-12 {
@@ -224,13 +235,11 @@ a:hover {
   }
 }
 
-
-
-
 /* Team Section */
 /* Team Section */
 .hs_astrology_team_main_wrapper {
   padding: 50px 0;
+  background: linear-gradient(135deg, #e3e6f3, #f7f9fc);
   text-align: center; /* Center text for the whole section */
 }
 
@@ -520,4 +529,121 @@ a:hover {
 
 .owl-next {
   right: 0;
+}
+
+/* Mission and Vision Section */
+.hs_astro_mission_vision_main_wrapper {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #e3e6f3, #f7f9fc);
+}
+
+.hs_astro_mission_vision_heading_wrapper {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hs_astro_mission_vision_heading_wrapper h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+  position: relative;
+  animation: fadeInDown 1s ease;
+}
+
+.hs_astro_mission_vision_heading_wrapper h2 span {
+  color: #465f99; /* Use the same color as other sections */
+}
+
+.hs_astro_mission_vision_heading_wrapper h4 {
+  border-bottom: 3px solid #465f99; /* Use the same color as other sections */
+  width: 60px;
+  margin: 20px auto;
+  position: relative;
+  animation: fadeInDown 1.2s ease;
+}
+
+.hs_astro_mission_vision_heading_wrapper p {
+  font-size: 18px;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  animation: fadeIn 1.4s ease;
+}
+
+.hs_astro_mission_wrapper,
+.hs_astro_vision_wrapper {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  animation: fadeInUp 1.6s ease;
+}
+
+.hs_astro_mission_wrapper h3,
+.hs_astro_vision_wrapper h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #465f99; /* Use the same color as other sections */
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.hs_astro_mission_wrapper p,
+.hs_astro_vision_wrapper p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 991px) { /* Medium screens and below */
+  .hs_astro_mission_wrapper,
+  .hs_astro_vision_wrapper {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) { /* Small screens */
+  .hs_astro_mission_vision_heading_wrapper h2 {
+    font-size: 28px;
+  }
+
+  .hs_astro_mission_wrapper h3,
+  .hs_astro_vision_wrapper h3 {
+    font-size: 20px;
+  }
 }
