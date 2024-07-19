@@ -1,1 +1,161 @@
 /* You can add global styles to this file, and also import other style files */
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.navbar .logo {
+    float: left;
+    margin-left: 20px;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.navbar .nav-links {
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links .active a {
+    text-decoration: underline;
+}
+
+/* Address and Phone Styles */
+.hs_header_add_wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.hs_header_add_icon {
+    margin-right: 10px;
+}
+
+.hs_header_add_icon i {
+    font-size: 20px;
+    color: #333;
+}
+
+.hs_header_add_icon_cont p {
+    margin: 0;
+    color: #333;
+}
+
+/* Search Bar Styles */
+.hs_navi_searchbar_wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.hs_navi_searchbar_wrapper input {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.hs_navi_searchbar_wrapper button {
+    padding: 5px;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.hs_navi_searchbar_wrapper button i {
+    margin-right: 5px;
+}
+
+/* Dropdown and Cart Styles */
+.cart_login_wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart_login_wrapper .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.cart_login_wrapper .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.cart_login_wrapper .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.cart_login_wrapper .dropdown-menu a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 12px 16px;
+}
+
+.cart_login_wrapper .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.hs_effect_btn {
+    margin-top: 10px;
+}
+
+.hs_btn_hover {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.hs_btn_hover:hover {
+    background-color: #555;
+}
+
+.sign_up_message p {
+    margin-top: 10px;
+}
