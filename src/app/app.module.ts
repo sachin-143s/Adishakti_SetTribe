@@ -20,6 +20,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,8 +36,8 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
     BlogsComponent,
     LoginComponent,
     SignupComponent,
-    AdminLoginComponent
-    , FeedbackFormComponent
+    AdminLoginComponent,
+    FeedbackFormComponent
   ],
   imports: [
     BrowserModule,

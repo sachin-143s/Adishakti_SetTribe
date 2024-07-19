@@ -1,24 +1,40 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+
+interface Astrologer {
+  id: number;
+  name: string;
+}
 
 @Component({
   selector: 'app-feedback-form',
   templateUrl: './feedback-form.component.html',
-  styleUrl: './feedback-form.component.css'
+  styleUrls: ['./feedback-form.component.css']
 })
-export class FeedbackFormComponent {
+export class FeedbackFormComponent implements OnInit {
   feedbackForm: FormGroup;
-  private apiUrl = 'http://localhost:8080/api/feedbacks/this.feedbackForm';
+  astrologers: Astrologer[] = [];
+  private apiUrl = 'http://localhost:8080/api/feedbacks';
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.feedbackForm = this.fb.group({
-      userId: ['', Validators.required],
       astrologerId: ['', Validators.required],
       rating: ['', [Validators.required, Validators.min(1), Validators.max(5)]],
       comments: ['', Validators.required]
     });
+  }
+
+  ngOnInit() {
+    this.getAstrologers().subscribe(
+      data => {
+        this.astrologers = data;
+      },
+      error => {
+        console.error('Error fetching astrologers', error);
+      }
+    );
   }
 
   onSubmit() {
@@ -37,5 +53,9 @@ export class FeedbackFormComponent {
 
   createFeedback(feedback: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, feedback);
+  }
+
+  getAstrologers(): Observable<Astrologer[]> {
+    return this.http.get<Astrologer[]>('http://localhost:8080/api/astrologers'); // Adjust the URL as needed
   }
 }
