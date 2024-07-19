@@ -1,3 +1,4 @@
+// src/app/blog.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,11 +8,13 @@ export interface Blog {
   title: string;
   featuredImage: string;
   content: string;
-  astrologer: any;
+  astrologer: {
+    name: string;
+  };
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BlogService {
   private apiUrl = 'http://localhost:8080/api/blogs';
