@@ -1,81 +1,140 @@
+/* Reset and Font Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+/* Banner Container */
 .banner {
   position: relative;
-  margin-top: 60px; /* Adjust this value based on the height of your navbar */
   width: 100%;
-  height: 400px; /* Adjust height as needed */
+  height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f5f5f5; /* Fallback background color */
   overflow: hidden;
 }
 
-.banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the banner area without distortion */
+/* Banner Image */
+.banner-image {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* Places the image behind the content */
-  filter: brightness(70%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.banner-options {
-  position: relative; /* Ensures the buttons are properly positioned */
-  z-index: 1; /* Ensures the buttons are above the image */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%) blur(5px);
+  transition: filter 0.3s ease;
 }
 
-.banner-options button {
-  margin: 10px;
-  padding: 15px 30px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+/* Banner Overlay */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: 1; /* Places the overlay above the image but below the content */
 }
 
-.banner-options button:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
-  transform: scale(1.1); /* Slightly enlarge button on hover */
-}
-
-.banner-options button:active {
-  transform: scale(0.95); /* Slightly shrink button on click */
-}
-
+/* Banner Content */
 .banner-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
   color: #fff;
+  text-align: center;
+  z-index: 2; /* Ensure content is above the overlay */
   animation: fadeIn 2s ease-in-out;
+  padding: 0 20px;
 }
 
 .banner-content h1 {
-  font-size: 48px;
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .banner-content p {
-  font-size: 24px;
-  font-family: 'Poppins', sans-serif;
-  margin: 10px 0 20px;
+  font-size: 1.5rem;
+  margin: 0.5rem 0 2rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
+/* Banner Options */
+.banner-options {
+  display: flex;
+  gap: 1rem;
+  z-index: 2; /* Ensure buttons are above the overlay */
+  padding: 0 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-tertiary {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.btn-secondary:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.btn-tertiary:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Keyframes for Fade In Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
