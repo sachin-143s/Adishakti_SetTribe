@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StatsService {
-  private apiUrl = 'http://your-spring-boot-api-url/stats'; // Replace with your API endpoint
+  private apiUrl = 'http://localhost:8080/api/astrologers'; 
 
   constructor(private http: HttpClient) {}
 

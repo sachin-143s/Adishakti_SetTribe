@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-top-rated-astrologers',
@@ -6,13 +7,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-rated-astrologers.component.css']
 })
 export class TopRatedAstrologersComponent implements OnInit {
-  astrologers = [
-    { image: 'assets/astrologer1.jpg', name: 'Astrologer 1', skills: 'Vedic Astrology' },
-    { image: 'assets/astrologer2.jpg', name: 'Astrologer 2', skills: 'Palmistry' },
-    
-  ];
+  astrologers: any[] = [];  // Adjust the type based on your data model
+  currentIndex = 0;
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.fetchAstrologers();
+  }
+
+  fetchAstrologers(): void {
+    this.http.get<any[]>('http://localhost:8080/api/astrologers')
+      .subscribe(data => {
+        this.astrologers = data;
+        this.updateSlider(); // Initialize slider position
+      });
+  }
+
+  prevSlide(): void {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      this.updateSlider();
+    }
+  }
+
+  nextSlide(): void {
+    if (this.currentIndex < this.astrologers.length - 4) {
+      this.currentIndex++;
+      this.updateSlider();
+    }
+  }
+
+  updateSlider(): void {
+    const slider = document.querySelector('.slider') as HTMLElement;
+    if (slider) {
+      slider.style.transform = `translateX(-${this.currentIndex * 25}%)`;
+    }
+  }
 }
