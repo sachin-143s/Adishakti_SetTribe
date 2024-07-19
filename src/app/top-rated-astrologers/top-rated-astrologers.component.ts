@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./top-rated-astrologers.component.css']
 })
 export class TopRatedAstrologersComponent implements OnInit {
-  astrologers: any[] = [];  // Adjust the type based on your data model
+  astrologers: any[] = [];  
   currentIndex = 0;
 
   constructor(private http: HttpClient) {}
@@ -20,7 +20,7 @@ export class TopRatedAstrologersComponent implements OnInit {
     this.http.get<any[]>('http://localhost:8080/api/astrologers')
       .subscribe(data => {
         this.astrologers = data;
-        this.updateSlider(); // Initialize slider position
+        this.updateSlider(); 
       });
   }
 
