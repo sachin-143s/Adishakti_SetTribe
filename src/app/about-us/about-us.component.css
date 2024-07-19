@@ -92,6 +92,8 @@ a:hover {
 .hs_service_wrapper {
   padding-top: 100px;
   padding-bottom: 100px;
+    text-align: center; /* Center text for the whole section */
+
 }
 
 .hs_about_heading_main_wrapper h2 span {
@@ -225,15 +227,15 @@ a:hover {
 
 
 
-
-
+/* Team Section */
 /* Team Section */
 .hs_astrology_team_main_wrapper {
   padding: 50px 0;
+  text-align: center; /* Center text for the whole section */
 }
 
 .hs_about_heading_main_wrapper h2 span {
-  color: #007bff;
+  color: #465f99;
 }
 
 .hs_about_heading_main_wrapper h4 {
@@ -249,59 +251,121 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.hs_team_slider_wrapper .owl-carousel .owl-item {
-  margin-right: 15px;
+.hs_team_cards_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust spacing between cards */
 }
 
 .hs_astro_team_img_main_wrapper {
-  background-color: #fff;
-  padding: 20px;
   text-align: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0px 0px 35px -20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ebebeb;
+  overflow: hidden;
+  transition: all 0.5s;
+  flex: 1 1 calc(25% - 20px); /* 4 items per row, adjust gap accordingly */
+  margin-bottom: 30px;
 }
 
-.hs_astro_team_img_main_wrapper:hover {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+.hs_astro_img_wrapper {
+  position: relative;
 }
 
-.hs_astro_team_img_main_wrapper img {
-  max-width: 100%;
-  border-radius: 50%;
-  margin-bottom: 15px;
+.hs_astro_img_wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hs_astro_img_wrapper ul {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.hs_astro_img_wrapper ul li {
+  margin: 0 5px;
+}
+
+.hs_astro_img_wrapper ul li a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.hs_astro_img_wrapper ul li a:hover {
+  color: #007bff;
+}
+
+.hs_astro_img_cont_wrapper {
+  padding: 20px;
+  transition: all 0.5s; /* Add transition for smooth effect */
 }
 
 .hs_astro_img_cont_wrapper h2 {
   font-size: 20px;
   color: #333;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  transition: color 0.5s; /* Add transition for smooth effect */
+}
+
+.hs_astro_img_cont_wrapper h4 {
+  font-size: 18px;
+  color: #007bff;
+  margin-bottom: 15px;
+  transition: color 0.5s; /* Add transition for smooth effect */
 }
 
 .hs_astro_img_cont_wrapper p {
   font-size: 16px;
   color: #666;
-  margin-bottom: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  transition: color 0.5s; /* Add transition for smooth effect */
 }
 
-.hs_astro_img_bottom_wrapper ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+/* Hover effect */
+.hs_astro_team_img_main_wrapper:hover {
+
+  background: #75429c;
+  color: #fff;
 }
 
-.hs_astro_img_bottom_wrapper ul li {
-  font-size: 16px;
-  color: #666;
+.hs_astro_team_img_main_wrapper:hover .hs_astro_img_wrapper ul li a {
+  color: #fff;
 }
 
-.hs_astro_img_bottom_wrapper ul li:first-child {
-  font-weight: bold;
-  margin-bottom: 5px;
+.hs_astro_team_img_main_wrapper:hover .hs_astro_img_cont_wrapper h2,
+.hs_astro_team_img_main_wrapper:hover .hs_astro_img_cont_wrapper h4,
+.hs_astro_team_img_main_wrapper:hover .hs_astro_img_cont_wrapper p {
+  color: #fff; /* Change text color on hover */
 }
 
-.hs_astro_img_bottom_wrapper ul li:last-child {
-  font-weight: bold;
+/* Ensure responsiveness */
+@media (max-width: 1199px) { /* Large screens */
+  .hs_astro_team_img_main_wrapper {
+    flex: 1 1 calc(33.333% - 20px); /* 3 items per row */
+  }
 }
+
+@media (max-width: 991px) { /* Medium screens */
+  .hs_astro_team_img_main_wrapper {
+    flex: 1 1 calc(50% - 20px); /* 2 items per row */
+  }
+}
+
+@media (max-width: 767px) { /* Small screens */
+  .hs_astro_team_img_main_wrapper {
+    flex: 1 1 100%; /* 1 item per row */
+  }
+}
+
 
 /* Owl Carousel Navigation Arrows */
 .owl-prev,
