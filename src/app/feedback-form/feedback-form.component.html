@@ -2,17 +2,12 @@
   <h2>Submit Feedback</h2>
   <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
     <div>
-      <label for="userId">User ID</label>
-      <input id="userId" formControlName="userId" type="text" />
-      <div *ngIf="feedbackForm.get('userId')?.invalid && feedbackForm.get('userId')?.touched">
-        User ID is required.
-      </div>
-    </div>
-    <div>
-      <label for="astrologerId">Astrologer ID</label>
-      <input id="astrologerId" formControlName="astrologerId" type="text" />
+      <label for="astrologerId">Astrologer Name</label>
+      <select id="astrologerId" formControlName="astrologerId">
+        <option *ngFor="let astrologer of astrologers" [value]="astrologer.id">{{ astrologer.name }}</option>
+      </select>
       <div *ngIf="feedbackForm.get('astrologerId')?.invalid && feedbackForm.get('astrologerId')?.touched">
-        Astrologer ID is required.
+        Astrologer Name is required.
       </div>
     </div>
     <div>
