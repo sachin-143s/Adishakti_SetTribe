@@ -8,14 +8,20 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'find-astrologers', component: FindAstrologersComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
+
 
 ];
+
+
+
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
