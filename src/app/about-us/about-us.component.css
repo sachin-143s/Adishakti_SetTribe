@@ -17,7 +17,7 @@ a:hover {
 }
 
 /* About Us Section */
-/* About Us Section */
+/* About jyotish Section */
 .hs_about_us_main_wrapper {
   padding: 50px 0;
 }
@@ -366,6 +366,136 @@ a:hover {
   }
 }
 
+/* Why Adishakti Section */
+.hs_astro_why_adishakti_main_wrapper {
+  padding: 60px 0;
+  background: #f5f5f5;
+}
+
+.hs_astro_why_adishakti_heading_wrapper {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hs_astro_why_adishakti_heading_wrapper h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hs_astro_why_adishakti_heading_wrapper h2 span {
+  color: #465f99; /* Updated color */
+}
+
+.hs_astro_why_adishakti_heading_wrapper h4 {
+  border-bottom: 3px solid #465f99; /* Updated color */
+  width: 60px;
+  margin: 20px auto;
+}
+
+.hs_astro_why_adishakti_heading_wrapper p {
+  font-size: 18px;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hs_astro_why_adishakti_img_wrapper img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hs_astro_why_adishakti_cont_main_wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hs_astro_why_adishakti_cont_wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hs_astro_why_adishakti_cont_wrapper ul li {
+  font-size: 18px;
+  color: #465f99;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background: #b4c8dd;
+  border-radius: 30px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hs_astro_why_adishakti_cont_wrapper ul li i {
+  color: #007bff; /* Updated color */
+  margin-right: 10px;
+}
+
+.hs_astro_why_adishakti_cont_wrapper ul li:hover {
+  background-color: #465f99; /* Updated color */
+  color: #fff;
+}
+
+.hs_astro_why_adishakti_cont_wrapper ul li:hover i {
+  color: #fff; /* Updated icon color on hover */
+}
+
+/* Responsive Layout */
+@media (min-width: 992px) { /* Large screens */
+  .hs_astro_why_adishakti_main_wrapper .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .hs_astro_why_adishakti_main_wrapper .col-lg-6 {
+    flex: 1 0 50%;
+  }
+}
+
+@media (max-width: 991px) { /* Medium screens and below */
+  .hs_astro_why_adishakti_main_wrapper .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hs_astro_why_adishakti_main_wrapper .col-lg-6 {
+    flex: 1 0 100%;
+  }
+
+  .hs_astro_why_adishakti_cont_wrapper ul li {
+    font-size: 16px;
+  }
+
+  .hs_astro_why_adishakti_heading_wrapper p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) { /* Small screens */
+  .hs_astro_why_adishakti_heading_wrapper h2 {
+    font-size: 28px;
+  }
+
+  .hs_astro_why_adishakti_img_wrapper,
+  .hs_astro_why_adishakti_cont_main_wrapper {
+    margin-bottom: 20px;
+  }
+
+  .hs_astro_why_adishakti_cont_wrapper ul li {
+    font-size: 16px;
+  }
+
+  .hs_astro_why_adishakti_heading_wrapper p {
+    font-size: 16px;
+  }
+}
 
 /* Owl Carousel Navigation Arrows */
 .owl-prev,
