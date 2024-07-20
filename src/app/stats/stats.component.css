@@ -20,7 +20,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text visibility */
+  background: rgba(255, 255, 255, 0.3); /* Dark overlay for better text visibility */
   border-radius: 10px;
   z-index: 1;
 }
@@ -28,46 +28,36 @@
 .stat-item {
   text-align: center;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  background: #420E57; /* Background color for all items */
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
   position: relative;
   z-index: 2;
+  color: #F9DA82; /* Text color for contrast */
 }
 
 .stat-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-}
-
-.stat-item:hover:nth-child(1) {
-  background-color: #b2ebf2; /* Slightly darker cyan for the first item */
-}
-
-.stat-item:hover:nth-child(2) {
-  background-color: #ffe0b2; /* Slightly darker orange for the second item */
-}
-
-.stat-item:hover:nth-child(3) {
-  background-color: #f8bbd0; /* Slightly darker pink for the third item */
+  background-color: #F9DA82; /* Background color on hover */
 }
 
 .stat-item i {
   font-size: 40px;
-  color: #007bff;
+  color: #fff; /* Icon color */
   margin-bottom: 10px;
 }
 
 .stat-item h2 {
   font-size: 36px;
   margin: 10px 0;
-  color: #333;
+  color: #fff; /* Heading color */
   font-family: 'Poppins', sans-serif;
 }
 
 .stat-item p {
   font-size: 18px;
-  color: #666;
+  color: #fff; /* Paragraph color */
   font-family: 'Poppins', sans-serif;
 }
