@@ -1,4 +1,3 @@
-// src/app/blog.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -23,5 +22,13 @@ export class BlogService {
 
   getBlogs(): Observable<Blog[]> {
     return this.http.get<Blog[]>(this.apiUrl);
+  }
+
+  getBlogsByCategory(category: string): Observable<Blog[]> {
+    return this.http.get<Blog[]>(`${this.apiUrl}/category/${category}`);
+  }
+
+  getBlogById(id: number): Observable<Blog> {
+    return this.http.get<Blog>(`${this.apiUrl}/${id}`);
   }
 }

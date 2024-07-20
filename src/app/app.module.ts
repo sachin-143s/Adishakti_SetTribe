@@ -22,6 +22,7 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup
     AdminLoginComponent,
     FeedbackFormComponent,
     AstrologerSignupComponent
+ 
   ],
   imports: [
     BrowserModule,
