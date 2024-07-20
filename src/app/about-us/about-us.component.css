@@ -199,13 +199,14 @@ a:hover {
   .hs_service_wrapper .row {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 30px; /* Adjust this value to set the gap between rows */
-
+    justify-content: space-between;
+    gap: 0 30px; /* Adjust gap between columns */
   }
 
   .hs_service_wrapper .col-lg-3 {
-    flex: 1 0 25%; /* 4 items per row */
-    max-width: 25%;
+    flex: 1 0 calc(25% - 30px); /* 4 items per row with gap */
+    max-width: calc(25% - 30px);
+    margin-bottom: 60px; /* Increase gap between rows */
   }
 }
 
@@ -213,11 +214,14 @@ a:hover {
   .hs_service_wrapper .row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 30px; /* Adjust gap between columns */
   }
 
   .hs_service_wrapper .col-md-3 {
-    flex: 1 0 50%; /* 2 items per row */
-    max-width: 50%;
+    flex: 1 0 calc(50% - 30px); /* 2 items per row with gap */
+    max-width: calc(50% - 30px);
+    margin-bottom: 60px; /* Increase gap between rows */
   }
 }
 
@@ -225,15 +229,16 @@ a:hover {
   .hs_service_wrapper .row {
     display: flex;
     flex-direction: column;
-    row-gap: 300px; /* Adjust this value to set the gap between rows */
-
+    row-gap: 30px; /* Adjust gap between rows */
   }
 
   .hs_service_wrapper .col-xs-12 {
     flex: 1 0 100%; /* 1 item per row */
     max-width: 100%;
+    margin-bottom: 30px; /* Increase gap between rows */
   }
 }
+
 
 /* Team Section */
 /* Team Section */
