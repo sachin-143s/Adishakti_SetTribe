@@ -8,9 +8,9 @@ import { StatsService } from '../stats.service';
 })
 export class StatsComponent implements OnInit {
   stats: { totalAstrologers: number; minutesConsulted: number; happyCustomers: number } = {
-    totalAstrologers: 0,
-    minutesConsulted: 0,
-    happyCustomers: 0
+    totalAstrologers: 10,
+    minutesConsulted: 500,
+    happyCustomers: 1000
   };
 
   constructor(private statsService: StatsService) {}
