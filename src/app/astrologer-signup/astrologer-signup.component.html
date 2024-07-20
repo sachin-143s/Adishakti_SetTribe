@@ -1,0 +1,112 @@
+<form [formGroup]="signupForm" (ngSubmit)="signup()" class="signup-form">
+  <h2>Astrologer Sign Up</h2>
+
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" formControlName="firstName" required />
+    <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)" class="error-message">
+      <b *ngIf="firstName?.errors?.['required']">First Name is required</b>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" formControlName="lastName" required />
+    <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)" class="error-message">
+      <b *ngIf="lastName?.errors?.['required']">Last Name is required</b>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" required />
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+      <b *ngIf="email?.errors?.['required']">Email is required</b>
+      <b *ngIf="email?.errors?.['email']">Invalid email address</b>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="mobile">Mobile Number</label>
+    <input type="text" id="mobile" formControlName="mobile" required />
+    <div *ngIf="mobile?.invalid && (mobile?.dirty || mobile?.touched)" class="error-message">
+      <b *ngIf="mobile?.errors?.['required']">Mobile Number is required</b>
+      <b *ngIf="mobile?.errors?.['pattern']">Mobile Number must be numeric and 10 digits long</b>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" formControlName="dob" required />
+  </div>
+
+  <div class="form-group">
+    <label for="gender">Gender</label>
+    <select id="gender" formControlName="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="aadharNumber">Aadhar Number</label>
+    <input type="text" id="aadharNumber" formControlName="aadharNumber" required />
+  </div>
+
+  <div class="form-group">
+    <label for="experience">Experience (years)</label>
+    <input type="number" id="experience" formControlName="experience" required />
+  </div>
+
+  <div class="form-group">
+    <label for="languagesKnown">Languages Known (comma-separated)</label>
+    <input type="text" id="languagesKnown" formControlName="languagesKnown" required />
+  </div>
+
+  <div class="form-group">
+    <label for="skills">Skills (comma-separated)</label>
+    <input type="text" id="skills" formControlName="skills" required />
+  </div>
+
+  <div class="form-group">
+    <label for="certification">Certification</label>
+    <input type="text" id="certification" formControlName="certification" required />
+  </div>
+
+  <div class="form-group">
+    <label for="degree">Degree</label>
+    <input type="text" id="degree" formControlName="degree" required />
+  </div>
+
+  <div class="form-group">
+    <label for="ratePerMinute">Rate per Minute</label>
+    <input type="number" id="ratePerMinute" formControlName="ratePerMinute" required />
+  </div>
+
+  <div class="form-group">
+    <label for="city">City</label>
+    <input type="text" id="city" formControlName="city" required />
+  </div>
+
+  <div class="form-group">
+    <label for="district">District</label>
+    <input type="text" id="district" formControlName="district" required />
+  </div>
+
+  <div class="form-group">
+    <label for="state">State</label>
+    <input type="text" id="state" formControlName="state" required />
+  </div>
+
+  <div class="form-group">
+    <label for="country">Country</label>
+    <input type="text" id="country" formControlName="country" required />
+  </div>
+
+  <div class="form-group">
+    <label for="pinCode">Pin Code</label>
+    <input type="text" id="pinCode" formControlName="pinCode" required />
+  </div>
+
+  <button type="submit">Sign
