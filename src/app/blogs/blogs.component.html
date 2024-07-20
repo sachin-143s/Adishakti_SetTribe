@@ -1,14 +1,31 @@
-<div class="latest-blogs">
-    <h2 class="heading">Latest from Blogs</h2>
-    <div class="blogs-container">
-      <div *ngFor="let blog of blogs" class="blog-card">
-        <img [src]="blog.featuredImage" alt="{{ blog.title }}" class="blog-image">
-        <div class="blog-info">
-          <h3>{{ blog.title }}</h3>
-          <p>{{ blog.content | slice:0:100 }}...</p>
-          <button (click)="readMore(blog.id)">Read more</button>
-        </div>
-      </div>
-    </div>
+<div class="blog-container">
+  <div class="categories">
+    <h2>Categories</h2>
+    <ul>
+      <li *ngFor="let category of categories" (click)="filterByCategory(category)">
+        {{ category }}
+      </li>
+    </ul>
   </div>
-  
+
+  <div class="blogs">
+    <ng-container *ngIf="!selectedBlog; else blogDetail">
+      <div *ngFor="let blog of blogs" class="blog-item">
+        <img [src]="blog.featuredImage" alt="Blog Image" />
+        <h3>{{ blog.title }}</h3>
+        <p>{{ blog.content | slice: 0:100 }}...</p>
+        <button (click)="readMore(blog.id)">Read More</button>
+      </div>
+    </ng-container>
+    
+    <ng-template #blogDetail>
+      <div class="blog-detail">
+        <button (click)="backToList()">Back to Blogs</button>
+        <h1>{{ selectedBlog?.title }}</h1>
+        <img [src]="selectedBlog?.featuredImage" alt="Blog Image" />
+        <p>{{ selectedBlog?.content }}</p>
+        <p *ngIf="selectedBlog?.astrologer"><strong>Author:</strong> {{ selectedBlog?.astrologer?.name }}</p>
+      </div>
+    </ng-template>
+  </div>
+</div>
