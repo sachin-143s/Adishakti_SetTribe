@@ -28,35 +28,44 @@
 }
 
 .categories h2 {
-  font-size: 40px; /* Larger font size */
-  font-weight: bold; /* Bold font weight */
+  font-size: 45px; 
+  font-weight: bold; 
   margin-bottom: 30px;
   text-align: center;
-  color: #b4108d; /* Dark color for better contrast */
-  width: 100%;
-  text-transform: uppercase; /* Make the heading uppercase */
-  letter-spacing: 2px; /* Add some spacing between letters */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Enhanced shadow for better readability */
-  animation: highlight 3s ease-in-out infinite; /* New animation */
+  color: #ffffff; 
+  text-transform: uppercase; 
+  letter-spacing: 3px; 
+  position: relative; 
+  animation: neonGlow 1.5s ease-in-out infinite; 
 }
 
-@keyframes highlight {
+@keyframes neonGlow {
   0% {
-    color: #10040d; /* Starting color */
-    transform: scale(1); /* Initial size */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Initial shadow */
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 75px #ff00ff, 0 0 100px #ff00ff; /* Initial neon glow */
+    color: #ffffff; 
+    opacity: 0.8; 
   }
   50% {
-    color: #ffffff; /* Lighter color in the middle of the animation */
-    transform: scale(1.1); /* Slightly larger */
-    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6); /* Larger shadow */
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 90px #ff00ff, 0 0 120px #ff00ff; /* Enhanced neon glow */
+    color: #ffffff; 
+    opacity: 1; 
   }
   100% {
-    color: #b4108d; /* Original color */
-    transform: scale(1); /* Back to original size */
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Original shadow */
+    text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff, 0 0 35px #ff00ff, 0 0 45px #ff00ff, 0 0 55px #ff00ff, 0 0 80px #ff00ff, 0 0 110px #ff00ff; /* Slightly reduced glow */
+    color: #ffffff; 
+    opacity: 0.9; 
   }
 }
+
+.categories .content {
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background for better contrast */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 900px;
+}
+
 
 .categories ul {
   display: flex;
