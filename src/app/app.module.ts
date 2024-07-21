@@ -20,6 +20,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup.component';
+import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-astrologer.component';
 
 
 
@@ -40,7 +41,8 @@ import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup
     SignupComponent,
     AdminLoginComponent,
     FeedbackFormComponent,
-    AstrologerSignupComponent
+    AstrologerSignupComponent,
+    ChatWithAstrologerComponent
  
   ],
   imports: [
