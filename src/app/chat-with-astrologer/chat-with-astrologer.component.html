@@ -1,4 +1,9 @@
-<div>
+<div class="video-background">
+  <video autoplay muted loop>
+    <source src="bckvdo.mp4" type="video/mp4">
+    
+  </video>
+  <div class="content">
     <input type="text" [(ngModel)]="filters.skills" placeholder="e.g., Astrology">
     <select [(ngModel)]="filters.experience">
       <option value="">Select Experience</option>
@@ -7,7 +12,7 @@
       <option value="Expert">Expert</option>
     </select>
     <button (click)="applyFilters()">Apply Filters</button>
-  
+
     <div *ngFor="let astrologer of filteredAstrologers" class="astrologer-card">
       <h4 (click)="viewAstrologerDetails(astrologer.id)">{{ astrologer.name }}</h4>
       <p>Experience: {{ astrologer.experience }}</p>
@@ -15,4 +20,4 @@
       <button (click)="initiateCall(astrologer.id)">Call</button>
     </div>
   </div>
-  
+</div>
