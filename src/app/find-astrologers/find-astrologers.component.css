@@ -1,7 +1,17 @@
+.outside{
+  background-color: #8393a3;
+  background: url('/back.jpg') ;
+
+}
+
+/* .find-astrologers
+{    background: url('/login.jpg') no-repeat center center fixed;
+} */
+
+
 .find-astrologers-container {
     padding: 20px;
     background-color: #8393a3;
-    /* background-image: url('./assets/background.jpg'); */
     background-size: cover;
     background-position: center;
     min-height: 100vh;

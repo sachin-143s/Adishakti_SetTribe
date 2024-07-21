@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-interface Astrologer {
+export interface Astrologer {
   id: number;
   firstName: string;
   lastName: string;
   skills: string[];
-  // Include other properties if needed
+  image: string; // assuming each astrologer has an image URL
 }
 
 @Injectable({
