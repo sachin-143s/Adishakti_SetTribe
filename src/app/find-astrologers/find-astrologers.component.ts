@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 
 interface Astrologer {
   name: string;
@@ -47,3 +47,9 @@ export class FindAstrologersComponent implements OnInit {
     );
   }
 }
+ 
+
+
+
+
+
