@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup.component';
+import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-astrologer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,7 +19,9 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'feedback', component: FeedbackFormComponent },
-  { path: 'astrologer-signup', component: AstrologerSignupComponent }
+  { path: 'astrologer-signup', component: AstrologerSignupComponent },
+  { path: 'chat-with-astrologer', component: ChatWithAstrologerComponent },
+
 ];
 
 @NgModule({
