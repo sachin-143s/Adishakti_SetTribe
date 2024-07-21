@@ -1,0 +1,24 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+interface Astrologer {
+  id: number;
+  firstName: string;
+  lastName: string;
+  skills: string[];
+  // Include other properties if needed
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AstrologerService {
+  private apiUrl = 'http://localhost:8080/api/astrologers'; 
+
+  constructor(private http: HttpClient) { }
+
+  getAstrologers(): Observable<Astrologer[]> {
+    return this.http.get<Astrologer[]>(this.apiUrl);
+  }
+}
