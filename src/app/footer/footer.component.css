@@ -24,24 +24,24 @@
 
 .hs_footer_list_wrapper {
   padding: 20px;
-  color: #ffffff; /* Ensures text inside this wrapper is white */
+  color: #ffffff; 
 }
 
 .hs_footer_list_wrapper h2 {
   font-size: 1.5em;
   margin-bottom: 15px;
-  color: #ffffff; /* Ensures headings are white */
+  color: #ffffff; 
 }
 
 .hs_footer_list {
   list-style: none;
   padding: 0;
-  color: #ffffff; /* Ensures list items are white */
+  color: #ffffff; 
 }
 
 .hs_footer_list li {
   margin-bottom: 10px;
-  color: #ffffff; /* Ensures list items are white */
+  color: #ffffff; 
 }
 
 .hs_footer_list li a {
@@ -51,7 +51,7 @@
 
 .hs_footer_list li a:hover {
   text-decoration: underline;
-  color: #ffffff; /* Ensures hover text remains white */
+  color: #F9DA82; 
 }
 
 .hs_bottom_footer_main_wrapper .container .row {
@@ -59,13 +59,13 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: #420E57; /* Consistent background color */
-  color: #ffffff; /* Ensures text in bottom footer is white */
+  background-color: #420E57; 
+  color: #ffffff; 
 }
 
 .footer_bottom_cont_wrapper p,
 .footer_bottom_list_wrapper ul li {
-  color: #ffffff; /* Ensures text in bottom footer is white */
+  color: #ffffff;
 }
 
 .footer_bottom_list_wrapper ul {
@@ -73,7 +73,7 @@
   padding: 0;
   display: flex;
   gap: 15px;
-  color: #ffffff; /* Ensures list items in bottom footer are white */
+  color: #ffffff; 
 }
 
 .footer_bottom_list_wrapper ul li {
@@ -88,5 +88,5 @@
 
 .footer_bottom_list_wrapper ul li a:hover {
   text-decoration: underline;
-  color: #ffffff; /* Ensures hover text remains white */
+  color: #F9DA82; 
 }

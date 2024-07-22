@@ -1,22 +1,23 @@
+<!-- app.component.html -->
 <nav class="navbar">
     <div>
         <div class="logo">
-            <!-- Image Logo -->
+            <!-- Font Awesome Logo -->
             <img src="\images\header\Guiding_Brilliance-removebg-preview.png" alt="Logo" class="logo-image">
-
             <!-- Text Logo -->
             <span class="logo-text">Adishakti</span>
         </div>
     </div>
     <ul class="nav-links">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/find-astrologers">Find Astrologers</a></li>
-        <li><a routerLink="/about-us">About Us</a></li>
-        <li><a routerLink="/blogs">Blogs</a></li>
-        <li><a routerLink="/login">Login</a></li>
-        <li><a routerLink="/feedback">Feedback</a></li>
-        <li><a routerLink="/astrologer-signup">Astrologer Signup</a></li>
+        <li><a routerLink="/"><i class="fas fa-home"></i> Home</a></li>
+        <li><a routerLink="/find-astrologers"><i class="fas fa-search"></i> Find Astrologers</a></li>
+        <li><a routerLink="/about-us"><i class="fas fa-info-circle"></i> About Us</a></li>
+        <li><a routerLink="/blogs"><i class="fas fa-blog"></i> Blogs</a></li>
+        <li><a routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a routerLink="/feedback"><i class="fas fa-comment-dots"></i> Feedback</a></li>
+        <li><a routerLink="/astrologer-signup"><i class="fas fa-user-plus"></i> Astrologer Signup</a></li>
         <li class="dropdown">
+            <!-- <button class="dropbtn"><i class="fas fa-user"></i> Profile</button> -->
             <div class="dropdown-content">
                 <app-login></app-login>
             </div>
