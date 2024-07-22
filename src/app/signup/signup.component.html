@@ -18,24 +18,6 @@
   </div>
 
   <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" formControlName="email" required />
-    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
-      <b *ngIf="email?.errors?.['required']">Email is required</b>
-      <b *ngIf="email?.errors?.['email']">Invalid email address</b>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" id="password" formControlName="password" required />
-    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
-      <b *ngIf="password?.errors?.['required']">Password is required</b>
-      <b *ngIf="password?.errors?.['minlength']">Password must be at least 8 characters long</b>
-    </div>
-  </div>
-
-  <div class="form-group">
     <label for="dob">Date of Birth</label>
     <input type="date" id="dob" formControlName="dob" required />
   </div>
@@ -91,6 +73,28 @@
   <div class="form-group">
     <label for="birthTime">Birth Time</label>
     <input type="time" id="birthTime" formControlName="birthTime" required />
+  </div>
+
+  <!-- Move Email and Password fields to the end -->
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" required />
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+      <b *ngIf="email?.errors?.['required']">Email is required</b>
+      <b *ngIf="email?.errors?.['email']">Invalid email address</b>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <div class="password-container">
+      <input [type]="hidePassword ? 'password' : 'text'" id="password" formControlName="password" required />
+      <span class="eye-icon" (click)="togglePasswordVisibility()">{{ hidePassword ? '👁️' : '👁️‍🗨️' }}</span>
+    </div>
+    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
+      <b *ngIf="password?.errors?.['required']">Password is required</b>
+      <b *ngIf="password?.errors?.['minlength']">Password must be at least 8 characters long</b>
+    </div>
   </div>
 
   <button type="submit">Sign Up</button>

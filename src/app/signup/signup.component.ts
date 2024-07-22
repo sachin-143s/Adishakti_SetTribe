@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
+  hidePassword: boolean = true;
   backEndUrl: string = 'http://localhost:8080/api/users';
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -18,8 +19,6 @@ export class SignupComponent implements OnInit {
     this.signupForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       dob: new FormControl('', Validators.required),
       city: new FormControl('', Validators.required),
       district: new FormControl('', Validators.required),
@@ -29,7 +28,9 @@ export class SignupComponent implements OnInit {
       mobileNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
       gender: new FormControl('', Validators.required),
       birthPlace: new FormControl('', Validators.required),
-      birthTime: new FormControl('', Validators.required)
+      birthTime: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)])
     });
   }
 
@@ -38,6 +39,10 @@ export class SignupComponent implements OnInit {
   get email() { return this.signupForm.get('email'); }
   get password() { return this.signupForm.get('password'); }
   get mobileNumber() { return this.signupForm.get('mobileNumber'); }
+
+  togglePasswordVisibility() {
+    this.hidePassword = !this.hidePassword;
+  }
 
   signup() {
     if (this.signupForm.invalid) {
@@ -55,26 +60,24 @@ export class SignupComponent implements OnInit {
       } else if (this.password?.errors?.['required']) {
         alert('Password is required');
       }
-      if (this.mobileNumber?.errors?.['pattern']) {
-        alert('Mobile Number must be numeric and 10 digits long');
-      } else if (this.mobileNumber?.errors?.['required']) {
+      if (this.mobileNumber?.errors?.['required']) {
         alert('Mobile Number is required');
+      } else if (this.mobileNumber?.errors?.['pattern']) {
+        alert('Mobile Number must be numeric and 10 digits long');
       }
-    } else {
-      this.http.post(this.backEndUrl, this.signupForm.value).subscribe(
-        (response: any) => {
-          console.log('Signup successful:', response);
-          alert('Signup successful');
-          this.signupForm.reset();
-          this.router.navigate(['/login']);
-        },
-        (error) => {
-          console.error('Signup failed:', error);
-          alert('Signup failed');
-        }
-      );
-      this.router.navigate(['/login']);
+      return;
     }
 
+    this.http.post(this.backEndUrl, this.signupForm.value).subscribe(
+      response => {
+        console.log('Signup successful:', response);
+        alert('Signup successful! You can now log in.');
+        this.router.navigate(['/login']);
+      },
+      error => {
+        console.error('Signup failed:', error);
+        alert('Signup failed! Please try again later.');
+      }
+    );
   }
 }

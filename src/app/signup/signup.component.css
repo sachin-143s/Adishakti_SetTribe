@@ -1,83 +1,100 @@
-/* signup.component.css */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .signup-form {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(135deg, #f0f0f0, #d9d9d9);
-  }
-  
-  .signup-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-    font-weight: 500;
-  }
-  
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .form-group input:focus,
-  .form-group select:focus {
-    outline: none;
-    border-color: #5e72e4;
-    box-shadow: 0 0 5px rgba(94, 114, 228, 0.5);
-  }
-  
-  button[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    background-color: #5e72e4;
-    border: none;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #4a60d0;
-  }
-  
-  .login-link {
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
-  }
-  
-  .login-link a {
-    color: #5e72e4;
-    text-decoration: none;
-  }
-  
-  .login-link a:hover {
-    text-decoration: underline;
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.signup-form {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f0f0f0, #d9d9d9);
+}
+
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #5e72e4;
+  box-shadow: 0 0 5px rgba(94, 114, 228, 0.5);
+}
+
+.password-container {
+  position: relative; /* Ensure positioning context for the eye icon */
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px; /* Add space for the eye icon */
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 20px; /* Adjust size as needed */
+  color: #333;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #5e72e4;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #4a60d0;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.login-link a {
+  color: #5e72e4;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
