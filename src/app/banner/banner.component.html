@@ -1,8 +1,7 @@
 <div class="banner">
   <div class="banner-video">
-    <video id="background-video" autoplay muted loop>
+    <video id="background-video" autoplay muted loop preload="auto">
       <source src="banvdo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
     </video>
   </div>
   <div class="banner-overlay"></div>
@@ -12,7 +11,7 @@
   </div>
   <div class="banner-options">
     <a routerLink="/chat-with-astrologer" class="btn btn-primary">Chat with Astrologer</a>
-    <button class="btn btn-secondary">Call with Astrologer</button>
-    <button class="btn btn-tertiary">Blogs</button>
+    <a routerLink="/chat-with-astrologer" class="btn btn-secondary">Call with Astrologer</a>
+    <a routerLink="/blogs" class="btn btn-tertiary">Blogs</a>
   </div>
 </div>
