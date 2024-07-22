@@ -23,18 +23,16 @@ body {
 }
 
 .logo img {
-  height: 100px;
-  width: 100px;
+  height: 60px;
+  width: 60px;
   margin-right: 10px;
 }
 
 .logo-text {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #F9DA82;
-  animation: bounce 1s infinite; /* Apply bounce animation */
   animation: glow 1.5s ease-in-out infinite; /* Apply glow animation */
-
 }
 
 /* Navigation links styling */
@@ -44,11 +42,10 @@ body {
   margin: 0;
   padding: 0;
   flex-grow: 1; /* Allow links to take up remaining space */
-  justify-content: center; /* Center align items */
+  justify-content: space-between; /* Space out items evenly */
 }
 
 .nav-links li {
-  margin-left: 30px; /* Increased space between links */
   position: relative;
 }
 
@@ -56,16 +53,36 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-weight: 500; /* Medium weight for readability */
-  font-size: 18px; /* Increased font size for better visibility */
+  font-size: 15px; /* Adjust font size for better fit */
   display: inline-block;
-  padding: 12px 20px; /* Increased padding for better click area */
-  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 10px 15px; /* Adjust padding for better fit */
+  transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
   border-radius: 5px; /* Rounded corners for modern look */
+  border: 2px solid transparent; /* Start with transparent border */
+  position: relative;
+  overflow: hidden; /* Ensure pseudo-element does not overflow */
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(249, 218, 130, 0); /* Invisible border initially */
+  transition: all 0.3s ease;
+  z-index: -1; /* Place behind the link text */
 }
 
 .nav-links a:hover {
-  color: #420E57; /* Change text color on hover */
-  background-color: #F9DA82; /* Light background color on hover */
+  color: rgba(249, 218, 130, 1); /* Change text color on hover */
+  background-color: #420E57; /* Change background color on hover */
+}
+
+.nav-links a:hover::before {
+  border-color: rgba(249, 218, 130, 1); /* Visible border on hover */
+  animation: run-border 1s linear infinite; /* Run the border animation */
 }
 
 /* Dropdown menu styling */
@@ -77,17 +94,42 @@ body {
   background: none;
   border: none;
   color: #ffffff;
-  font-size: 18px; /* Increased font size */
+  font-size: 16px; /* Adjust font size */
   cursor: pointer;
-  transition: color 0.3s ease;
-  padding: 12px 20px; /* Increased padding for better click area */
+  transition: color 0.3s ease, border 0.3s ease;
+  padding: 10px 15px; /* Adjust padding for better fit */
+  border: 2px solid transparent; /* Start with transparent border */
+  position: relative;
+  overflow: hidden; /* Ensure pseudo-element does not overflow */
+}
+
+.dropdown .dropbtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(249, 218, 130, 0); /* Invisible border initially */
+  transition: all 0.3s ease;
+  z-index: -1; /* Place behind the button text */
+}
+
+.dropdown .dropbtn:hover {
+  color: rgba(249, 218, 130, 1); /* Change text color on hover */
+  background-color: #420E57; /* Change background color on hover */
+}
+
+.dropdown .dropbtn:hover::before {
+  border-color: rgba(249, 218, 130, 1); /* Visible border on hover */
+  animation: run-border 1s linear infinite; /* Run the border animation */
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #ffffff;
-  min-width: 200px; /* Increased width for better visibility */
+  min-width: 180px; /* Adjusted width */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
   top: 100%;
@@ -107,10 +149,10 @@ body {
 }
 
 .dropdown-content a {
-  padding: 12px 20px; /* Increased padding for better click area */
+  padding: 10px 15px; /* Adjust padding for better fit */
   text-decoration: none;
   display: block;
-  font-size: 16px; /* Increased font size */
+  font-size: 14px; /* Adjust font size */
   color: #420E57;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -118,18 +160,10 @@ body {
 .dropdown-content a:hover {
   background-color: #F9DA82;
   color: #420E57;
+  animation: fadeIn 0.3s ease; /* Apply fade-in animation on hover */
 }
 
 /* Animations */
-/* @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-} */
-
 @keyframes glow {
   0% {
     text-shadow: 0 0 10px rgba(249, 218, 130, 0.5);
@@ -142,33 +176,23 @@ body {
   }
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px); /* Slightly less movement */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(-10px); /* Slightly less movement */
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes run-border {
+  0% {
+    border-color: rgba(249, 218, 130, 0.5);
+  }
+  50% {
+    border-color: rgba(249, 218, 130, 1);
+  }
+  100% {
+    border-color: rgba(249, 218, 130, 0.5);
   }
 }
