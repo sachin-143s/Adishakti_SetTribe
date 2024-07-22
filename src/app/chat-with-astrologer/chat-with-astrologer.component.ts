@@ -31,17 +31,14 @@ export class ChatWithAstrologerComponent implements OnInit {
   }
 
   viewAstrologerDetails(id: number): void {
-    // Implement this method to view astrologer details
     console.log(`Viewing details for astrologer with ID: ${id}`);
   }
 
   initiateChat(id: number): void {
-    // Implement this method to initiate a chat with the astrologer
     console.log(`Initiating chat with astrologer with ID: ${id}`);
   }
 
   initiateCall(id: number): void {
-    // Implement this method to initiate a call with the astrologer
     console.log(`Initiating call with astrologer with ID: ${id}`);
   }
 }
