@@ -80,20 +80,20 @@
   border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  margin: 10px;
+  margin: 20px;
   flex: 1 1 auto;
-  max-width: 220px; /* Optional: to limit the width of each option */
-  background-color: #8734a2; /* Set background color for options */
-  color: #fff; /* Text color for options */
-  font-size: 20px; /* Larger font size */
-  font-weight: bold; /* Make the text bold */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for better visual effect */
+  max-width: 220px; 
+  background-color: #8734a2; 
+  color: #fff; 
+  font-size: 20px; 
+  font-weight: bold; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .categories li:hover {
-  background-color: #0056b3; /* Darker background on hover */
-  transform: scale(1.1); /* Slightly increase the size on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  background-color: #0056b3; 
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .categories li.selected {

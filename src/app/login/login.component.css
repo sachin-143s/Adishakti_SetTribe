@@ -1,23 +1,37 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('/loginn.jpg') no-repeat center center fixed;
-  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  color: #ffffff;
+  position: relative;
+}
+
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  background-size: cover;
 }
 
 .container {
+  z-index: 1;
   max-width: 400px;
   width: 100%;
   padding: 20px;
 }
 
 .login-container {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(205, 196, 196, 0.9);
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -38,7 +52,7 @@ body {
 
 label {
   font-size: 14px;
-  color: #666666;
+  color: #131313;
   margin-bottom: 5px;
   display: inline-block;
 }
@@ -57,6 +71,14 @@ label {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   outline: none;
+}
+
+.input-group-append {
+  display: flex;
+}
+
+.input-group .btn-outline-secondary {
+  border-radius: 0 5px 5px 0;
 }
 
 .buttons-container {
