@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 interface User {
   email: string;
-  password: string;
+  password: string;  // Ideally, this should be handled securely.
 }
 
 @Component({
@@ -15,7 +15,7 @@ interface User {
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  user: User | null = null;
+  user: User | null = null; // Make sure this is correctly defined
   errorMessage: string = '';
 
   apiUrl = 'http://localhost:8080/';
@@ -24,28 +24,31 @@ export class LoginComponent {
 
   validateCredentials() {
     this.errorMessage = '';
-    this.http.get<User>(this.apiUrl + "api/users/email/" + this.email).subscribe(
-      success => {
-        this.user = success;
-        if (this.user) {
-          if (this.user.password === this.password) {
+    
+    if (!this.email || !this.password) {
+      this.errorMessage = 'Please fill in both fields.';
+      return;
+    }
+
+    this.http.get<User>(`${this.apiUrl}api/users/email/${this.email}`).subscribe(
+      user => {
+        if (user) {
+          if (user.password === this.password) {
             // Store user data in localStorage
-            localStorage.setItem('currentUser', JSON.stringify(this.user));
-            this.router.navigateByUrl("/");
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            this.user = user; // Set the user here
+            this.router.navigateByUrl("/find-astrologers");
           } else {
             this.errorMessage = 'Password does not match.';
           }
         } else {
-          this.errorMessage = 'user with this email not found.';
+          this.errorMessage = 'User with this email not found.';
         }
       },
       error => {
         console.error('Error fetching user:', error);
         this.errorMessage = 'Error fetching user data.';
       }
-
     );
-
-  
   }
 }
