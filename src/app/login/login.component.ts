@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 interface User {
   email: string;
-  password: string;  // Ideally, this should be handled securely.
+  password: string;  
 }
 
 @Component({
@@ -15,8 +15,10 @@ interface User {
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  user: User | null = null; // Make sure this is correctly defined
+  user: User | null = null; 
   errorMessage: string = '';
+
+  showPassword: boolean = false;  
 
   apiUrl = 'http://localhost:8080/';
 
@@ -34,9 +36,9 @@ export class LoginComponent {
       user => {
         if (user) {
           if (user.password === this.password) {
-            // Store user data in localStorage
+            
             localStorage.setItem('currentUser', JSON.stringify(user));
-            this.user = user; // Set the user here
+            this.user = user; 
             this.router.navigateByUrl("/find-astrologers");
           } else {
             this.errorMessage = 'Password does not match.';
@@ -50,5 +52,9 @@ export class LoginComponent {
         this.errorMessage = 'Error fetching user data.';
       }
     );
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 }
