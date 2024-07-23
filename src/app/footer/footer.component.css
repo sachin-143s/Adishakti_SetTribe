@@ -1,71 +1,73 @@
-/* footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
+/* Ensure the footer spans the entire width */
+.hs_footer_main_wrapper {
+  background-color: #420E57; /* Set to your desired background color */
+  color: #ffffff; /* Set to your desired text color */
+  padding: 40px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.footer-links a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
+.hs_footer_top_wrapper {
+  border-bottom: 1px solid #444; /* Border color for separation */
+  padding-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.footer-links a:hover {
-  text-decoration: underline;
+.hs_footer_top_wrapper .container,
+.hs_bottom_footer_main_wrapper .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
- */
- .hs_footer_top_wrapper .container .row {
+
+.hs_footer_top_wrapper .container .row,
+.hs_bottom_footer_main_wrapper .container .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #420E57;
 }
 
 .hs_footer_list_wrapper {
   padding: 20px;
-  color: #ffffff; 
 }
 
 .hs_footer_list_wrapper h2 {
   font-size: 1.5em;
   margin-bottom: 15px;
-  color: #ffffff; 
+  color: #ffffff; /* Heading color */
 }
 
 .hs_footer_list {
   list-style: none;
   padding: 0;
-  color: #ffffff; 
+  color: #ffffff; /* List item text color */
 }
 
 .hs_footer_list li {
   margin-bottom: 10px;
-  color: #ffffff; 
+  color: #ffffff; /* List item text color */
 }
 
 .hs_footer_list li a {
-  color: #ffffff;
+  color: #ffffff; /* Link color */
   text-decoration: none;
 }
 
 .hs_footer_list li a:hover {
   text-decoration: underline;
-  color: #F9DA82; 
+  color: #F9DA82; /* Hover color */
 }
 
-.hs_bottom_footer_main_wrapper .container .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #420E57; 
-  color: #ffffff; 
+/* Ensure the bottom footer has a white text color */
+.hs_bottom_footer_main_wrapper {
+  padding: 20px 0;
+  background-color: #420E57; /* Set to your desired background color */
 }
 
-.footer_bottom_cont_wrapper p,
-.footer_bottom_list_wrapper ul li {
-  color: #ffffff;
+.footer_bottom_cont_wrapper p {
+  color: #ffffff; /* Text color */
 }
 
 .footer_bottom_list_wrapper ul {
@@ -73,20 +75,19 @@
   padding: 0;
   display: flex;
   gap: 15px;
-  color: #ffffff; 
+  margin: 0;
 }
 
 .footer_bottom_list_wrapper ul li {
-  color: #ffffff;
   margin: 0;
 }
 
 .footer_bottom_list_wrapper ul li a {
-  color: #ffffff;
+  color: #ffffff; /* Link color */
   text-decoration: none;
 }
 
 .footer_bottom_list_wrapper ul li a:hover {
   text-decoration: underline;
-  color: #F9DA82; 
+  color: #F9DA82; /* Hover color */
 }
