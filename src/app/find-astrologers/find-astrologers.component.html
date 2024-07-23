@@ -1,5 +1,5 @@
 <div class="outside">
-<div class="find-astrologers">
+  <div class="find-astrologers">
     <div class="search-bar">
       <input type="text" placeholder="Search for astrologers..." [(ngModel)]="searchTerm" (input)="filterAstrologers()" />
     </div>
@@ -10,12 +10,16 @@
         <div class="astrologer-details">
           <h3>{{ astrologer.name }}</h3>
           <p>Skills: {{ astrologer.skills }}</p>
+          <div class="astrologer-actions">
+            <button class="btn-chat" (click)="chatWithAstrologer(astrologer.id)">Chat</button>
+            <button class="btn-call" (click)="callAstrologer(astrologer.id)">Call</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-   
+
   
     
 <!-- fetch data from db -->

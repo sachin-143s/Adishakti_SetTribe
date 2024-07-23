@@ -1,64 +1,92 @@
-.outside{
+.outside {
   background-color: #8393a3;
-  background: url('/back.jpg') ;
-
+  background: url('/back.jpg') no-repeat center center;
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-attachment: fixed; /* Optional: Keeps the background fixed on scroll */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the background image */
 }
 
-/* .find-astrologers
-{    background: url('/login.jpg') no-repeat center center fixed;
-} */
-
-
-.find-astrologers-container {
-    padding: 20px;
-    background-color: #8393a3;
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-  }
-
-
 .find-astrologers {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgb(129, 145, 145);
-  }
-  
-  .search-bar {
-    margin-bottom: 20px;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(129, 145, 145);
+  border-radius: 10px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.astrologer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.astrologer {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.astrologer-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.astrologer-details {
+  padding: 10px 0;
+}
+
+.astrologer-details h3 {
+  margin: 5px 0;
+}
+
+.astrologer-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-chat, .btn-call {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.btn-chat {
+  background-color: #008CBA;  
+}
+
+.btn-chat:hover {
+  background-color: #005f73; /* Darker blue for hover */
+}
+
+.btn-call {
+  background-color: #45a049;
+}
+
+.btn-call:hover {
+  background-color: #2c6a3e; /* Darker green for hover */
+}
+
+@media screen and (max-width: 768px) {
   .astrologer-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
-  .astrologer {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .astrologer-image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .astrologer-details {
-    padding: 10px 0;
-  }
-  
-  .astrologer-details h3 {
-    margin: 5px 0;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .astrologer-list {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-  }
-  
+}
