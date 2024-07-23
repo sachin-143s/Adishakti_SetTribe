@@ -4,8 +4,7 @@
   align-items: center;
   margin: 50px 0;
   padding: 20px;
-  /* background: url('image.jpg') no-repeat center center;  */
-  background-size: cover;
+  background-color: #f0f0f0; /* Background color for the container */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: #fff; /* Text color for contrast */
@@ -31,7 +30,7 @@
   background: #420E57; /* Background color for all items */
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
   position: relative;
   z-index: 2;
   color: #F9DA82; /* Text color for contrast */
@@ -40,7 +39,8 @@
 .stat-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-  background-color: #F9DA82; /* Background color on hover */
+  background-color: #df05cc5c; /* Background color on hover */
+  color: #420E57; /* Text color on hover */
 }
 
 .stat-item i {
