@@ -21,6 +21,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup.component';
 import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-astrologer.component';
+import { WhyadiComponent } from './whyadi/whyadi.component';
 
 
 
@@ -42,7 +43,8 @@ import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-as
     AdminLoginComponent,
     FeedbackFormComponent,
     AstrologerSignupComponent,
-    ChatWithAstrologerComponent
+    ChatWithAstrologerComponent,
+    WhyadiComponent
  
   ],
   imports: [
