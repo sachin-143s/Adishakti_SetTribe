@@ -1,6 +1,7 @@
- import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 interface Astrologer {
+  id: number;
   name: string;
   skills: string;
   image: string;
@@ -13,16 +14,15 @@ interface Astrologer {
 })
 export class FindAstrologersComponent implements OnInit {
   astrologers: Astrologer[] = [
-    { name: 'Dr. Anita Rai', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg' },
-    { name: 'Shri Ashok Shukla', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img3.jpg' },
-    { name: 'Dr. Priya Sharma', skills: 'Vedic Astrology, Palmistry', image: 'images/content/about/astro_img2.jpg' },
-    { name: 'Shri Rajesh Gupta', skills: 'Western Astrology, Feng Shui', image: 'images/content/about/astro_img4.jpg' },
-    { name: 'Dr. Suman Verma', skills: 'Vedic Astrology, Tarot Reading', image: 'images/content/about/astro_img1.jpg' },
-    { name: 'Shri Rakesh Singh', skills: 'Numerology, Palmistry', image: 'images/content/about/astro_img3.jpg' },
-    { name: 'Dr. Kavita Gupta', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img2.jpg' },
-    { name: 'Shri Ankit Mishra', skills: 'Astrology, Western Astrology', image: 'images/content/about/astro_img4.jpg' },
-    { name: 'Dr. Radha Kapoor', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg' }
-
+    { id: 1, name: 'Dr. Anita Rai', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg' },
+    { id: 2, name: 'Shri Ashok Shukla', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img3.jpg' },
+    { id: 3, name: 'Dr. Priya Sharma', skills: 'Vedic Astrology, Palmistry', image: 'images/content/about/astro_img2.jpg' },
+    { id: 4, name: 'Shri Rajesh Gupta', skills: 'Western Astrology, Feng Shui', image: 'images/content/about/astro_img4.jpg' },
+    { id: 5, name: 'Dr. Suman Verma', skills: 'Vedic Astrology, Tarot Reading', image: 'images/content/about/astro_img1.jpg' },
+    { id: 6, name: 'Shri Rakesh Singh', skills: 'Numerology, Palmistry, tarot reading', image: 'images/content/about/astro_img3.jpg' },
+    { id: 7, name: 'Dr. Kavita Gupta', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img2.jpg' },
+    { id: 8, name: 'Shri Ankit Mishra', skills: 'Astrology, Western Astrology', image: 'images/content/about/astro_img4.jpg' },
+    { id: 9, name: 'Dr. Radha Kapoor', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg' }
   ];
 
   filteredAstrologers: Astrologer[] = [];
@@ -45,8 +45,18 @@ export class FindAstrologersComponent implements OnInit {
       astrologer.skills.toLowerCase().includes(searchTerm)
     );
   }
+
+  chatWithAstrologer(id: number): void {
+    console.log(`Chat with astrologer ID: ${id}`);
+    // Implement chat functionality here
+  }
+
+  callAstrologer(id: number): void {
+    console.log(`Call astrologer ID: ${id}`);
+    // Implement call functionality here
+  }
 }
- 
+
  
 
 //fetch astrologer using db
