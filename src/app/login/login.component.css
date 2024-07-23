@@ -48,6 +48,7 @@ body {
 .form-group {
   margin-bottom: 20px;
   text-align: left;
+  position: relative; /* Added */
 }
 
 label {
@@ -73,12 +74,33 @@ label {
   outline: none;
 }
 
-.input-group-append {
-  display: flex;
+.input-group {
+  position: relative; /* Ensures eye icon is positioned relative to the input */
 }
 
-.input-group .btn-outline-secondary {
-  border-radius: 0 5px 5px 0;
+.input-group .form-control {
+  width: 100%; /* Adjusted to take up the full width of its container */
+  padding-right: 40px; /* Added padding to make space for the eye icon */
+}
+
+.input-group-append {
+  position: absolute;
+  right: 10px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  pointer-events: none; /* Allows clicks to pass through to the input */
+}
+
+.input-group-append .btn {
+  border: none; /* Remove border */
+  background: transparent; /* Remove background */
+  padding: 0;
+  height: 100%;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .buttons-container {
