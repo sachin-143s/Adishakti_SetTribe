@@ -380,7 +380,7 @@ a:hover {
   }
 }
 
-/* Why Adishakti Section */
+Why Adishakti Section
 .hs_astro_why_adishakti_main_wrapper {
   padding: 60px 0;
   background: #f5f5f5;
@@ -575,14 +575,22 @@ a:hover {
   animation: fadeIn 1.4s ease;
 }
 
+.hs_astro_mission_vision_wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between the Mission and Vision sections */
+  flex-wrap: wrap; /* Ensure items wrap properly on smaller screens */
+}
+
 .hs_astro_mission_wrapper,
 .hs_astro_vision_wrapper {
   background: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  animation: fadeInUp 1.6s ease;
+  flex: 1; /* Allows items to grow equally */
+  min-width: calc(50% - 20px); /* Ensures two items fit side by side with gap */
+  box-sizing: border-box; /* Includes padding and border in element's total width and height */
 }
 
 .hs_astro_mission_wrapper h3,
@@ -636,9 +644,13 @@ a:hover {
 
 /* Responsive Layout */
 @media (max-width: 991px) { /* Medium screens and below */
+  .hs_astro_mission_vision_wrapper {
+    flex-direction: column;
+  }
+
   .hs_astro_mission_wrapper,
   .hs_astro_vision_wrapper {
-    margin-bottom: 20px;
+    min-width: 100%;
   }
 }
 
