@@ -34,12 +34,14 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: justify;
 }
 
 .hs_about_us_cont_main_wrapper h2 {
-  font-size: 36px;
+  font-size: 40px;
   color: #333;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .hs_about_us_cont_main_wrapper h3 {
