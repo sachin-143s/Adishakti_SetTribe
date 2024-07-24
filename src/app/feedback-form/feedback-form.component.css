@@ -1,15 +1,15 @@
 .feedback-form-container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 20px auto; /* Added margin-top for spacing from the navbar */
   padding: 20px;
-  background-color: #F8F4E1;
+  background-color: #420E57;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   text-align: center;
-  color: #543310;
+  color: #F9DA82;
 }
 
 form div {
@@ -19,24 +19,26 @@ form div {
 label {
   display: block;
   margin-bottom: 5px;
-  color: #74512D;
+  color: #F9DA82;
 }
 
-input, textarea {
+input, textarea, select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #AF8F6F;
+  border: 1px solid #F9DA82;
   border-radius: 5px;
   box-sizing: border-box;
+  background-color: #F9DA82;
+  color: #420E57;
 }
 
 button {
   width: 100%;
   padding: 10px;
-  background-color: #AF8F6F;
+  background-color: #F9DA82;
   border: none;
   border-radius: 5px;
-  color: #F8F4E1;
+  color: #420E57;
   font-size: 16px;
   cursor: pointer;
 }
