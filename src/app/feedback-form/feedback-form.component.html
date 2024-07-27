@@ -1,3 +1,4 @@
+<body>
 <div class="feedback-form-container">
   <h2>Submit Feedback</h2>
   <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
@@ -12,10 +13,14 @@
     </div>
     <div>
       <label for="rating">Rating</label>
-      <input id="rating" formControlName="rating" type="number" />
-      <div *ngIf="feedbackForm.get('rating')?.invalid && feedbackForm.get('rating')?.touched">
-        Rating must be between 1 and 5.
+      <div class="rating">
+        <label for="radio-1" aria-label="Rating 1"><input type="radio" name="rating" id="radio-1" class="sr-only" value="1" formControlName="rating"></label>
+        <label for="radio-2" aria-label="Rating 2"> <input type="radio" name="rating" id="radio-2" class="sr-only"value="2" formControlName="rating"></label>
+        <label for="radio-3" aria-label="Rating 3"><input type="radio" name="rating" id="radio-3" class="sr-only" value="3" checked formControlName="rating"></label>
+        <label for="radio-4" aria-label="Rating 4"><input type="radio" name="rating" id="radio-4" class="sr-only"value="4" formControlName="rating"></label>
+        <label for="radio-5" aria-label="Rating 5"><input type="radio" name="rating" id="radio-5" class="sr-only" value="5" formControlName="rating"></label>
       </div>
+
     </div>
     <div>
       <label for="comments">Comments</label>
@@ -27,3 +32,4 @@
     <button type="submit" [disabled]="feedbackForm.invalid">Submit Feedback</button>
   </form>
 </div>
+</body>
