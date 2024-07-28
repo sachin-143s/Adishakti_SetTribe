@@ -15,19 +15,21 @@ interface User {
 })
 export class LoginComponent implements OnInit{
   email: string = '';
-  password: string = '';
+  password: string = 'Password Required*';
   user: User | null = null; 
   errorMessage: string = '';
   errorUser:string=""
+  userReq:string="Email or phone Number Required*"
   errorPassword:string=""
+  errMass:boolean=false
   showPassword: boolean = false;  
 
   apiUrl = 'http://localhost:8080/';
 
   constructor(private http: HttpClient, private router: Router) { }
   myData:FormGroup =new FormGroup({
-    user: new FormControl(''),
-    password: new FormControl(''),
+    user: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required]),
   })
   get getuser():any{
     return this.myData.get('user')
@@ -36,6 +38,7 @@ export class LoginComponent implements OnInit{
     return this.myData.get('password')
   }
   validateCredentials() {
+    this.errMass=!this.errMass
     this.errorMessage = '';
     
     if (!this.email || !this.password) {
@@ -75,15 +78,15 @@ export class LoginComponent implements OnInit{
         this.myData.get('user')?.setValidators([Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern('[0-9]*')])
         if(this.myData.get('user')?.hasError('pattern'))
         {
-          this.errorUser="Enter Only Numbers"
+          this.errorUser="Enter Only Numbers*"
         }
         else if(this.myData.get('user')?.hasError('minlength'))
         {
-            this.errorUser="Enter Atlist 10 number"
+            this.errorUser="Enter Atlist 10 number*"
         }
         else if(this.myData.get('user')?.hasError('maxlength'))
         {
-            this.errorUser="Enter Onliy 10 number"
+            this.errorUser="Enter Onliy 10 number*"
         }
         else{
         this.errorUser=""
@@ -94,7 +97,7 @@ export class LoginComponent implements OnInit{
        
           if(this.myData.get('user')?.hasError('email'))
           {
-            this.errorUser="Enter Valid Email Id"
+            this.errorUser="Enter Valid Email Id*"
           }
           else{
           this.errorUser=""
