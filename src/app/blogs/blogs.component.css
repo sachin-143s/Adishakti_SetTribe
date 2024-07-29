@@ -1,3 +1,81 @@
 .headr{
     color: goldenrod;
 }
+.pcs{
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+.w3-row-padding .w3-third {
+   
+    box-shadow: 9px 6px 5px black;
+    display: inline-block;
+    vertical-align: top;
+   
+    border: 4px solid rgb(22, 78, 5);
+    margin: 5px;
+    padding: 0;
+    width: 32%;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+.w3-row-padding img {
+   
+    width: 100%;
+    height: 300px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures images cover the container */
+}
+.w3-container p {
+    margin: 10px 0; /* Adds space between text and image containers */
+    font-size: 14px; /* Font size for the text */
+}
+.w3-container p b {
+ 
+    font-size: 16px; /* Font size for bold text */
+  }
+.view-more {position: absolute;
+    left: 35%;
+    bottom: 1%;
+    border-radius: 40px;
+    box-shadow: 9px 6px 5px black;
+    text-align: center;
+    margin: 20px 0;
+}
+.view-more button {
+    border-radius: 40px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(10, 40, 40);
+    color: white;
+    text-decoration: none;
+    
+}
+.view-more button:hover {
+    border-radius: 40px;
+    background-color: rgb(28, 61, 61);
+}
+div.display-blog{
+    background-color: green;
+    position: sticky;
+    top: 0px;
+    padding: 10px 0px;
+ 
+}
+.display-blog span{
+     cursor: default;
+     
+     color: red;
+  }
+  .more-content {
+    display: none; /* Initially hide additional content */
+  }
+  .expanded .more-content {
+    display: block; /* Show additional content when expanded */
+  }
+  .expanded {
+    height: auto; /* Allows container to expand based on content */
+    overflow: visible; /* Ensures no content is hidden */
+  }
+  .w3-container.expanded img {
+    height: auto; /* Adjust image height when expanded */
+  }

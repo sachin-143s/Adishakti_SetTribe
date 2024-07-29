@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService, Blog } from '../blog.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blogs',
@@ -9,26 +11,39 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BlogsComponent implements OnInit {
   blogs: Blog[] = [];
-  categories = ['Technology', 'Health', 'Lifestyle', 'Education'];
-  selectedCategory: string | null = null;
+ displayBlock:boolean=false
+  individualData:any=[]
+  
   selectedBlog: Blog | null = null;
+  data:any=[]
+  constructor(private blogService: BlogService, private router: Router, private route: ActivatedRoute,public http:HttpClient,private sanitizer: DomSanitizer) {
+    this.gerData()
+  }
+  viewMore(i:any){
+    this.displayBlock=!this.displayBlock;
+    this.individualData=i
 
-  constructor(private blogService: BlogService, private router: Router, private route: ActivatedRoute) {}
-
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const categoryId = params.get('category');
-      const blogId = params.get('id');
+  }
+ closs(){
+  this.displayBlock=false
+ }
+  gerData(){
+    
+   this.http.get("http://localhost:8080/get-image-data").subscribe(
+    (data)=>{
+      this.data=data
+     // const objectURL = URL.createObjectURL(data);
+      //this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
       
-      if (categoryId) {
-        this.selectedCategory = categoryId;
-        this.fetchBlogsByCategory(this.selectedCategory);
-      } else if (blogId) {
-        this.fetchBlogById(Number(blogId));
-      } else {
-        this.fetchBlogs();
-      }
-    });
+    }
+    ,(error)=>
+    {
+      
+    }
+   )
+  }
+  ngOnInit(): void {
+    
   }
 
   fetchBlogs(): void {
