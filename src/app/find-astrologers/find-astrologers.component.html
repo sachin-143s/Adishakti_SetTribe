@@ -1,3 +1,4 @@
+
 <div class="outside">
   <div class="find-astrologers">
     <div class="search-bar">
@@ -10,26 +11,24 @@
         <div class="astrologer-details">
           <h3>{{ astrologer.name }}</h3>
           <p>Skills: {{ astrologer.skills }}</p>
-          <div class="astrologer-actions">
-            <button class="btn-chat" (click)="chatWithAstrologer(astrologer.id)">Chat</button>
-            <button class="btn-call" (click)="callAstrologer(astrologer.id)">Call</button>
-          </div>
+          <p>Rating: 
+            <span class="star-rating">
+              <span *ngFor="let star of [1, 2, 3, 4, 5]; let i = index" 
+                    (mouseover)="hoverRating = i + 1" 
+                    (mouseleave)="hoverRating = null" 
+                    [class.filled]="astrologer.rating >= i + 1 || (hoverRating && hoverRating >= i + 1)">
+                &#9733;
+              </span>
+            </span>
+            ({{ astrologer.rating }})
+          </p>
+        </div>
+        <div class="astrologer-actions">
+          <button class="btn-chat" (click)="chatWithAstrologer(astrologer.id)">Chat</button>
+          <button class="btn-call" (click)="callAstrologer(astrologer.id)">Call</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-  
-    
-<!-- fetch data from db -->
-    <!-- <div class="find-astrologers">
-      <input [(ngModel)]="searchTerm" (input)="filterAstrologers()" placeholder="Search astrologers...">
-      
-      <div *ngFor="let astrologer of filteredAstrologers" class="astrologer-card">
-        <img [src]="astrologer.image" alt="{{ astrologer.firstName }} {{ astrologer.lastName }}">
-        <h3>{{ astrologer.firstName }} {{ astrologer.lastName }}</h3>
-        <p>{{ astrologer.skills.join(', ') }}</p>
-      </div>
-    </div> -->
-    
+<app-footer></app-footer>

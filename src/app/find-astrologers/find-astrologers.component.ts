@@ -5,6 +5,7 @@ interface Astrologer {
   name: string;
   skills: string;
   image: string;
+  rating: number; // Add rating property
 }
 
 @Component({
@@ -14,19 +15,20 @@ interface Astrologer {
 })
 export class FindAstrologersComponent implements OnInit {
   astrologers: Astrologer[] = [
-    { id: 1, name: 'Dr. Anita Rai', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg' },
-    { id: 2, name: 'Shri Ashok Shukla', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img3.jpg' },
-    { id: 3, name: 'Dr. Priya Sharma', skills: 'Vedic Astrology, Palmistry', image: 'images/content/about/astro_img2.jpg' },
-    { id: 4, name: 'Shri Rajesh Gupta', skills: 'Western Astrology, Feng Shui', image: 'images/content/about/astro_img4.jpg' },
-    { id: 5, name: 'Dr. Suman Verma', skills: 'Vedic Astrology, Tarot Reading', image: 'images/content/about/astro_img1.jpg' },
-    { id: 6, name: 'Shri Rakesh Singh', skills: 'Numerology, Palmistry, tarot reading', image: 'images/content/about/astro_img3.jpg' },
-    { id: 7, name: 'Dr. Kavita Gupta', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img2.jpg' },
-    { id: 8, name: 'Shri Ankit Mishra', skills: 'Astrology, Western Astrology', image: 'images/content/about/astro_img4.jpg' },
-    { id: 9, name: 'Dr. Radha Kapoor', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg' }
+    { id: 1, name: 'Dr. Anita Rai', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg', rating: 4.5 },
+    { id: 2, name: 'Shri Ashok Shukla', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img3.jpg', rating: 4.0 },
+    { id: 3, name: 'Dr. Priya Sharma', skills: 'Vedic Astrology, Palmistry', image: 'images/content/about/astro_img2.jpg', rating: 3.5 },
+    { id: 4, name: 'Shri Rajesh Gupta', skills: 'Western Astrology, Feng Shui', image: 'images/content/about/astro_img4.jpg', rating: 4.8 },
+    { id: 5, name: 'Dr. Suman Verma', skills: 'Vedic Astrology, Tarot Reading', image: 'images/content/about/astro_img1.jpg', rating: 4.1 },
+    { id: 6, name: 'Shri Rakesh Singh', skills: 'Numerology, Palmistry, Tarot Reading', image: 'images/content/about/astro_img3.jpg', rating: 3.8 },
+    { id: 7, name: 'Dr. Kavita Gupta', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img2.jpg', rating: 4.2 },
+    { id: 8, name: 'Shri Ankit Mishra', skills: 'Astrology, Western Astrology', image: 'images/content/about/astro_img4.jpg', rating: 3.9 },
+    { id: 9, name: 'Dr. Radha Kapoor', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg', rating: 4.7 }
   ];
 
   filteredAstrologers: Astrologer[] = [];
   searchTerm: string = '';
+  hoverRating: number | null = null; // For managing hover effect
 
   ngOnInit(): void {
     this.filteredAstrologers = this.astrologers;
@@ -56,53 +58,3 @@ export class FindAstrologersComponent implements OnInit {
     // Implement call functionality here
   }
 }
-
- 
-
-//fetch astrologer using db
-/* import { Component, OnInit } from '@angular/core';
-import { AstrologerService,Astrologer } from '../astrologer.service';
-
-@Component({
-  selector: 'app-find-astrologers',
-  templateUrl: './find-astrologers.component.html',
-  styleUrls: ['./find-astrologers.component.css']
-})
-export class FindAstrologersComponent implements OnInit {
-  astrologers: Astrologer[] = [];
-  filteredAstrologers: Astrologer[] = [];
-  searchTerm: string = '';
-
-  constructor(private astrologerService: AstrologerService) {}
-
-  ngOnInit(): void {
-    this.loadAstrologers();
-  }
-
-  loadAstrologers(): void {
-    this.astrologerService.getAstrologers().subscribe(
-      (data) => {
-        this.astrologers = data;
-        this.filteredAstrologers = data;
-      },
-      (error) => {
-        console.error('Error fetching astrologers', error);
-      }
-    );
-  }
-
-  filterAstrologers(): void {
-    const searchTerm = this.searchTerm.toLowerCase().trim();
-
-    if (searchTerm === '') {
-      this.filteredAstrologers = this.astrologers;
-      return;
-    }
-
-    this.filteredAstrologers = this.astrologers.filter(astrologer =>
-      (`${astrologer.firstName} ${astrologer.lastName}`.toLowerCase().includes(searchTerm) ||
-      astrologer.skills.join(', ').toLowerCase().includes(searchTerm))
-    );
-  }
-}
- */
