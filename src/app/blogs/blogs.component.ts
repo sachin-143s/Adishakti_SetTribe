@@ -29,7 +29,7 @@ export class BlogsComponent implements OnInit {
  }
   gerData(){
     
-   this.http.get("http://localhost:8080/get-image-data").subscribe(
+   this.http.get("http://localhost:8080/get-images").subscribe(
     (data)=>{
       this.data=data
      // const objectURL = URL.createObjectURL(data);
@@ -42,6 +42,67 @@ export class BlogsComponent implements OnInit {
     }
    )
   }
+  getEducation(){
+    
+    this.http.get("http://localhost:8080/get-images-education").subscribe(
+     (data)=>{
+       this.data=data
+      // const objectURL = URL.createObjectURL(data);
+       //this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+       
+     }
+     ,(error)=>
+     {
+       
+     }
+    )
+   }
+   
+   getLifeStyle(){
+    
+    this.http.get("http://localhost:8080/get-images-lifestyle").subscribe(
+     (data)=>{
+       this.data=data
+      // const objectURL = URL.createObjectURL(data);
+       //this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+       
+     }
+     ,(error)=>
+     {
+       
+     }
+    )
+   }
+   getTec(){
+    
+    this.http.get("http://localhost:8080/get-images-tecnology").subscribe(
+     (data)=>{
+       this.data=data
+      // const objectURL = URL.createObjectURL(data);
+       //this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+       
+     }
+     ,(error)=>
+     {
+       
+     }
+    )
+   }
+   getHelth(){
+    
+    this.http.get("http://localhost:8080/get-images-helth").subscribe(
+     (data)=>{
+       this.data=data
+      // const objectURL = URL.createObjectURL(data);
+       //this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+       
+     }
+     ,(error)=>
+     {
+       
+     }
+    )
+   }
   ngOnInit(): void {
     
   }

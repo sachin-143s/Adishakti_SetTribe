@@ -22,10 +22,11 @@
 
   </div>
   <div class="w3-bar-block">
-    <a href="#"class="w3-bar-item w3-button w3-padding w3-text-teal"><i ><img src="\images\icons\tecnology.png" width="30px"></i>Technology</a> 
-    <a href="#"  class="w3-bar-item w3-button w3-padding"><i ><img src="\images\icons\helth.png" width="30px"></i>Health</a> 
-    <a href="#"  class="w3-bar-item w3-button w3-padding"><i ><img src="\images\icons\lifestyle.png" width="30px"></i>Lifestyle </a>
-    <a href="#"  class="w3-bar-item w3-button w3-padding"><i ><img src="\images\icons\education.png" width="30px"></i>Education  </a>
+    <a class="w3-bar-item w3-button w3-padding w3-text-teal" (click)="gerData()"><i ></i>ALL</a> 
+    <a class="w3-bar-item w3-button w3-padding " (click)="getTec()"><i ><img src="\images\icons\tecnology.png" width="30px"></i>Technology</a> 
+    <a  class="w3-bar-item w3-button w3-padding" (click)="getHelth()"><i ><img src="\images\icons\helth.png" width="30px"></i>Health</a> 
+    <a   class="w3-bar-item w3-button w3-padding" (click)="getLifeStyle()"><i ><img src="\images\icons\lifestyle.png" width="30px"></i>Lifestyle </a>
+    <a   class="w3-bar-item w3-button w3-padding"(click)="getEducation()"><i ><img src="\images\icons\education.png" width="30px"></i>Education  </a>
   </div>
  
 </nav>
@@ -42,18 +43,22 @@
    
     </div>
   </header>
+  
   <div class="w3-bar-block" style="margin-left:300px">
     
   <!-- First Photo Grid-->
   <div class="w3-row-padding" >
+    <div class="w3-sidebar pkk" style="z-index:5;" id="mySidebar" *ngIf="displayBlock"><span style='font-size:40px;' (click)="closs()">&#10006;</span>
+<br>
+<img [src]="'data:image/png;base64,'+individualData.images.imageData" alt="Norway"    class="w3-hover-opacity"><p><b>{{individualData.title}}</b></p>
+<p>{{individualData.blog}}
+          </p>
+    </div>
     <div class="w3-third w3-container w3-margin-bottom" *ngFor="let i Of data">
-      <img [src]="'data:image/png;base64,'+i.imageData" alt="Norway"  style="width:100%"   class="w3-hover-opacity">
+      <img [src]="'data:image/png;base64,'+i.images.imageData" alt="Norway"  style="width:100%"   class="w3-hover-opacity">
       <div class="w3-container w3-white pcs">
-        <p><b>Lorem Ipsum</b></p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        <p><b>{{i.title}}</b></p>
+        <p>{{i.blog}}</p>
         <div class="view-more">
           <button (click)="viewMore(i)">View More</button>
         </div>
@@ -66,7 +71,7 @@
   <!-- Second Photo Grid-->
  
    
-  
+ 
   
   
   </div>

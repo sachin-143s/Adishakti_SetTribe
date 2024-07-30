@@ -1,6 +1,7 @@
 .headr{
     color: goldenrod;
 }
+
 .pcs{
     position: relative;
     height: 220px;
@@ -61,7 +62,34 @@ div.display-blog{
     padding: 10px 0px;
  
 }
-.display-blog span{
+a img{
+  color: black;
+}
+.pkk{
+  box-shadow: 10px 10px 5px 5px rgb(45, 43, 46);
+  background-color: black;
+  width: 60%;
+  margin-left: 10%;
+  font-size: larger;
+  opacity:3;
+  color: aliceblue;
+ 
+height: max-content;
+  overflow: scroll;
+
+}
+.pkk p{
+  overflow-wrap: break-word;
+  text-align: justify;
+}
+.pkk img{
+float: left;
+margin: 5px;
+ height:300px;
+
+ width: max-content;
+}
+.pkk span{
      cursor: default;
      
      color: red;
