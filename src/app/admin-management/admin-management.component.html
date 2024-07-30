@@ -1,0 +1,15 @@
+<div class="admin-management">
+    <h1>Admin Management</h1>
+    <nav>
+      <button (click)="currentView = 'users'">Manage Users</button>
+      <button (click)="currentView = 'astrologers'">Manage Astrologers</button>
+      <button (click)="currentView = 'blogs'">Manage Blogs</button>
+      <button (click)="currentView = 'skills'">Manage Skills</button>
+    </nav>
+  
+    <app-manage-users *ngIf="currentView === 'users'"></app-manage-users>
+    <app-manage-astrologers *ngIf="currentView === 'astrologers'"></app-manage-astrologers>
+    <app-manage-blogs *ngIf="currentView === 'blogs'"></app-manage-blogs>
+    <app-manage-skills *ngIf="currentView === 'skills'"></app-manage-skills>
+  </div>
+  

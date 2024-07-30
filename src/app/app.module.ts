@@ -22,6 +22,11 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup.component';
 import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-astrologer.component';
 import { WhyadiComponent } from './whyadi/whyadi.component';
+import { AdminManagementComponent } from './admin-management/admin-management.component';
+import { ManageUsersComponent } from './admin-management/manage-users/manage-users.component';
+import { ManageAstrologersComponent } from './admin-management/manage-astrologers/manage-astrologers.component';
+import { ManageBlogsComponent } from './admin-management/manage-blogs/manage-blogs.component';
+import { ManageSkillsComponent } from './admin-management/manage-skills/manage-skills.component';
 
 
 
@@ -44,7 +49,12 @@ import { WhyadiComponent } from './whyadi/whyadi.component';
     FeedbackFormComponent,
     AstrologerSignupComponent,
     ChatWithAstrologerComponent,
-    WhyadiComponent
+    WhyadiComponent,
+    AdminManagementComponent,
+    ManageUsersComponent,
+    ManageAstrologersComponent,
+    ManageBlogsComponent,
+    ManageSkillsComponent
  
   ],
   imports: [
