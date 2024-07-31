@@ -11,6 +11,7 @@ import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup
 import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-astrologer.component';
 import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-dashboard.component';
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
+// import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'blogs', component: BlogsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  // { path: 'navbar', component: NavbarComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'feedback', component: FeedbackFormComponent },
   { path: 'astrologer-signup', component: AstrologerSignupComponent },

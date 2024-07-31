@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   width: 100%;
   background-color: green;
   color: greenyellow;
@@ -27,7 +27,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  position: relative; /* Ensure that dropdown is positioned relative to main-nav */
+  position: relative; 
 }
 
 .logo h1 {
@@ -44,7 +44,7 @@
 
 .nav-links li {
   margin-left: 20px;
-  position: relative; /* Ensure that dropdown-content is positioned relative to this li */
+  position: relative;
 }
 
 .nav-links a {
@@ -80,9 +80,9 @@
   background-color: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1000; /* Ensure it is on top of other elements */
-  top: 100%; /* Position below the dropdown trigger */
-  left: 0; /* Align with the left edge of the dropdown trigger */
+  z-index: 1000; 
+  top: 100%; 
+  left: 0; 
 }
 
 .dropdown-content.show {
@@ -92,4 +92,147 @@
 .dropdown-content app-login {
   padding: 10px;
   color: #000;
+} */
+
+
+/* General styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Light background color for better contrast */
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  background-color: #420E57; /* Dark Purple */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px; /* Reduced height */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.logo img {
+  height: 80px; /* Reduced size */
+  width: 80px; /* Reduced size */
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5rem; /* Reduced font size */
+  font-weight: bold;
+  color: #F9DA82; /* Light Yellow */
+  animation: glow 1.5s ease-in-out infinite; /* Apply glow animation */
+}
+
+/* Navigation links styling */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1; /* Allow links to take up remaining space */
+  justify-content: center; /* Center align items */
+}
+
+.nav-links li {
+  margin-left: 15px; /* Space between links */
+  position: relative;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500; /* Medium weight for readability */
+  font-size: 14px; /* Reduced font size */
+  display: inline-block;
+  padding: 8px 15px; /* Reduced padding for smaller height */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 5px; /* Rounded corners for modern look */
+}
+
+.nav-links a:hover {
+  color: #420E57; /* Dark Purple */
+  background-color: #F9DA82; /* Light Yellow */
+}
+
+/* Dropdown menu styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropbtn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 14px; /* Reduced font size */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 8px 15px; /* Reduced padding for smaller height */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff; /* White */
+  min-width: 200px; /* Width for better visibility */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.dropdown-content app-login {
+  padding: 10px;
+  color: #420E57; /* Dark Purple */
+}
+
+.dropdown-content a {
+  padding: 8px 15px; /* Reduced padding for smaller height */
+  text-decoration: none;
+  display: block;
+  font-size: 12px; /* Smaller font size */
+  color: #420E57; /* Dark Purple */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #F9DA82; /* Light Yellow */
+  color: #420E57; /* Dark Purple */
+}
+
+/* Animations */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(249, 218, 130, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(249, 218, 130, 1);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(249, 218, 130, 0.5);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
