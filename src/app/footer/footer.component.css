@@ -2,14 +2,14 @@
 .hs_footer_main_wrapper {
   background-color: #420E57; /* Set to your desired background color */
   color: #ffffff; /* Set to your desired text color */
-  padding: 40px 0;
+  padding: 5px 0; /* Reduced padding to decrease height */
   width: 100%;
   box-sizing: border-box;
 }
 
 .hs_footer_top_wrapper {
   border-bottom: 1px solid #444; /* Border color for separation */
-  padding-bottom: 20px;
+  padding-bottom: 10px; /* Reduced padding to decrease height */
   width: 100%;
   box-sizing: border-box;
 }
@@ -30,12 +30,12 @@
 }
 
 .hs_footer_list_wrapper {
-  padding: 20px;
+  padding: 10px 0; /* Reduced padding to decrease height */
 }
 
 .hs_footer_list_wrapper h2 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
+  font-size: 1.2em; /* Reduced font size */
+  margin-bottom: 10px; /* Reduced margin */
   color: #ffffff; /* Heading color */
 }
 
@@ -46,7 +46,7 @@
 }
 
 .hs_footer_list li {
-  margin-bottom: 10px;
+  margin-bottom: 5px; /* Reduced margin */
   color: #ffffff; /* List item text color */
 }
 
@@ -62,19 +62,21 @@
 
 /* Ensure the bottom footer has a white text color */
 .hs_bottom_footer_main_wrapper {
-  padding: 20px 0;
+  padding: 10px 0; /* Reduced padding to decrease height */
   background-color: #420E57; /* Set to your desired background color */
 }
 
 .footer_bottom_cont_wrapper p {
   color: #ffffff; /* Text color */
+  font-size: 12px; /* Reduced font size */
+  margin: 0; /* Remove default margin */
 }
 
 .footer_bottom_list_wrapper ul {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 15px;
+  gap: 10px; /* Reduced gap */
   margin: 0;
 }
 
