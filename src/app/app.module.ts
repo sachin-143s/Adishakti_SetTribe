@@ -24,6 +24,7 @@ import { WhyadiComponent } from './whyadi/whyadi.component';
 import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-dashboard.component';
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
