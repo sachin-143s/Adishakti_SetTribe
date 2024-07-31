@@ -1,0 +1,68 @@
+
+  <div class="dashboard-container">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h2>Home</h2>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a routerLink="/astrodash">Dashboard</a></li>
+        <li><a routerLink="/astroprofile">Profile</a></li>
+        <li><a href="#">Client Lists</a></li>
+        <li><a href="#">Reports</a></li>
+      </ul>
+    </nav>
+    <div class="main-content">
+      <header class="topbar">
+        <h1>Dashboard</h1>
+        <div class="user-info">
+          <p>Welcome, <strong>Username</strong></p>
+          <a href="#">Logout</a>
+        </div>
+      </header>
+     
+<div class="profile-container">
+  <header class="profile-header">
+    <h2>Profile</h2>
+  </header>
+  
+  <section class="profile-info">
+    <div class="profile-item">
+      <label for="username">Username:</label>
+      <p>{{ user.username }}</p>
+    </div>
+    <div class="profile-item">
+      <label for="email">Email:</label>
+      <p>{{ user.email }}</p>
+    </div>
+    <div class="profile-item">
+      <label for="phone">Phone:</label>
+      <p>{{ user.phone }}</p>
+    </div>
+    <div class="profile-item">
+      <label for="bio">Bio:</label>
+      <p>{{ user.bio }}</p>
+    </div>
+  </section>
+  
+  <!-- <section class="profile-update">
+    <h3>Update Profile</h3>
+    <form (ngSubmit)="updateProfile()">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="user.username" name="username">
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="user.email" name="email">
+      
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" [(ngModel)]="user.phone" name="phone">
+      
+      <label for="bio">Bio:</label>
+      <textarea id="bio" [(ngModel)]="user.bio" name="bio"></textarea>
+      
+      <button type="submit">Save Changes</button>
+    </form>
+  </section> -->
+</div>
+    </div>
+  </div>
+  
