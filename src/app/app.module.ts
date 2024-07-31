@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -22,8 +21,8 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup.component';
 import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-astrologer.component';
 import { WhyadiComponent } from './whyadi/whyadi.component';
-
-
+import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-dashboard.component';
+import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 
 
 @NgModule({
@@ -46,16 +45,15 @@ import { WhyadiComponent } from './whyadi/whyadi.component';
     AstrologerSignupComponent,
     ChatWithAstrologerComponent,
     WhyadiComponent,
- 
- 
+    AstrologerDashboardComponent,
+    AstroProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,9 +9,12 @@ import { SignupComponent } from './signup/signup.component';
 import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup.component';
 import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-astrologer.component';
+import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-dashboard.component';
+import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'Home', component: HomeComponent },
   { path: 'find-astrologers', component: FindAstrologersComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'blogs', component: BlogsComponent },
@@ -21,8 +24,9 @@ const routes: Routes = [
   { path: 'feedback', component: FeedbackFormComponent },
   { path: 'astrologer-signup', component: AstrologerSignupComponent },
   { path: 'chat-with-astrologer', component: ChatWithAstrologerComponent },
-
-];
+  { path: 'astrodash', component: AstrologerDashboardComponent },
+  { path: 'astroprofile', component: AstroProfileComponent },
+];  
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
