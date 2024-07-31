@@ -25,6 +25,7 @@ import { WhyadiComponent } from './whyadi/whyadi.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { WhyadiComponent } from './whyadi/whyadi.component';
     FeedbackFormComponent,
     AstrologerSignupComponent,
     ChatWithAstrologerComponent,
-    WhyadiComponent
+    WhyadiComponent,
+ 
  
   ],
   imports: [
