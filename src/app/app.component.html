@@ -1,10 +1,10 @@
-<!-- app.component.html -->
+
 <nav class="navbar">
     <div>
       <div class="logo">
-        <!-- Font Awesome Logo -->
+       
         <img src="\images\header\Guiding_Brilliance-removebg-preview.png" alt="Logo" class="logo-image">
-        <!-- Text Logo -->
+        
         <span class="logo-text">Adishakti</span>
       </div>
     </div>
@@ -16,6 +16,7 @@
       <li *ngIf="!isLoggedIn"><a routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
       <li><a routerLink="/feedback"><i class="fas fa-comment-dots"></i> Feedback</a></li>
       <li *ngIf="!isLoggedIn"><a routerLink="/astrologer-signup"><i class="fas fa-user-plus"></i> Astrologer Signup</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/astrodash"><i class="fas fa-user-plus"></i> AstroDash</a></li>
       <li class="dropdown" *ngIf="isLoggedIn">
         <button class="dropbtn"><i class="fas fa-user"></i> Profile</button>
         <div class="dropdown-content">
