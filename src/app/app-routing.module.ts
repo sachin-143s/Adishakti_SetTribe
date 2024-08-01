@@ -13,6 +13,11 @@ import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { AstroReportComponent } from './astro-report/astro-report.component';
+import { ManageSkillsComponent } from './manage-skills/manage-skills.component';
+import { ManageAstrologersComponent } from './manage-astrologers/manage-astrologers.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { AdminastrologerComponent } from './adminastrologer/adminastrologer.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 // import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
@@ -33,6 +38,12 @@ const routes: Routes = [
   { path: 'astroclient', component: ClientListComponent },
   { path: 'astroreport', component: AstroReportComponent },
   { path: 'astroclient', component: ClientListComponent },
+
+  { path: 'admin',component:AdminDashboardComponent},
+  {path:'manageskills', component:ManageSkillsComponent},
+  {path:'manageastrologer', component:ManageAstrologersComponent},
+{path:'manageusers', component:ManageUsersComponent},
+{path:'adminastrologer',component:AdminastrologerComponent}
 ];  
 
 @NgModule({
