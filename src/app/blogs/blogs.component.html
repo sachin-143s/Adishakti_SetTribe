@@ -39,46 +39,39 @@
     
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" ><i class="fa fa-bars"></i></span>
     <div class="w3-container">
-    <h1 class="headr"><b>Adishakti</b></h1>
+   
    
     </div>
   </header>
   
   <div class="w3-bar-block" style="margin-left:300px">
-    
+    <h1 class="headr"><b>Adishakti</b></h1>
   <!-- First Photo Grid-->
   <div class="w3-row-padding" >
-    <div class="w3-sidebar pkk" style="z-index:5;" id="mySidebar" *ngIf="displayBlock"><span style='font-size:40px;' (click)="closs()">&#10006;</span>
+    <div class="w3-sidebar pkk" style="z-index:5;" id="mySidebar" *ngIf="displayBlock"><span   (click)="closs()">&#10006;</span>
 <br>
-<img [src]="'data:image/png;base64,'+individualData.images.imageData" alt="Norway"    class="w3-hover-opacity"><p><b>{{individualData.title}}</b></p>
-<p>{{individualData.blog}}
+<img [src]="'data:image/png;base64,'+individualData.featuredImage" alt="Norway" >
+
+<p><b>{{individualData.title}}</b></p>
+<p>{{individualData.content}}
           </p>
+          <br><p>Written By:{{individualData.astrologer}}</p>
     </div>
     <div class="w3-third w3-container w3-margin-bottom" *ngFor="let i Of data">
-      <img [src]="'data:image/png;base64,'+i.images.imageData" alt="Norway"  style="width:100%"   class="w3-hover-opacity">
+      <img [src]="'data:image/png;base64,'+i.featuredImage" alt="Norway"  style="width:100%"   class="w3-hover-opacity">
       <div class="w3-container w3-white pcs">
         <p><b>{{i.title}}</b></p>
-        <p>{{i.blog}}</p>
+        <p>{{i.content}}</p>
         <div class="view-more">
           <button (click)="viewMore(i)">View More</button>
         </div>
       </div>
     
     </div>
- 
-   
-  
-  <!-- Second Photo Grid-->
- 
-   
- 
-  
+
   
   </div>
 
-
-
   </div>
- 
 </body>
 </html>

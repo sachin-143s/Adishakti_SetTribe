@@ -67,33 +67,44 @@ a img{
 }
 .pkk{
   box-shadow: 10px 10px 5px 5px rgb(45, 43, 46);
+  border: 3px solid rgb(6, 50, 6);
   background-color: black;
   width: 60%;
   margin-left: 10%;
   font-size: larger;
   opacity:3;
   color: aliceblue;
- 
-height: max-content;
+ height: 520px;
   overflow: scroll;
 
 }
 .pkk p{
   overflow-wrap: break-word;
   text-align: justify;
+  margin: 15px;
+  padding: 2px;
 }
 .pkk img{
 float: left;
-margin: 5px;
+margin: 10px;
  height:300px;
 
  width: max-content;
 }
 .pkk span{
+  position: sticky;
+  height: fit-content;
+  width: fit-content;
+  position: -webkit-sticky;
      cursor: default;
-     
+     font-size:40px;
      color: red;
   }
+  .pkk span:hover{
+    cursor: default;
+  
+    color: rgb(141, 132, 132);
+ }
   .more-content {
     display: none; /* Initially hide additional content */
   }
