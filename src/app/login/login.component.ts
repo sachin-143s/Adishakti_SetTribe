@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 interface User {
   email: string;
@@ -12,19 +13,32 @@ interface User {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   email: string = '';
-  password: string = '';
+  password: string = 'Password Required*';
   user: User | null = null; 
   errorMessage: string = '';
-
+  errorUser:string=""
+  userReq:string="Email or phone Number Required*"
+  errorPassword:string=""
+  errMass:boolean=false
   showPassword: boolean = false;  
 
   apiUrl = 'http://localhost:8080/';
 
   constructor(private http: HttpClient, private router: Router) { }
-
+  myData:FormGroup =new FormGroup({
+    user: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required]),
+  })
+  get getuser():any{
+    return this.myData.get('user')
+  }
+  get getpass():any{
+    return this.myData.get('password')
+  }
   validateCredentials() {
+    this.errMass=!this.errMass
     this.errorMessage = '';
     
     if (!this.email || !this.password) {
@@ -53,7 +67,47 @@ export class LoginComponent {
       }
     );
   }
-
+  isEmail(str:string):boolean {
+    // Basic email regex pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(str);
+  }
+  ngOnInit() {
+    this.myData.get('user')?.valueChanges.subscribe(value=>{
+      if(!isNaN(Number(value.substr(0,1)))){
+        this.myData.get('user')?.setValidators([Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern('[0-9]*')])
+        if(this.myData.get('user')?.hasError('pattern'))
+        {
+          this.errorUser="Enter Only Numbers*"
+        }
+        else if(this.myData.get('user')?.hasError('minlength'))
+        {
+            this.errorUser="Enter Atlist 10 number*"
+        }
+        else if(this.myData.get('user')?.hasError('maxlength'))
+        {
+            this.errorUser="Enter Onliy 10 number*"
+        }
+        else{
+        this.errorUser=""
+        }
+      }
+      else if(!this.isEmail(value)){
+        this.myData.get('user')?.setValidators([Validators.required,Validators.email])
+       
+          if(this.myData.get('user')?.hasError('email'))
+          {
+            this.errorUser="Enter Valid Email Id*"
+          }
+          else{
+          this.errorUser=""
+          }
+      }
+      else if(this.isEmail(value)){
+        this.errorUser=""
+      }
+    })
+  }
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }

@@ -1,10 +1,106 @@
+
+body{
+  background-image: url("/loginn.jpg");
+  
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 .feedback-form-container {
+ 
   max-width: 600px;
   margin: 20px auto; /* Added margin-top for spacing from the navbar */
   padding: 20px;
   background-color: #420E57;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100svh;
+  background-color: #022C22;
+  display: grid;
+  place-content: center;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.rating {
+  --star-size: clamp(2rem, 5vw, 6rem);
+  --star-clr-inactive: rgba(128, 128, 128, 0.7);
+  --star-clr-active: rgb(245, 158, 11);
+  --star-clr-hover: rgba(236, 201, 136, 0.2);
+  --star-clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+label {
+  position: relative;
+  cursor: pointer;
+  width: var(--star-size);
+  height: var(--star-size);
+}
+label::before {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  border-radius: 50%;
+  background-color: var(--star-clr-hover);
+  transition: rotate 450ms ease-in-out, inset 300ms ease-in-out;
+  clip-path: var(--star-clip-path);
+}
+label:hover::before {
+  inset: -1rem;
+  rotate: 45deg;
+}
+label::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--star-clr-inactive);
+  clip-path: var(--star-clip-path);
+  transition: 300ms ease-in-out;
+  scale: 0.75;
+}
+label:has(~ label:hover)::after,
+label:has(~ label > :checked)::after,
+label:has(:checked)::after,
+label:hover::after {
+  background-color: var(--star-clr-active);
+  scale: 1;
+}
+
+label:hover ~ label::after {
+  scale: 0.75;
+}
+label:active::before {
+  inset: -2rem;
 }
 
 h2 {
