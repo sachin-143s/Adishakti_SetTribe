@@ -22,4 +22,5 @@ export class AstroProfileComponent implements OnInit {
     // Handle profile update logic here
     console.log('Profile updated:', this.user);
   }
+
 }

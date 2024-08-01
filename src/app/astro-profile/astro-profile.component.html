@@ -19,50 +19,67 @@
           <a href="#">Logout</a>
         </div>
       </header>
-     
-<div class="profile-container">
-  <header class="profile-header">
-    <h2>Profile</h2>
-  </header>
-  
-  <section class="profile-info">
-    <div class="profile-item">
-      <label for="username">Username:</label>
-      <p>{{ user.username }}</p>
-    </div>
-    <div class="profile-item">
-      <label for="email">Email:</label>
-      <p>{{ user.email }}</p>
-    </div>
-    <div class="profile-item">
-      <label for="phone">Phone:</label>
-      <p>{{ user.phone }}</p>
-    </div>
-    <div class="profile-item">
-      <label for="bio">Bio:</label>
-      <p>{{ user.bio }}</p>
-    </div>
-  </section>
-  
-  <!-- <section class="profile-update">
-    <h3>Update Profile</h3>
-    <form (ngSubmit)="updateProfile()">
-      <label for="username">Username:</label>
-      <input type="text" id="username" [(ngModel)]="user.username" name="username">
+
+      <div class="profile">
+        <div class="profile1">
+          <figure>
+            <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/55758/random-user-31.jpg" />
+            <div class="image-buttons">
+              <button class="update-btn" title="Update Image"><i class="fa-solid fa-pen"></i></button>
+              <button class="remove-btn" title="Remove Image"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </figure>
+          <p>Dr. Anita Rai</p>
+          <div class="col-md-4">
+            <h4>Social Media</h4>
+            <ul class="social-icon">
+              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
       
-      <label for="email">Email:</label>
-      <input type="email" id="email" [(ngModel)]="user.email" name="email">
-      
-      <label for="phone">Phone:</label>
-      <input type="text" id="phone" [(ngModel)]="user.phone" name="phone">
-      
-      <label for="bio">Bio:</label>
-      <textarea id="bio" [(ngModel)]="user.bio" name="bio"></textarea>
-      
-      <button type="submit">Save Changes</button>
-    </form>
-  </section> -->
+        <div class="profile2">
+          <form>
+            <table cellspacing="9" cellpadding="9">
+              <tr>
+                <td colspan="2"><h2>Profile Information</h2></td>
+              </tr>
+              <tr>
+                <td><label for="firstName">First Name</label></td>
+                <td><input type="text" id="firstName" class="form-control" name="firstName"></td>
+              </tr>
+              <tr>
+                <td><label for="lastName">Last Name</label></td>
+                <td><input type="text" id="lastName" class="form-control" name="lastName"></td>
+              </tr>
+              <tr>
+                <td><label for="fullName">Full Name</label></td>
+                <td><input type="text" id="fullName" class="form-control" name="fullName"></td>
+              </tr>
+              <tr>
+                <td><label for="birthdate">Birth Date</label></td>
+                <td><input type="text" id="birthdate" class="form-control" name="birthdate"></td>
+              </tr>
+              <tr>
+                <td><label for="mobnumber">Mobile Number</label></td>
+                <td><input type="number" id="mobnumber" class="form-control" name="mobnumber"></td>
+              </tr>
+              <tr>
+                <td><label for="emailid">Email ID</label></td>
+                <td><input type="email" id="emailid" class="form-control" name="emailid"></td>
+              </tr>
+              <tr>
+                <td colspan="2" class="submit-row">
+                  <button type="submit" class="submit-btn">Update Info</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
 </div>
     </div>
-  </div>
+  
   
