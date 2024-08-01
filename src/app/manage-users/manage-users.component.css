@@ -1,0 +1,143 @@
+/* 
+
+.user-management {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-management h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .user-management table {
+    margin-bottom: 20px;
+  }
+  
+  .user-management table th {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .user-management table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .user-management table td button {
+    margin-right: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #23527c;
+    border-color: #23527c;
+    color: #fff;
+  }
+  
+  .btn-warning {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+    color: #fff;
+  }
+  
+  .btn-warning:hover {
+    background-color: #eea236;
+    border-color: #eea236;
+    color: #fff;
+  }
+  
+  .btn-danger {
+    background-color: #d9534f;
+    border-color: #d9534f;
+    color: #fff;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c9302c;
+    border-color: #c9302c;
+    color: #fff;
+  } */
+
+
+  .user-management {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* background-image: url('C:/Users/suhai/Desktop/AdminDash/Adishakti_SetTribe/public/bann.jpg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .user-management h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .user-management table {
+    margin-bottom: 20px;
+  }
+  
+  .user-management table th {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .user-management table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .user-management table td button {
+    margin-right: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #23527c;
+    border-color: #23527c;
+    color: #fff;
+  }
+  
+  .btn-warning {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+    color: #fff;
+  }
+  
+  .btn-warning:hover {
+    background-color: #eea236;
+    border-color: #eea236;
+    color: #fff;
+  }
+  
+  .btn-danger {
+    background-color: #d9534f;
+    border-color: #d9534f;
+    color: #fff;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c9302c;
+    border-color: #c9302c;
+    color: #fff;
+  }

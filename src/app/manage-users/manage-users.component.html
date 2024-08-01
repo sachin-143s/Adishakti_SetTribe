@@ -1,0 +1,51 @@
+
+<div>
+    <section class="user-management">
+      <h2>Manage Users</h2>
+      <button class="btn btn-primary mb-3" (click)="addUser()">Add User</button>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; let i = index">
+            <td>
+              <input type="text" [(ngModel)]="user.id" [disabled]="!isEditable[i]">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="user.name" [disabled]="!isEditable[i]">
+            </td>
+            <td>
+              <input type="email" [(ngModel)]="user.email" [disabled]="!isEditable[i]">
+            </td>
+            <td>
+              <button class="btn btn-warning" (click)="toggleEdit(i)">Edit</button>
+              <button class="btn btn-danger" (click)="deleteUser(i)">Delete</button>
+              <button class="btn btn-success" (click)="saveUser(user)" [hidden]="!isEditable[i]">Save</button>
+            </td>
+          </tr>
+          <tr [hidden]="!isNewUser">
+            <td>
+              <input type="text" [(ngModel)]="newUser.id">
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="newUser.name">
+            </td>
+            <td>
+              <input type="email" [(ngModel)]="newUser.email">
+            </td>
+            <td>
+              <button class="btn btn-success" (click)="saveNewUser()">Save</button>
+              <button class="btn btn-danger" (click)="cancelNewUser()">Cancel</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <router-outlet></router-outlet>
+  </div>
