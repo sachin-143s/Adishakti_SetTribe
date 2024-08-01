@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<br>
+<div class="card">
+  <div class="card-header">
+    <h2 class="astrologer-name">{{ astrologerName }}</h2>
+    <span [ngClass]="{'status-available': isAvailable, 'status-unavailable': !isAvailable}" class="availability-status">
+      {{ isAvailable ? 'Available' : 'Unavailable' }}
+    </span>
+  </div>
+  <div class="card-body">
+    <p class="current-date">Date: <span id="current-date"></span></p>
+    <p class="mobile-number">Mobile: <a href="tel:+919850703662">+91 9850703662</a></p>
+  </div>
+</div>
+<br>
+<app-footer></app-footer>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Astrologer {
   id: number;
@@ -30,6 +31,8 @@ export class FindAstrologersComponent implements OnInit {
   searchTerm: string = '';
   hoverRating: number | null = null; // For managing hover effect
 
+  constructor(private router: Router) { }
+
   ngOnInit(): void {
     this.filteredAstrologers = this.astrologers;
   }
@@ -49,8 +52,7 @@ export class FindAstrologersComponent implements OnInit {
   }
 
   chatWithAstrologer(id: number): void {
-    console.log(`Chat with astrologer ID: ${id}`);
-    // Implement chat functionality here
+    this.router.navigate(['callwithastro', id]);
   }
 
   callAstrologer(id: number): void {
