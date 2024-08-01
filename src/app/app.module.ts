@@ -25,11 +25,6 @@ import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { AstroReportComponent } from './astro-report/astro-report.component';
-import { ManageAstrologersComponent } from './manage-astrologers/manage-astrologers.component';
-import { ManageSkillsComponent } from './manage-skills/manage-skills.component';
-import { ManageUsersComponent } from './manage-users/manage-users.component';
-import { AdminastrologerComponent } from './adminastrologer/adminastrologer.component';
-import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -55,12 +50,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     AstrologerDashboardComponent,
     AstroProfileComponent,
     ClientListComponent,
-    AstroReportComponent,
-    ManageAstrologersComponent,
-    ManageSkillsComponent,
-    ManageUsersComponent,
-    AdminastrologerComponent,
-    AdminDashboardComponent
+    AstroReportComponent
   ],
   imports: [
     BrowserModule,
