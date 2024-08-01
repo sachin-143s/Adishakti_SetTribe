@@ -1,214 +1,120 @@
-.blog-container {
+.headr{
+  color: goldenrod;
+}
+
+.pcs{
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  font-family: 'Poppins', sans-serif;
-  min-height: 100vh; /* Ensures the container takes up the entire height of the viewport */
+  height: 220px;
+  overflow: hidden;
 }
-
-#bgVideo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  object-fit: cover;
-}
-
-.categories {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background: transparent; /* Fully transparent background */
-  margin-bottom: 20px;
-}
-
-.categories .content {
-  background: rgba(255, 255, 255, 0.9); /* Slightly opaque background for readability */
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 900px;
-}
-
-.categories h2 {
-  font-size: 45px; 
-  font-weight: bold; 
-  margin-bottom: 30px;
-  text-align: center;
-  color: #ffffff; 
-  text-transform: uppercase; 
-  letter-spacing: 3px; 
-  position: relative; 
-  animation: neonGlow 1.5s ease-in-out infinite; 
-}
-
-@keyframes neonGlow {
-  0% {
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 75px #ff00ff, 0 0 100px #ff00ff; /* Initial neon glow */
-    color: #ffffff; 
-    opacity: 0.8; 
-  }
-  50% {
-    text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 90px #ff00ff, 0 0 120px #ff00ff; /* Enhanced neon glow */
-    color: #ffffff; 
-    opacity: 1; 
-  }
-  100% {
-    text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff, 0 0 35px #ff00ff, 0 0 45px #ff00ff, 0 0 55px #ff00ff, 0 0 80px #ff00ff, 0 0 110px #ff00ff; /* Slightly reduced glow */
-    color: #ffffff; 
-    opacity: 0.9; 
-  }
-}
-
-.categories ul {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
+.w3-row-padding .w3-third {
+ 
+  box-shadow: 9px 6px 5px black;
+  display: inline-block;
+  vertical-align: top;
+ 
+  border: 4px solid rgb(22, 78, 5);
+  margin: 5px;
   padding: 0;
-  width: 100%;
+  width: 32%;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Smooth transition */
 }
+.w3-row-padding img {
+ 
+  width: 100%;
+  height: 300px; /* Fixed height for all images */
+  object-fit: cover; /* Ensures images cover the container */
+}
+.w3-container p {
+  margin: 10px 0; /* Adds space between text and image containers */
+  font-size: 14px; /* Font size for the text */
+}
+.w3-container p b {
 
-.categories li {
-  cursor: pointer;
-  padding: 15px 25px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 16px; /* Font size for bold text */
+}
+.view-more {position: absolute;
+  left: 35%;
+  bottom: 1%;
+  border-radius: 40px;
+  box-shadow: 9px 6px 5px black;
   text-align: center;
-  margin: 20px;
-  flex: 1 1 auto;
-  max-width: 220px; 
-  background-color: #8734a2; 
-  color: #fff; 
-  font-size: 20px; 
-  font-weight: bold; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
 }
-
-.categories li:hover {
-  background-color: #0056b3; 
-  transform: scale(1.1); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+.view-more button {
+  border-radius: 40px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgb(10, 40, 40);
+  color: white;
+  text-decoration: none;
+  
 }
-
-.categories li.selected {
-  background-color: #0056b3;
-  color: #fff;
+.view-more button:hover {
+  border-radius: 40px;
+  background-color: rgb(28, 61, 61);
 }
+div.display-blog{
+  background-color: green;
+  position: sticky;
+  top: 0px;
+  padding: 10px 0px;
 
-.categories li.selected:hover {
-  background-color: #003d80;
 }
-
-.blogs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  width: 100%;
+a img{
+color: black;
 }
+.pkk{
+box-shadow: 10px 10px 5px 5px rgb(45, 43, 46);
+border: 3px solid rgb(6, 50, 6);
+background-color: black;
+width: 60%;
+margin-left: 10%;
+font-size: larger;
+opacity:3;
+color: aliceblue;
+height: 520px;
+overflow: scroll;
 
-.blog-item {
-  width: 100%;
-  max-width: 350px;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-  margin: 15px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
-
-.blog-item:hover {
-  transform: translateY(-5px);
+.pkk p{
+overflow-wrap: break-word;
+text-align: justify;
+margin: 15px;
+padding: 2px;
 }
+.pkk img{
+float: left;
+margin: 10px;
+height:300px;
 
-.blog-item h3 {
-  font-size: 22px;
-  margin: 15px 0;
-  text-align: center;
-  color: #333;
+width: max-content;
 }
-
-.blog-item h3::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background-color: #007bff;
-  margin: 5px auto 10px auto;
+.pkk span{
+position: sticky;
+height: fit-content;
+width: fit-content;
+position: -webkit-sticky;
+   cursor: default;
+   font-size:40px;
+   color: red;
 }
+.pkk span:hover{
+  cursor: default;
 
-.blog-item p {
-  font-size: 16px;
-  color: #555;
-  text-align: justify;
+  color: rgb(141, 132, 132);
 }
-
-.blog-item button {
-  display: block;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin: 10px auto 0 auto;
-  width: 100%;
+.more-content {
+  display: none; /* Initially hide additional content */
 }
-
-.blog-item button:hover {
-  background-color: #0056b3;
+.expanded .more-content {
+  display: block; /* Show additional content when expanded */
 }
-
-.blog-detail {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.expanded {
+  height: auto; /* Allows container to expand based on content */
+  overflow: visible; /* Ensures no content is hidden */
 }
-
-.blog-detail button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 20px;
-}
-
-.blog-detail button:hover {
-  background-color: #0056b3;
-}
-
-.blog-detail h1 {
-  font-size: 26px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.blog-detail img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.blog-detail p {
-  font-size: 18px;
-  color: #555;
-  text-align: justify;
-}
-
-.blog-detail p strong {
-  color: #333;
+.w3-container.expanded img {
+  height: auto; /* Adjust image height when expanded */
 }
