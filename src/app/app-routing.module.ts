@@ -11,6 +11,8 @@ import { AstrologerSignupComponent } from './astrologer-signup/astrologer-signup
 import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-astrologer.component';
 import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-dashboard.component';
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
+import { ClientListComponent } from './client-list/client-list.component';
+import { AstroReportComponent } from './astro-report/astro-report.component';
 // import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
@@ -28,6 +30,9 @@ const routes: Routes = [
   { path: 'chat-with-astrologer', component: ChatWithAstrologerComponent },
   { path: 'astrodash', component: AstrologerDashboardComponent },
   { path: 'astroprofile', component: AstroProfileComponent },
+  { path: 'astroclient', component: ClientListComponent },
+  { path: 'astroreport', component: AstroReportComponent },
+  { path: 'astroclient', component: ClientListComponent },
 ];  
 
 @NgModule({

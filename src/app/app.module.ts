@@ -23,6 +23,8 @@ import { ChatWithAstrologerComponent } from './chat-with-astrologer/chat-with-as
 import { WhyadiComponent } from './whyadi/whyadi.component';
 import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-dashboard.component';
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
+import { ClientListComponent } from './client-list/client-list.component';
+import { AstroReportComponent } from './astro-report/astro-report.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { AstroProfileComponent } from './astro-profile/astro-profile.component';
     ChatWithAstrologerComponent,
     WhyadiComponent,
     AstrologerDashboardComponent,
-    AstroProfileComponent
+    AstroProfileComponent,
+    ClientListComponent,
+    AstroReportComponent
   ],
   imports: [
     BrowserModule,
