@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 interface Astrologer {
@@ -14,40 +15,46 @@ interface Astrologer {
   styleUrls: ['./find-astrologers.component.css']
 })
 export class FindAstrologersComponent implements OnInit {
-  astrologers: Astrologer[] = [
-    { id: 1, name: 'Dr. Anita Rai', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg', rating: 4.5 },
-    { id: 2, name: 'Shri Ashok Shukla', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img3.jpg', rating: 4.0 },
-    { id: 3, name: 'Dr. Priya Sharma', skills: 'Vedic Astrology, Palmistry', image: 'images/content/about/astro_img2.jpg', rating: 3.5 },
-    { id: 4, name: 'Shri Rajesh Gupta', skills: 'Western Astrology, Feng Shui', image: 'images/content/about/astro_img4.jpg', rating: 4.8 },
-    { id: 5, name: 'Dr. Suman Verma', skills: 'Vedic Astrology, Tarot Reading', image: 'images/content/about/astro_img1.jpg', rating: 4.1 },
-    { id: 6, name: 'Shri Rakesh Singh', skills: 'Numerology, Palmistry, Tarot Reading', image: 'images/content/about/astro_img3.jpg', rating: 3.8 },
-    { id: 7, name: 'Dr. Kavita Gupta', skills: 'Tarot Reading, Vastu Shastra', image: 'images/content/about/astro_img2.jpg', rating: 4.2 },
-    { id: 8, name: 'Shri Ankit Mishra', skills: 'Astrology, Western Astrology', image: 'images/content/about/astro_img4.jpg', rating: 3.9 },
-    { id: 9, name: 'Dr. Radha Kapoor', skills: 'Vedic Astrology, Numerology', image: 'images/content/about/astro_img1.jpg', rating: 4.7 }
-  ];
-
+  data:any=[]
+  
+  constructor(private http:HttpClient){
+    this.getAllData()
+  }
   filteredAstrologers: Astrologer[] = [];
   searchTerm: string = '';
   hoverRating: number | null = null; // For managing hover effect
 
   ngOnInit(): void {
-    this.filteredAstrologers = this.astrologers;
+    this.data = this.data;
   }
 
   filterAstrologers(): void {
     const searchTerm = this.searchTerm.toLowerCase().trim();
 
     if (searchTerm === '') {
-      this.filteredAstrologers = this.astrologers;
+      this.data = this.data;
       return;
     }
 
-    this.filteredAstrologers = this.astrologers.filter(astrologer =>
-      astrologer.name.toLowerCase().includes(searchTerm) ||
-      astrologer.skills.toLowerCase().includes(searchTerm)
+    this.data = this.data.filter((astrologe: { name: string; skills: string; }) =>
+      astrologe.name.toLowerCase().includes(searchTerm) ||
+      astrologe.skills.toLowerCase().includes(searchTerm)
     );
   }
-
+  getAllData(){
+    this.http.get("http://localhost:8080/api/astrologers/get-astrologers").subscribe(
+      (data)=>{
+        this.data=data
+       // const objectURL = URL.createObjectURL(data);
+        //this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+        
+      }
+      ,(error)=>
+      {
+        
+      }
+     )
+  }
   chatWithAstrologer(id: number): void {
     console.log(`Chat with astrologer ID: ${id}`);
     // Implement chat functionality here
