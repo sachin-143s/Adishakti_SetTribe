@@ -6,14 +6,14 @@
     </div>
     
     <div class="astrologer-list">
-      <div class="astrologer" *ngFor="let astrologer of filteredAstrologers">
-        <img [src]="astrologer.image" alt="Astrologer Image" class="astrologer-image" />
+      <div class="astrologer" *ngFor="let astrologer of data">
+        <img [src]="'data:image/png;base64,'+astrologer.astrologerImages.imageData" alt="Astrologer Image" class="astrologer-image" />
         <div class="astrologer-details">
-          <h3>{{ astrologer.name }}</h3>
+          <h3>{{ astrologer.firstName|uppercase }}</h3>
           <p>Skills: {{ astrologer.skills }}</p>
           <p>Rating: 
             <span class="star-rating">
-              <span *ngFor="let star of [1, 2, 3, 4, 5]; let i = index" 
+              <span *ngFor="let star of [1, 2, 3, 4]; let i = index" 
                     (mouseover)="hoverRating = i + 1" 
                     (mouseleave)="hoverRating = null" 
                     [class.filled]="astrologer.rating >= i + 1 || (hoverRating && hoverRating >= i + 1)">
