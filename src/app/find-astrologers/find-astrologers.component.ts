@@ -45,13 +45,11 @@ export class FindAstrologersComponent implements OnInit {
       astrologer.skills.toLowerCase().includes(searchTerm)
     );
   }
-<<<<<<< HEAD
-  getAllData(){
-    this.http.get("http://localhost:8080/api/astrologers/get-astrologers").subscribe(
-      (data)=>{
-        this.data=data
-      
-=======
+
+ 
+navagate(){
+  this.router.navigateByUrl("/chats")
+}
 
   getAllData(): void {
     this.http.get<Astrologer[]>("http://localhost:8080/api/astrologers/get-astrologers").subscribe(
@@ -61,7 +59,7 @@ export class FindAstrologersComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching data', error);
->>>>>>> 4c2bca9b0467b02948e61c7b3d2a81f6ecb92472
+
       }
     );
   }

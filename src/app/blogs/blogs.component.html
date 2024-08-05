@@ -56,7 +56,7 @@
 <p><b>{{individualData.title}}</b></p>
 <p>{{individualData.content}}
           </p>
-          <br><p>Written By:{{individualData.astrologer}}</p>
+          <br><p>Written By:{{individualData.astrologer.firstName}}   {{individualData.astrologer.lastName}}</p>
     </div>
     <div class="w3-third w3-container w3-margin-bottom" *ngFor="let i Of data">
       <img [src]="'data:image/png;base64,'+i.featuredImage" alt="Norway"  style="width:100%"   class="w3-hover-opacity">
