@@ -24,6 +24,7 @@ export class BlogsComponent implements OnInit {
     this.individualData=i
 
   }
+  
  closs(){
   this.displayBlock=false
  }

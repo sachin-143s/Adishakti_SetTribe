@@ -1,5 +1,5 @@
 <app-navbar></app-navbar> 
-<form [formGroup]="signupForm" (ngSubmit)="signup()" class="signup-form">
+<form [formGroup]="signupForm" (ngSubmit)="signup(signupForm)" class="signup-form">
   <h2>Astrologer Sign Up</h2>
 
   <div class="form-group">
@@ -43,11 +43,17 @@
 
   <div class="form-group">
     <label for="gender">Gender</label>
-    <select id="gender" formControlName="gender" required>
+    <label for="male">Male</label>
+    <input id="male" type="radio" formControlName="gender" value="male">
+    <label for="female">Female</label>
+    <input id="female" type="radio" formControlName="gender" value="female">
+    <label for="other">Other</label>
+    <input type="radio" id="other" formControlName="gender" value="other">
+    <!-- <select id="gender" formControlName="gender" required>
       <option value="male">Male</option>
       <option value="female">Female</option>
       <option value="other">Other</option>
-    </select>
+    </select> -->
   </div>
 
   <div class="form-group">
@@ -63,11 +69,19 @@
   <div class="form-group">
     <label for="languagesKnown">Languages Known (comma-separated)</label>
     <input type="text" id="languagesKnown" formControlName="languagesKnown" required />
+    <select id="gender" formControlName="lang" (change)="skillsChange()"required>
+      <option value="Hindi">Hindi</option>
+      <option value="English">English</option>
+      <option value="Marathi">Marathi</option>
+    </select>
   </div>
 
   <div class="form-group">
     <label for="skills">Skills (comma-separated)</label>
-    <input type="text" id="skills" formControlName="skills" required />
+    <!-- <input type="text" id="skills"  required /> -->
+    <select formControlName="skills">
+      <option>Aistrology</option>
+    </select>
   </div>
 
   <div class="form-group">
@@ -110,4 +124,19 @@
     <input type="text" id="pinCode" formControlName="pinCode" required />
   </div>
 
-  <button type="submit">Sign
+  <img *ngIf="image!=''"  [src]="'data:image/png;base64,'+image.body.imageData" alt="Norway" [width]="50" >
+  <div class="form-group">
+    <label for="filr">Upload Images</label>
+    <input type="file" accept="image/png, image/gif, image/jpeg"  (change)="onImageUpload($event)">
+  </div>
+  <div class="form-group">
+    <label for="country">password</label>
+    <input type="text" id="country" formControlName="password" required />
+  </div>
+  <div class="form-group">
+    <label for="country">confirm password</label>
+    <input type="password" id="country" formControlName="confirmpass" required />
+  </div>
+  <button type="submit">Sign</button>
+</form>
+{{signupForm.value|json}}
