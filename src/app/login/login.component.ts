@@ -23,14 +23,17 @@ export class LoginComponent implements OnInit{
   errorPassword:string=""
   errMass:boolean=false
   showPassword: boolean = false;  
-
+  indication:boolean=false
   apiUrl = 'http://localhost:8080/';
-
-  constructor(private http: HttpClient, private router: Router) { }
+  data:any=[]
+  constructor(private http: HttpClient, private router: Router) {
+   
+   }
   myData:FormGroup =new FormGroup({
     user: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required]),
   })
+
   get getuser():any{
     return this.myData.get('user')
   }
@@ -73,6 +76,7 @@ export class LoginComponent implements OnInit{
     return emailPattern.test(str);
   }
   ngOnInit() {
+    this.getAllData()
     this.myData.get('user')?.valueChanges.subscribe(value=>{
       if(!isNaN(Number(value.substr(0,1)))){
         this.myData.get('user')?.setValidators([Validators.required,Validators.maxLength(10),Validators.minLength(10),Validators.pattern('[0-9]*')])
@@ -111,4 +115,18 @@ export class LoginComponent implements OnInit{
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
+  getAllData(){
+   
+    this.http.get("http://localhost:8080/api/astrologers/get-astrologers").subscribe(
+      (data)=>{
+        this.data=data
+    
+      }
+      ,(error)=>
+      {
+        
+      }
+     )
+  
+    }
 }

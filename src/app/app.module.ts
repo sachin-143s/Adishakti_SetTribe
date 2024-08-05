@@ -25,7 +25,11 @@ import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { AstroReportComponent } from './astro-report/astro-report.component';
+import { InsertblogComponent } from './insertblog/insertblog.component';
+
 import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
+import { ChatsComponent } from './chats/chats.component';
+
 
 
 @NgModule({
@@ -52,14 +56,20 @@ import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-as
     AstroProfileComponent,
     ClientListComponent,
     AstroReportComponent,
-    CallWithAstrologerComponent
+
+    InsertblogComponent,
+
+    CallWithAstrologerComponent,
+      ChatsComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

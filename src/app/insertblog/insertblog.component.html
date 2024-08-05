@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<form [formGroup]="myData" (submit)="sub()">
+    <label>Title</label>
+    <input type="text" placeholder="Enter Title" formControlName="title">
+    <br>
+    <img *ngIf="image!=''"  [src]="'data:image/png;base64,'+image.body.imageData" alt="Norway" [width]="50" >
+   <br> <label>Upload Images</label>
+    <input type="file"  id="" (change)="onImageUpload($event)" accept="image/png, image/gif, image/jpeg">
+    <br>
+    <label>Blog Catagory</label>
+    <select formControlName="blogCatagory">
+        <option>HEALTH</option>
+        <option>TECNOLOGY</option>
+        <option>LIFESTYLE</option>
+        <option>EDUCATION</option>
+    </select>
+    <br>
+    <label>Aistrologer</label>
+    <select formControlName="astrologer">
+        <option *ngFor="let i Of data" [ngValue]="i">{{i.firstName}}  {{i.lastName}}</option>
+        
+    </select>
+    <br>
+    <label>Blog</label>
+    <textarea cols="30" rows="3" formControlName="content"></textarea><br>
+    <input type="submit" value="Post Blog">
+</form>
+{{myData.value.astrologer|json}}
+

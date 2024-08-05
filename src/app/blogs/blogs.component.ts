@@ -33,9 +33,7 @@ export class BlogsComponent implements OnInit {
    this.http.get("http://localhost:8080/api/blogs").subscribe(
     (data)=>{
       this.data=data
-     // const objectURL = URL.createObjectURL(data);
-      //this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-      
+
     }
     ,(error)=>
     {

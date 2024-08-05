@@ -18,10 +18,12 @@ export class AdminLoginComponent {
   password: string = '';
   admin: Admin | null = null;
   errorMessage: string = '';
-
+  data:any=[]
   apiUrl = 'http://localhost:8080/';
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+
+  }
 
   validateCredentials() {
     this.errorMessage = '';
@@ -49,6 +51,6 @@ export class AdminLoginComponent {
     this.router.navigate(['/login']);
   
   }
-
+  
 
 }

@@ -46,6 +46,11 @@ export class FindAstrologersComponent implements OnInit {
     );
   }
 
+ 
+navagate(){
+  this.router.navigateByUrl("/chats")
+}
+
   getAllData(): void {
     this.http.get<Astrologer[]>("http://localhost:8080/api/astrologers/get-astrologers").subscribe(
       (data) => {
@@ -54,6 +59,7 @@ export class FindAstrologersComponent implements OnInit {
       },
       (error) => {
         console.error('Error fetching data', error);
+
       }
     );
   }
