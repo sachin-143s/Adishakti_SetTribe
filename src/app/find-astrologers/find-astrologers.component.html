@@ -4,7 +4,6 @@
     <div class="search-bar">
       <input type="text" placeholder="Search for astrologers..." [(ngModel)]="searchTerm" (input)="filterAstrologers()" />
     </div>
-    
     <div class="astrologer-list">
       <div class="astrologer" *ngFor="let astrologer of filteredAstrologers">
         <img [src]="'data:image/png;base64,' + astrologer.astrologerImages.imageData" alt="Astrologer Image" class="astrologer-image" />
@@ -25,8 +24,8 @@
           </p>
         </div>
         <div class="astrologer-actions">
-          <button class="btn-chat" routerLink="/callwithastro/:id">Call</button>
-          <button class="btn-call" (click)="navagate()" >Chat</button>
+          <button class="btn-chat" (click)="navigateToCall(astrologer)">Call</button>
+          <button class="btn-call" (click)="navagate()">Chat</button>
         </div>
       </div>
     </div>
