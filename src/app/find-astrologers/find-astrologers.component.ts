@@ -32,10 +32,12 @@ export class FindAstrologersComponent implements OnInit {
     const searchTerm = this.searchTerm.toLowerCase().trim();
 
     if (searchTerm === '') {
-      this.data = this.data;
+      this.getAllData()
       return;
     }
-
+    else{
+      this.getSearchData()
+    }
     this.data = this.data.filter((astrologe: { name: string; skills: string; }) =>
       astrologe.name.toLowerCase().includes(searchTerm) ||
       astrologe.skills.toLowerCase().includes(searchTerm)
@@ -43,6 +45,20 @@ export class FindAstrologersComponent implements OnInit {
   }
   getAllData(){
     this.http.get("http://localhost:8080/api/astrologers/get-astrologers").subscribe(
+      (data)=>{
+        this.data=data
+       // const objectURL = URL.createObjectURL(data);
+        //this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+        
+      }
+      ,(error)=>
+      {
+        
+      }
+     )
+  }
+  getSearchData(){
+    this.http.get("http://localhost:8080/api/astrologers/get-data/"+this.searchTerm).subscribe(
       (data)=>{
         this.data=data
        // const objectURL = URL.createObjectURL(data);

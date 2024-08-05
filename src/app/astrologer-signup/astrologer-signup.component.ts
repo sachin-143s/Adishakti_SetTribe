@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-astrologer-signup',
@@ -9,35 +10,46 @@ import { Router } from '@angular/router';
   styleUrls: ['./astrologer-signup.component.css']
 })
 export class AstrologerSignupComponent implements OnInit {
-  signupForm!: FormGroup;
+  newArray:any = [];
   backEndUrl: string = 'http://localhost:8080/api/astrologers';
 
+  uploadedImage!: File;
+  image:any=[]
   constructor(private http: HttpClient, private router: Router) { }
-
+  signupForm: FormGroup = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    mobile: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+    dob: new FormControl('', [Validators.required]),
+    gender: new FormControl('',[ Validators.required]),
+    aadharNumber: new FormControl('',[ Validators.required]),
+    experience: new FormControl('', [Validators.required]),
+    languagesKnown: new FormControl([]),
+    skills: new FormControl([]),
+    lang: new FormControl([]),
+    certification: new FormControl(null),
+    degree: new FormControl(''),
+    ratePerMinute: new FormControl('' ),
+    city: new FormControl(''),
+    district: new FormControl(''),
+    state: new FormControl(''),
+    country: new FormControl(''),
+    id: new FormControl(0),
+    
+    pinCode: new FormControl(''),
+    blogs: new FormControl(null),
+    astrologerImages: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    confirmpass: new FormControl('')
+  });
+  
   ngOnInit(): void {
-    this.signupForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      mobile: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
-      dob: new FormControl('', Validators.required),
-      gender: new FormControl('', Validators.required),
-      aadharNumber: new FormControl('', Validators.required),
-      experience: new FormControl('', Validators.required),
-      languagesKnown: new FormControl('', Validators.required),
-      skills: new FormControl('', Validators.required),
-      certification: new FormControl('', Validators.required),
-      degree: new FormControl('', Validators.required),
-      ratePerMinute: new FormControl('', Validators.required),
-      city: new FormControl('', Validators.required),
-      district: new FormControl('', Validators.required),
-      state: new FormControl('', Validators.required),
-      country: new FormControl('', Validators.required),
-      pinCode: new FormControl('', Validators.required)
-    });
+    
   }
 
   get firstName() { return this.signupForm.get('firstName'); }
+  get imageData() { return this.signupForm.get('astrologerImages'); }
   get lastName() { return this.signupForm.get('lastName'); }
   get email() { return this.signupForm.get('email'); }
   get mobile() { return this.signupForm.get('mobile'); }
@@ -47,6 +59,7 @@ export class AstrologerSignupComponent implements OnInit {
   get experience() { return this.signupForm.get('experience'); }
   get languagesKnown() { return this.signupForm.get('languagesKnown'); }
   get skills() { return this.signupForm.get('skills'); }
+  get lang() { return this.signupForm.get('lang'); }
   get certification() { return this.signupForm.get('certification'); }
   get degree() { return this.signupForm.get('degree'); }
   get ratePerMinute() { return this.signupForm.get('ratePerMinute'); }
@@ -55,25 +68,52 @@ export class AstrologerSignupComponent implements OnInit {
   get state() { return this.signupForm.get('state'); }
   get country() { return this.signupForm.get('country'); }
   get pinCode() { return this.signupForm.get('pinCode'); }
-
-  signup() {
-    if (this.signupForm.invalid) {
-      alert('Please fill all required fields with valid data.');
-      return;
+  public onImageUpload(event:any) {
+    this.uploadedImage = event.target.files[0];
+alert("insert image")
+    this.imageUploadAction()
+  }
+  skillsChange(){
+    
+    this.newArray.push(this.lang?.value)
+    console.log(this.newArray)
+    this.languagesKnown?.setValue(this.newArray);
+  }
+  imageUploadAction() {
+    const imageFormData = new FormData();
+    imageFormData.append('image', this.uploadedImage, this.uploadedImage.name);
+    this.http.post('http://localhost:8080/api/astrologers/convert-image', imageFormData, { observe: 'response' })
+      .subscribe((response) => {  
+        this.image=response;
+        this.imageData?.setValue(this.image.body);
+       }
+       ,(error)=>
+       {
+        alert("Something Went Wrong")
+       }
+      );
     }
+  sublit(form:any){
+  this.http.post(this.backEndUrl,form).subscribe(
+    (response) => {
+      alert("Data Insert")
+   
+    },
+    (error) => {
+      alert("error")
+    }
+  );
+  }
+  signup(form:FormGroup) {
+   
 
-    const signupData = {
-      ...this.signupForm.value,
-      languagesKnown: this.signupForm.value.languagesKnown.split(','), // Convert comma-separated string to array
-      skills: this.signupForm.value.skills.split(',') // Convert comma-separated string to array
-    };
-
-    this.http.post(this.backEndUrl, signupData).subscribe(
+    
+    this.http.post(this.backEndUrl, form.value).subscribe(
       (response: any) => {
         console.log('Signup successful:', response);
-        alert('Signup successful');
+        alert('Submit Data');
         this.signupForm.reset();
-        this.router.navigate(['/login']);
+        // this.router.navigate(['/login']);
       },
       (error) => {
         console.error('Signup failed:', error);
