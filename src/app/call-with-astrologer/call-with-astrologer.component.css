@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow */
+  width: 400px; /* Increased width */
+  height: 300px; /* Increased height */
+  padding: 50px; /* Padding from all sides */
+  box-sizing: border-box;
+  margin: 50px;
+
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.astrologer-name {
+  font-size: 20px; /* Slightly larger font size */
+  font-weight: bold;
+}
+
+.availability-status {
+  font-size: 16px; /* Slightly larger font size */
+  color: #28a745;
+}
+
+.card-body {
+  font-size: 16px; /* Slightly larger font size */
+}
+
+.current-date, .mobile-number {
+  margin: 12px 0;
+}
+
+.mobile-number a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.mobile-number a:hover {
+  text-decoration: underline;
+}

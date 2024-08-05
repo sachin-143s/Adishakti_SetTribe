@@ -25,6 +25,7 @@ import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { AstroReportComponent } from './astro-report/astro-report.component';
+import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { AstroReportComponent } from './astro-report/astro-report.component';
     AstrologerDashboardComponent,
     AstroProfileComponent,
     ClientListComponent,
-    AstroReportComponent
+    AstroReportComponent,
+    CallWithAstrologerComponent
   ],
   imports: [
     BrowserModule,
