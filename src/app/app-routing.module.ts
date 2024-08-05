@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -13,13 +14,16 @@ import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { AstroReportComponent } from './astro-report/astro-report.component';
+<<<<<<< HEAD
 import { InsertblogComponent } from './insertblog/insertblog.component';
+=======
+import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
+>>>>>>> 4c2bca9b0467b02948e61c7b3d2a81f6ecb92472
 // import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'Home', component: HomeComponent },
-  { path: 'find-astrologers', component: FindAstrologersComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'login', component: LoginComponent },
@@ -34,7 +38,13 @@ const routes: Routes = [
   { path: 'astroclient', component: ClientListComponent },
   { path: 'astroreport', component: AstroReportComponent },
   { path: 'astroclient', component: ClientListComponent },
+<<<<<<< HEAD
   { path: 'insert-blog-component', component: InsertblogComponent },
+=======
+  { path: 'find-astrologers', component: FindAstrologersComponent },
+  { path: 'callwithastro/:id', component: CallWithAstrologerComponent },
+
+>>>>>>> 4c2bca9b0467b02948e61c7b3d2a81f6ecb92472
 ];  
 
 @NgModule({

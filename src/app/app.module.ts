@@ -25,7 +25,11 @@ import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { AstroReportComponent } from './astro-report/astro-report.component';
+<<<<<<< HEAD
 import { InsertblogComponent } from './insertblog/insertblog.component';
+=======
+import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
+>>>>>>> 4c2bca9b0467b02948e61c7b3d2a81f6ecb92472
 
 
 @NgModule({
@@ -52,7 +56,11 @@ import { InsertblogComponent } from './insertblog/insertblog.component';
     AstroProfileComponent,
     ClientListComponent,
     AstroReportComponent,
+<<<<<<< HEAD
     InsertblogComponent
+=======
+    CallWithAstrologerComponent
+>>>>>>> 4c2bca9b0467b02948e61c7b3d2a81f6ecb92472
   ],
   imports: [
     BrowserModule,

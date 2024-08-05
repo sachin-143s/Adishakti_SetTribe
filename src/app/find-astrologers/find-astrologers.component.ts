@@ -1,12 +1,15 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 interface Astrologer {
   id: number;
-  name: string;
+  firstName: string;
+  lastName: string;
   skills: string;
-  image: string;
-  rating: number; // Add rating property
+  languagesKnown: string[];
+  rating: number;
+  astrologerImages: { imageData: string };
 }
 
 @Component({
@@ -15,67 +18,65 @@ interface Astrologer {
   styleUrls: ['./find-astrologers.component.css']
 })
 export class FindAstrologersComponent implements OnInit {
-  data:any=[]
-  
-  constructor(private http:HttpClient){
-    this.getAllData()
-  }
+  data: Astrologer[] = [];
   filteredAstrologers: Astrologer[] = [];
   searchTerm: string = '';
-  hoverRating: number | null = null; // For managing hover effect
+  hoverRating: number | null = null;
+
+  constructor(private http: HttpClient, private router: Router) {
+    this.getAllData();
+  }
 
   ngOnInit(): void {
-    this.data = this.data;
+    this.filteredAstrologers = this.data;
   }
 
   filterAstrologers(): void {
     const searchTerm = this.searchTerm.toLowerCase().trim();
 
     if (searchTerm === '') {
-      this.getAllData()
+      this.getAllData();
       return;
     }
-    else{
-      this.getSearchData()
-    }
-    this.data = this.data.filter((astrologe: { name: string; skills: string; }) =>
-      astrologe.name.toLowerCase().includes(searchTerm) ||
-      astrologe.skills.toLowerCase().includes(searchTerm)
+
+    this.getSearchData();
+    this.filteredAstrologers = this.data.filter((astrologer: Astrologer) =>
+      astrologer.firstName.toLowerCase().includes(searchTerm) ||
+      astrologer.skills.toLowerCase().includes(searchTerm)
     );
   }
+<<<<<<< HEAD
   getAllData(){
     this.http.get("http://localhost:8080/api/astrologers/get-astrologers").subscribe(
       (data)=>{
         this.data=data
       
+=======
+
+  getAllData(): void {
+    this.http.get<Astrologer[]>("http://localhost:8080/api/astrologers/get-astrologers").subscribe(
+      (data) => {
+        this.data = data;
+        this.filteredAstrologers = data;
+      },
+      (error) => {
+        console.error('Error fetching data', error);
+>>>>>>> 4c2bca9b0467b02948e61c7b3d2a81f6ecb92472
       }
-      ,(error)=>
-      {
-        
-      }
-     )
-  }
-  getSearchData(){
-    this.http.get("http://localhost:8080/api/astrologers/get-data/"+this.searchTerm).subscribe(
-      (data)=>{
-        this.data=data
-       // const objectURL = URL.createObjectURL(data);
-        //this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-        
-      }
-      ,(error)=>
-      {
-        
-      }
-     )
-  }
-  chatWithAstrologer(id: number): void {
-    console.log(`Chat with astrologer ID: ${id}`);
-    // Implement chat functionality here
+    );
   }
 
-  callAstrologer(id: number): void {
-    console.log(`Call astrologer ID: ${id}`);
-    // Implement call functionality here
+  getSearchData(): void {
+    this.http.get<Astrologer[]>(`http://localhost:8080/api/astrologers/get-data/${this.searchTerm}`).subscribe(
+      (data) => {
+        this.data = data;
+        this.filteredAstrologers = data;
+      },
+      (error) => {
+        console.error('Error fetching search data', error);
+      }
+    );
   }
+
+
 }
