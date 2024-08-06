@@ -1,6 +1,5 @@
 <app-navbar></app-navbar>
 <body>
-
     <video autoplay muted loop id="background-video" >
         <source src="lgnvdo.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
@@ -39,13 +38,10 @@
             </div>
            
         </form>
-        {{myData.value|json}}
           
             <div *ngIf="user" class="mt-3">
                 <p>Logged in as: {{ user.email }}</p>
             </div>
         </div>
     </div>
-
-  
 </body>

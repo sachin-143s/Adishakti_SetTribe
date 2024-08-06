@@ -1,5 +1,26 @@
-<app-navbar></app-navbar>
-<form [formGroup]="myData" (submit)="sub()">
+<!-- <app-navbar></app-navbar> -->
+ <div class="dashboard-container">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h2>Home</h2>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a routerLink="/astrodash">Dashboard</a></li>
+        <li><a routerLink="/astroprofile">Profile</a></li>
+        <li><a routerLink="/astroclient">Client Lists</a></li>
+        <li><a routerLink="/astroreport">Reports</a></li>
+        <li><a routerLink="/insert-blog">Add Blogs</a></li>
+      </ul>
+    </nav>
+    <div class="main-content">
+      <header class="topbar">
+        <h1>Dashboard</h1>
+        <div class="user-info">
+          <p>Welcome, <strong>Username</strong></p>
+          <a href="#">Logout</a>
+        </div>
+      </header>
+  <form [formGroup]="myData" (submit)="sub()">
     <label>Title</label>
     <input type="text" placeholder="Enter Title" formControlName="title">
     <br>
@@ -25,5 +46,8 @@
     <textarea cols="30" rows="3" formControlName="content"></textarea><br>
     <input type="submit" value="Post Blog">
 </form>
-{{myData.value.astrologer|json}}
+
+    </div>
+  </div>
+  
 

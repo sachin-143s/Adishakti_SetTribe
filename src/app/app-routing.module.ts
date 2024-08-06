@@ -39,13 +39,14 @@ const routes: Routes = [
   { path: 'astroclient', component: ClientListComponent },
   { path: 'astroreport', component: AstroReportComponent },
   { path: 'astroclient', component: ClientListComponent },
-  { path: 'insert-blog-component', component: InsertblogComponent },         
+  { path: 'insert-blog-component', component: InsertblogComponent },
   { path: 'find-astrologers', component: FindAstrologersComponent },
-  { path: 'chats', component: ChatsComponent},
-  { path: 'callwithastro/:id', component: CallWithAstrologerComponent},
+  { path: 'chats', component: ChatsComponent },
+  { path: 'callwithastro/:id', component: CallWithAstrologerComponent },
   { path: 'astrologer-login', component: AstrologerLoginComponent },
+  { path: 'insert-blog', component: InsertblogComponent },
 
-];  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
