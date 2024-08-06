@@ -1,0 +1,43 @@
+<!-- <div class="container">
+  <div class="sidebar-menu">
+    <nav>
+      <ul class="sidebar-menu">
+        <li><a href="astadmin">Admin AstrologerDashboard</a></li>
+        <li><a href="manageusers">Manage astrologers</a></li>
+        <li><a href="astrologer-signup">Astrologer signup</a></li>
+        <li><a href="astrate">approve rate of astrologer</a></li>
+        <li><a href="astrequest">signup request Astrologers</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="search-section">
+    <input type="text" placeholder="Search by name" [(ngModel)]="searchTerm" (input)="searchAstrologers()" />
+    <ul>
+      <li *ngFor="let astrologer of filteredAstrologers">
+        {{ astrologer.firstName }} {{ astrologer.lastName }} - {{ astrologer.city }}
+      </li>
+    </ul>
+  </div>
+  </div>
+   -->
+   <div class="container">
+    <div class="sidebar-menu">
+      <nav>
+        <ul class="sidebar-menu-list">
+          <li><a href="astadmin" class="active">Admin Astrologer Dashboard</a></li>
+          <li><a href="manageusers">Manage astrologers</a></li>
+          <li><a href="astrologer-signup">Astrologer signup</a></li>
+          <li><a href="astrate">Approve rate of astrologer</a></li>
+          <li><a href="astrequest">Signup request Astrologers</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="search-section">
+      <input type="text" placeholder="Search by name" [(ngModel)]="searchTerm" (input)="searchAstrologers()" />
+      <ul class="search-results">
+        <li *ngFor="let astrologer of filteredAstrologers">
+          {{ astrologer.firstName }} {{ astrologer.lastName }} - {{ astrologer.city }}
+        </li>
+      </ul>
+    </div>
+  </div>

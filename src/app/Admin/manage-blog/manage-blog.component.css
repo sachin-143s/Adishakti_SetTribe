@@ -1,0 +1,37 @@
+/* manage-blogs.component.css */
+/* .container {
+    padding: 20px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  .blog-entry {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    margin-right: 10px;
+  } */
+  /* manage-blog.component.css */
+.container {
+    padding: 20px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .blog-entry {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  

@@ -1,0 +1,21 @@
+<!-- manage-blogs.component.html -->
+<div class="container">
+    <h2>Manage Blogs</h2>
+    
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      (input)="searchBlogs()" 
+      placeholder="Search blogs..." 
+      class="search-bar"
+    />
+  
+  
+    <div *ngFor="let blog of pendingBlogs" class="blog-entry">
+      <h3>{{ blog.title }}</h3>
+      <p>{{ blog.content }}</p>
+      <button (click)="acceptBlog(blog)">Accept</button>
+      <button (click)="rejectBlog(blog)">Reject</button>
+    </div><div *ngIf="pendingBlogs.length === 0">No pending blogs.</div>
+  </div>
+  

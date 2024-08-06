@@ -14,10 +14,15 @@ import { AstrologerDashboardComponent } from './astrologer-dashboard/astrologer-
 import { AstroProfileComponent } from './astro-profile/astro-profile.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { AstroReportComponent } from './astro-report/astro-report.component';
-
 import { InsertblogComponent } from './insertblog/insertblog.component';
 import { ChatsComponent } from './chats/chats.component';
 import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
+import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { ManageAstrologersComponent } from './Admin/manage-astrologers/manage-astrologers.component';
+import { AstrologerRequestComponent } from './Admin/astrologer-request/astrologer-request.component';
+import { ManageBlogComponent } from './Admin/manage-blog/manage-blog.component';
+import { ManageSkillsComponent } from './Admin/manage-skills/manage-skills.component';
+import { ManageUsersComponent } from './Admin/manage-users/manage-users.component';
 
 // import { NavbarComponent } from './navbar/navbar.component';
 
@@ -42,7 +47,12 @@ const routes: Routes = [
   { path: 'find-astrologers', component: FindAstrologersComponent },
   { path: 'chats', component: ChatsComponent},
   { path: 'callwithastro/:id', component: CallWithAstrologerComponent},
-
+{path:'admin',component:AdminDashboardComponent},
+{path:'manageast',component:ManageAstrologersComponent},
+{path:'astrequest',component:AstrologerRequestComponent},
+{path:'manageblog',component:ManageBlogComponent},
+{path:'manageskills',component:ManageSkillsComponent},
+{path:'manageusers',component:ManageUsersComponent},
 ];  
 
 @NgModule({

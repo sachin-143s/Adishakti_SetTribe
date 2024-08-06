@@ -1,0 +1,29 @@
+<div class="manage-skills-container">
+    
+    <h2>Manage Skills</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Skill</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let skill of skills; let i = index">
+          <td *ngIf="!skill.editing">{{ skill.name }}</td>
+          <td *ngIf="skill.editing">
+            <input [(ngModel)]="skill.name" aria-label="Edit Skill Name" />
+          </td>
+          <td>
+            <button *ngIf="!skill.editing" (click)="editSkill(i)">Edit</button>
+            <button *ngIf="skill.editing" (click)="saveSkill(i)">Save</button>
+            <button (click)="deleteSkill(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="add-skill">
+      <input [(ngModel)]="newSkill" placeholder="New Skill" aria-label="New Skill Name" />
+      <button (click)="addSkill()">Add Skill</button>
+    </div>
+  </div>

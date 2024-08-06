@@ -1,0 +1,40 @@
+<div>
+<app-admin-nav/>
+<h1>Astrologer's signup Requests</h1>
+  
+<div class="form-group">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search astrologers by name, email, or mobile"
+    [(ngModel)]="searchQuery"
+    (input)="searchAstrologers()"
+  />
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Experience</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let astrologer of filteredAstrologers">
+      <td>{{ astrologer.firstName }} {{ astrologer.lastName }}</td>
+      <td>{{ astrologer.email }}</td>
+      <td>{{ astrologer.mobile }}</td>
+      <td>{{ astrologer.experience }} years</td>
+      <td>{{ astrologer.status }}</td>
+      <td>
+        <button class="btn btn-success" (click)="acceptRequest(astrologer.id)" [disabled]="astrologer.status === 'accepted'">Accept</button>
+        <button class="btn btn-danger" (click)="rejectRequest(astrologer.id)" [disabled]="astrologer.status === 'rejected'">Reject</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
