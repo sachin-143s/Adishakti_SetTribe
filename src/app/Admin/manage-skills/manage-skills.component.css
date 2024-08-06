@@ -1,0 +1,102 @@
+.manage-skills-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .manage-skills-container h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  td {
+    background-color: #fff;
+  }
+  
+  td input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px; /* Add space between buttons */
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .add-skill {
+    margin-top: 20px;
+  }
+  
+  .add-skill input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-skill button {
+    width: 20%;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px; /* Add space between input and button */
+  }
+  
+  .add-skill button:hover {
+    background-color: #3e8e41;
+  }
+  
+  button {
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  input[type="text"] {
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #4CAF50;
+    transition: border-color 0.3s ease-in-out;
+  }
+  

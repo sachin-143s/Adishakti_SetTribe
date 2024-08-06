@@ -21,4 +21,11 @@ export class AstrologerService {
   getAstrologers(): Observable<Astrologer[]> {
     return this.http.get<Astrologer[]>(this.apiUrl);
   }
+  updateAstrologerStatus(id: number, status: string): Observable<any> {
+    return this.http.patch(`${this.apiUrl}/${id}`, { status });
+  }
+
+  signupAstrologer(astrologer: any): Observable<any> {
+    return this.http.post(this.apiUrl, astrologer);
+  }
 }

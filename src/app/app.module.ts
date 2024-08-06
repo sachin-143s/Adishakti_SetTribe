@@ -29,6 +29,16 @@ import { InsertblogComponent } from './insertblog/insertblog.component';
 
 import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
 import { ChatsComponent } from './chats/chats.component';
+import { AdminDashboardComponent } from './Admin/admin-dashboard/admin-dashboard.component';
+import { AdminAstrologerComponent } from './Admin/admin-astrologer/admin-astrologer.component';
+import { ManageAstrologersComponent } from './Admin/manage-astrologers/manage-astrologers.component';
+import { AstrologerRequestComponent } from './Admin/astrologer-request/astrologer-request.component';
+import { ManageBlogComponent } from './Admin/manage-blog/manage-blog.component';
+import { BlogService } from './blog.service';
+import { AstEditorDeleteComponent } from './Admin/ast-editor-delete/ast-editor-delete.component';
+import { ManageSkillsComponent } from './Admin/manage-skills/manage-skills.component';
+import { AdminNavComponent } from './Admin/admin-nav/admin-nav.component';
+import { ManageUsersComponent } from './Admin/manage-users/manage-users.component';
 
 
 
@@ -60,7 +70,16 @@ import { ChatsComponent } from './chats/chats.component';
     InsertblogComponent,
 
     CallWithAstrologerComponent,
-      ChatsComponent
+      ChatsComponent,
+      AdminDashboardComponent,
+      AdminAstrologerComponent,
+      ManageAstrologersComponent,
+      AstrologerRequestComponent,
+      ManageBlogComponent,
+      AstEditorDeleteComponent,
+      ManageSkillsComponent,
+      AdminNavComponent,
+      ManageUsersComponent
 
   ],
   imports: [

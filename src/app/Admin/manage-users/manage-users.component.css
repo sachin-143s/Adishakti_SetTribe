@@ -1,0 +1,97 @@
+.search-bar {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 50%;
+  }
+  
+  .search-bar input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .user-list {
+    padding: 20px;
+  }
+  
+  .user-list table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .user-list th, .user-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .user-list th {
+    background-color: #f0f0f0;
+  }
+  
+  .user-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .user-list tr:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .user-list button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .user-list button:hover {
+    background-color: #ccc;
+  }
+  
+  .edit-form {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    margin: 40px auto;
+  }
+  
+  .edit-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .edit-form input[type="text"], .edit-form input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .edit-form input[type="text"]:focus, .edit-form input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .edit-form button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .edit-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }

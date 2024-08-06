@@ -1,0 +1,36 @@
+<div class="search-bar">
+    <input type="text" placeholder="Search by email" [(ngModel)]="searchQuery" (input)="searchUsers()" />
+  </div>
+  
+  <div class="user-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of filteredUsers">
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+          <td>
+            <button (click)="editUser(user)">Edit</button>
+            <button (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="editMode" class="edit-form">
+    <form [formGroup]="editForm" (ngSubmit)="updateUser()">
+        <label for="email">Email</label>
+        <input formControlName="email" id="email" />
+        <label>Password</label>
+        <input formControlName="password" type="password" title="Password" />
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  
