@@ -10,11 +10,11 @@ import { map, Observable } from 'rxjs';
   styleUrls: ['./astrologer-signup.component.css']
 })
 export class AstrologerSignupComponent implements OnInit {
-  newArray:any = [];
+  newArray: any = [];
   backEndUrl: string = 'http://localhost:8080/api/astrologers';
 
   uploadedImage!: File;
-  image:any=[]
+  image: any = []
   constructor(private http: HttpClient, private router: Router) { }
   signupForm: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -22,30 +22,30 @@ export class AstrologerSignupComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     mobile: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
     dob: new FormControl('', [Validators.required]),
-    gender: new FormControl('',[ Validators.required]),
-    aadharNumber: new FormControl('',[ Validators.required]),
+    gender: new FormControl('', [Validators.required]),
+    aadharNumber: new FormControl('', [Validators.required]),
     experience: new FormControl('', [Validators.required]),
     languagesKnown: new FormControl([]),
     skills: new FormControl([]),
     lang: new FormControl([]),
     certification: new FormControl(null),
     degree: new FormControl(''),
-    ratePerMinute: new FormControl('' ),
+    ratePerMinute: new FormControl(''),
     city: new FormControl(''),
     district: new FormControl(''),
     state: new FormControl(''),
     country: new FormControl(''),
     id: new FormControl(0),
-    
+
     pinCode: new FormControl(''),
     blogs: new FormControl(null),
     astrologerImages: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     confirmpass: new FormControl('')
   });
-  
+
   ngOnInit(): void {
-    
+
   }
 
   get firstName() { return this.signupForm.get('firstName'); }
@@ -68,13 +68,13 @@ export class AstrologerSignupComponent implements OnInit {
   get state() { return this.signupForm.get('state'); }
   get country() { return this.signupForm.get('country'); }
   get pinCode() { return this.signupForm.get('pinCode'); }
-  public onImageUpload(event:any) {
+  public onImageUpload(event: any) {
     this.uploadedImage = event.target.files[0];
-alert("insert image")
+    alert("insert image")
     this.imageUploadAction()
   }
-  skillsChange(){
-    
+  skillsChange() {
+
     this.newArray.push(this.lang?.value)
     console.log(this.newArray)
     this.languagesKnown?.setValue(this.newArray);
@@ -83,37 +83,36 @@ alert("insert image")
     const imageFormData = new FormData();
     imageFormData.append('image', this.uploadedImage, this.uploadedImage.name);
     this.http.post('http://localhost:8080/api/astrologers/convert-image', imageFormData, { observe: 'response' })
-      .subscribe((response) => {  
-        this.image=response;
+      .subscribe((response) => {
+        this.image = response;
         this.imageData?.setValue(this.image.body);
-       }
-       ,(error)=>
-       {
-        alert("Something Went Wrong")
-       }
+      }
+        , (error) => {
+          alert("Something Went Wrong")
+        }
       );
-    }
-  sublit(form:any){
-  this.http.post(this.backEndUrl,form).subscribe(
-    (response) => {
-      alert("Data Insert")
-   
-    },
-    (error) => {
-      alert("error")
-    }
-  );
   }
-  signup(form:FormGroup) {
-   
+  sublit(form: any) {
+    this.http.post(this.backEndUrl, form).subscribe(
+      (response) => {
+        alert("Data Insert")
 
-    
+      },
+      (error) => {
+        alert("error")
+      }
+    );
+  }
+  signup(form: FormGroup) {
+
+
+
     this.http.post(this.backEndUrl, form.value).subscribe(
       (response: any) => {
         console.log('Signup successful:', response);
         alert('Submit Data');
         this.signupForm.reset();
-        // this.router.navigate(['/login']);
+        this.router.navigate(['/astrologer-login']);
       },
       (error) => {
         console.error('Signup failed:', error);
