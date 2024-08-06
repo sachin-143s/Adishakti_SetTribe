@@ -19,6 +19,11 @@ import { InsertblogComponent } from './insertblog/insertblog.component';
 import { ChatsComponent } from './chats/chats.component';
 import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
 import { AstrologerLoginComponent } from './astrologer-login/astrologer-login.component';
+import { ManageSkillsComponent } from './manage-skills/manage-skills.component';
+import { ManageAstrologersComponent } from './manage-astrologers/manage-astrologers.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminastrologerComponent } from './adminastrologer/adminastrologer.component';
 
 // import { NavbarComponent } from './navbar/navbar.component';
 
@@ -45,6 +50,15 @@ const routes: Routes = [
   { path: 'callwithastro/:id', component: CallWithAstrologerComponent },
   { path: 'astrologer-login', component: AstrologerLoginComponent },
   { path: 'insert-blog', component: InsertblogComponent },
+
+  { path: 'admin',component:AdminDashboardComponent},
+  { path: '', component: AdminDashboardComponent },
+  {path:'manageskills', component:ManageSkillsComponent},
+  {path:'manageastrologer', component:ManageAstrologersComponent},
+  {path:'manageusers', component:ManageUsersComponent},
+  {path:'adminastrologer',component:AdminastrologerComponent},
+  { path: '', redirectTo: '/admin', pathMatch: 'full' }
+
 
 ];
 

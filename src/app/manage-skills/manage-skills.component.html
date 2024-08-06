@@ -1,0 +1,72 @@
+
+<!-- <div class="manageSkills">
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h2>Menu</h2>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="admin">Dashboard</a></li>
+      <li><a href="manageusers">Manage Users</a></li>
+      <li><a href="manageastrologer">Manage Astrologers</a></li>
+      <li><a href="#">Manage Blog</a></li>
+      <li><a href="manageskills">Manage Skills</a></li>
+    </ul>
+  </nav>
+
+
+
+    <h2>Manage Skills</h2>
+   
+    <div class="manage-actions">
+      <button (click)="addSkills()">Add New Skills</button>
+    </div>
+   
+    <div class="skill-list">
+      <h3>List of Skills</h3>
+      <!-- Display a list of Skills -->
+      <!-- <ul>
+        <li *ngFor="let item of skillscntain; let i = index">
+          {{ item }}
+          <div class="button-group">
+            <button (click)="editSkill(i)">Edit</button>
+            <button (click)="deleteSkill(i)">Delete</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+   --> 
+  <!-- code2 -->
+  <div class="manageSkills">
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h2>Menu</h2>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="admin">Dashboard</a></li>
+        <li><a href="manageusers">Manage Users</a></li>
+        <li><a href="manageastrologer">Manage Astrologers</a></li>
+        <li><a href="#">Manage Blog</a></li>
+        <li><a href="manageskills">Manage Skills</a></li>
+      </ul>
+    </nav>
+  
+    <div class="main-content">
+      <h2>Manage Skills</h2>
+      <div class="manage-actions">
+        <button (click)="addSkills()">Add New Skills</button>
+      </div>
+      <div class="skill-list">
+        <h3>List of Skills</h3>
+        <ul>
+          <li *ngFor="let item of skillscntain; let i = index">
+            {{ item }}
+            <div class="button-group">
+              <button (click)="editSkill(i)">Edit</button>
+              <button (click)="deleteSkill(i)">Delete</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

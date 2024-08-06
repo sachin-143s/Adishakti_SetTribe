@@ -1,24 +1,48 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
-export interface Astrologer {
-  id: number;
-  firstName: string;
-  lastName: string;
-  skills: string[];
-  image: string; // assuming each astrologer has an image URL
-}
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AstrologerService {
-  private apiUrl = 'http://localhost:8080/api/astrologers'; 
+// getAstrologers(): Observable<Astrologer[]> 
+  // return this.http.get<Astrologer[]>(this.apiUrl);
 
-  constructor(private http: HttpClient) { }
-
-  getAstrologers(): Observable<Astrologer[]> {
-    return this.http.get<Astrologer[]>(this.apiUrl);
+  import { Injectable } from '@angular/core';
+  import { HttpClient } from '@angular/common/http';
+  import { Observable, of } from 'rxjs';
+  
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class AstrologerService {
+    private apiUrl = 'http://localhost:8080/api/astrologers';
+  
+    constructor(private http: HttpClient) {}
+  
+    // Mock method to avoid build errors
+    getAstrologers(): Observable<any[]> {
+      // This is just a mock implementation; replace it with real data if available
+      return this.getAllAstrologers();
+    }
+  
+    getAllAstrologers(): Observable<any[]> {
+      return this.http.get<any[]>(`${this.apiUrl}/all`);
+    }
+  
+    approveAstrologer(id: number): Observable<void> {
+      return this.http.put<void>(`${this.apiUrl}/approve/${id}`, {});
+    }
+  
+    rejectAstrologer(id: number): Observable<void> {
+      return this.http.put<void>(`${this.apiUrl}/reject/${id}`, {});
+    }
+  
+    deleteAstrologer(id: number): Observable<void> {
+      return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    }
+  
+    searchAstrologers(searchTerm: string): Observable<any[]> {
+      return this.http.get<any[]>(`${this.apiUrl}/search?term=${searchTerm}`);
+    }
+  
+    addAstrologer(astrologer: any): Observable<void> {
+      return this.http.post<void>(`${this.apiUrl}/add`, astrologer);
+    }
   }
-}
+  

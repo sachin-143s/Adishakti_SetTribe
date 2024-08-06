@@ -30,6 +30,12 @@ import { InsertblogComponent } from './insertblog/insertblog.component';
 import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
 import { ChatsComponent } from './chats/chats.component';
 import { AstrologerLoginComponent } from './astrologer-login/astrologer-login.component';
+import { ManageAstrologersComponent } from './manage-astrologers/manage-astrologers.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { ManageSkillsComponent } from './manage-skills/manage-skills.component';
+import { ManageBlogsComponent } from './manage-blogs/manage-blogs.component';
+import { AdminastrologerComponent } from './adminastrologer/adminastrologer.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 
@@ -63,7 +69,13 @@ import { AstrologerLoginComponent } from './astrologer-login/astrologer-login.co
 
     CallWithAstrologerComponent,
     ChatsComponent,
-    AstrologerLoginComponent
+    AstrologerLoginComponent,
+    ManageAstrologersComponent,
+    ManageUsersComponent,
+    ManageSkillsComponent,
+    ManageBlogsComponent,
+    AdminastrologerComponent,
+    AdminDashboardComponent
 
 
   ],
