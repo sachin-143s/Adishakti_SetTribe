@@ -18,6 +18,7 @@ import { AstroReportComponent } from './astro-report/astro-report.component';
 import { InsertblogComponent } from './insertblog/insertblog.component';
 import { ChatsComponent } from './chats/chats.component';
 import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
+import { AstrologerLoginComponent } from './astrologer-login/astrologer-login.component';
 
 // import { NavbarComponent } from './navbar/navbar.component';
 
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'find-astrologers', component: FindAstrologersComponent },
   { path: 'chats', component: ChatsComponent},
   { path: 'callwithastro/:id', component: CallWithAstrologerComponent},
+  { path: 'astrologer-login', component: AstrologerLoginComponent },
 
 ];  
 

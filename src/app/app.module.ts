@@ -29,6 +29,8 @@ import { InsertblogComponent } from './insertblog/insertblog.component';
 
 import { CallWithAstrologerComponent } from './call-with-astrologer/call-with-astrologer.component';
 import { ChatsComponent } from './chats/chats.component';
+import { AstrologerLoginComponent } from './astrologer-login/astrologer-login.component';
+
 
 
 
@@ -60,7 +62,9 @@ import { ChatsComponent } from './chats/chats.component';
     InsertblogComponent,
 
     CallWithAstrologerComponent,
-      ChatsComponent
+    ChatsComponent,
+    AstrologerLoginComponent
+
 
   ],
   imports: [
@@ -69,7 +73,7 @@ import { ChatsComponent } from './chats/chats.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
