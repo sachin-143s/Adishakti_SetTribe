@@ -1,14 +1,14 @@
 /* General body styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #e9ecef; /* Light gray background color */
+    background-color: lightgray; /* Light gray background color */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 500px;
 }
 
 /* Container styles */
