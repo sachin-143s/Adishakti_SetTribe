@@ -9,6 +9,7 @@ export interface Blog {
   content: string;
   astrologer: {
     name: string;
+    
   };
 }
 
@@ -30,5 +31,15 @@ export class BlogService {
 
   getBlogById(id: number): Observable<Blog> {
     return this.http.get<Blog>(`${this.apiUrl}/${id}`);
+  }
+
+
+//for manage blogs section
+  approveBlog(blogId: number): Observable<any> {
+    return this.http.post(`${this.apiUrl}/blogs/${blogId}/approve`, {});
+  }
+
+  rejectBlog(blogId: number): Observable<any> {
+    return this.http.post(`${this.apiUrl}/blogs/${blogId}/reject`, {});
   }
 }

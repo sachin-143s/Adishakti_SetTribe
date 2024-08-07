@@ -1,19 +1,78 @@
-.container {
-    padding: 20px;
-    background: url('/bann.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff; /* Ensure all text color is white by default */
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
   }
   
+  /* Dashboard Container */
+  .dashboard-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Sidebar Styling */
+  .sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-header {
+    padding: 20px;
+    text-align: center;
+    background-color: #444;
+  }
+  
+  .sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-menu li {
+    width: 100%;
+  }
+  
+  .sidebar-menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .sidebar-menu li a:hover {
+    background-color: #555;
+  }
+  
+  /* Main Content Styling */
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #c4b6c9;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #007bff; /* Blue color for sub-headings */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Search Bar Styling */
   .search-bar {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     box-sizing: border-box;
-    border: none;
+    border: 1px solid #ced4da;
     border-radius: 4px;
   }
   
+  /* Blog Entry Styling */
   .blog-entry {
     border: 1px solid #ddd;
     padding: 20px;
@@ -23,19 +82,26 @@
     color: #000; /* Set text color to black for better readability */
   }
   
+  .blog-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  /* Button Styling */
   button {
     margin-right: 10px;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    color: #fff; /* Ensure text color is white */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
-    transition: transform 0.2s; /* Smooth transition for hover effect */
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
   }
   
   button:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover for better visibility */
+    transform: scale(1.05);
   }
   
   button.accept {
@@ -46,6 +112,19 @@
     background-color: #f44336; /* Red background */
   }
   
-  h3, p {
-    color: #000; /* Ensure heading and paragraph text is black for readability */
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+    }
+  
+    .main-content {
+      padding: 10px;
+    }
   }
+  
