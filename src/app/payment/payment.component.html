@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="payment-card">
+  <h2>Payment Details</h2>
+  <p>Total Amount: {{ totalAmount | currency : "INR" : "symbol" }}</p>
+  <!-- Add payment form or other components here -->
+  <img src="paymentQR.png" alt="Chat with Astrologer" /><br />
+  <!-- WhatsApp Link with Image -->
+  <div *ngIf="astrologerMobile" class="logo">
+    <a [href]="'https://wa.me/' + astrologerMobile" target="_blank">
+      <img src="WhatsAppLogo.png" alt="Chat with Astrologer" /><br />
+      <h6>Click Here To Chat</h6>
+    </a>
+  </div>
+</div>
+
+<app-footer></app-footer>

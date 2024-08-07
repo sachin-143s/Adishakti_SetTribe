@@ -36,6 +36,7 @@ import { ManageSkillsComponent } from './manage-skills/manage-skills.component';
 import { ManageBlogsComponent } from './manage-blogs/manage-blogs.component';
 import { AdminastrologerComponent } from './adminastrologer/adminastrologer.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 
@@ -75,7 +76,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     ManageSkillsComponent,
     ManageBlogsComponent,
     AdminastrologerComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    PaymentComponent
 
 
   ],

@@ -2,23 +2,41 @@
 
 <div class="card">
   <div class="card-header">
-    <h2 class="astrologer-name">{{ astrologer?.firstName }} {{ astrologer?.lastName }}</h2>
-    <span class="availability-status" [ngClass]="{'available': isAvailable, 'unavailable': !isAvailable}">
-      {{ isAvailable ? 'Available' : 'Unavailable' }}
+    <h2 class="astrologer-name">
+      {{ astrologer?.firstName }} {{ astrologer?.lastName }}
+    </h2>
+    <span
+      class="availability-status"
+      [ngClass]="{ available: isAvailable, unavailable: !isAvailable }"
+    >
+      {{ isAvailable ? "Available" : "Unavailable" }}
     </span>
   </div>
   <div class="card-body">
     <p class="current-date">Date: <span id="current-date"></span></p>
-    <p class="mobile-number">Mobile: <a [href]="'tel:' + astrologer?.mobile">{{ astrologer?.mobile }}</a></p>
-    <p class="rate-per-minute">Rate Per Minute: {{ astrologer?.ratePerMinute | currency:'INR':'symbol' }}</p>
-    
+    <p class="mobile-number">
+      Mobile:
+      <a [href]="'tel:' + astrologer?.mobile">{{ astrologer?.mobile }}</a>
+    </p>
+    <p class="rate-per-minute">
+      Rate Per Minute:
+      {{ astrologer?.ratePerMinute | currency : "INR" : "symbol" }}
+    </p>
+
     <div class="calculator">
       <label for="minutes">Enter Minutes:</label>
       <input type="number" id="minutes" [(ngModel)]="minutes" />
       <button (click)="calculateTotal()">Calculate</button>
     </div>
-    
-    <p *ngIf="totalAmount !== null">Total Amount: {{ totalAmount | currency:'INR':'symbol' }}</p>
+
+    <p *ngIf="totalAmount !== null">
+      Total Amount: {{ totalAmount | currency : "INR" : "symbol" }}
+    </p>
+
+    <!-- Add the payment button -->
+    <button *ngIf="totalAmount !== null" (click)="goToPayment()"  >
+      Proceed to Payment
+    </button>
   </div>
 </div>
 
