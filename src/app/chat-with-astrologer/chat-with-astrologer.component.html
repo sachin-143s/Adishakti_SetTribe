@@ -1,24 +1,15 @@
-<app-navbar></app-navbar> 
-<div class="video-background">
-  <video autoplay muted loop>
-    <source src="bckvdo.mp4" type="video/mp4">
-    
-  </video>
-  <div class="content">
-    <input type="text" [(ngModel)]="filters.skills" placeholder="e.g., Astrology">
-    <select [(ngModel)]="filters.experience">
-      <option value="">Select Experience</option>
-      <option value="Beginner">Beginner</option>
-      <option value="Intermediate">Intermediate</option>
-      <option value="Expert">Expert</option>
-    </select>
-    <button (click)="applyFilters()">Apply Filters</button>
+<app-navbar></app-navbar>
 
-    <div *ngFor="let astrologer of filteredAstrologers" class="astrologer-card">
-      <h4 (click)="viewAstrologerDetails(astrologer.id)">{{ astrologer.name }}</h4>
-      <p>Experience: {{ astrologer.experience }}</p>
-      <button (click)="initiateChat(astrologer.id)">Chat</button>
-      <button (click)="initiateCall(astrologer.id)">Call</button>
-    </div>
+<div class="card">
+  <div class="card-header">
+    <h2 class="astrologer-name">{{ astrologer?.firstName }} {{ astrologer?.lastName }}</h2>
+    <span class="availability-status">Available</span>
+  </div>
+  <div class="card-body">
+    <p class="current-date">Date: <span id="current-date"></span></p>
+    <p class="mobile-number">Mobile: <a [href]="'tel:' + astrologer?.mobile">{{ astrologer?.mobile }}</a></p>
+    <p class="mobile-number">Rate Per Minute: <a [href]="'rs:' + astrologer?.ratePerMinute">{{ astrologer?.ratePerMinute }}</a></p>
   </div>
 </div>
+
+<app-footer></app-footer>

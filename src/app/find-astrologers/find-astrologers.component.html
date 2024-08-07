@@ -2,21 +2,47 @@
 <div class="outside">
   <div class="find-astrologers">
     <div class="search-bar">
-      <input type="text" placeholder="Search for astrologers..." [(ngModel)]="searchTerm" (input)="filterAstrologers()" />
+      <input
+        type="text"
+        placeholder="Search for astrologers..."
+        [(ngModel)]="searchTerm"
+        (input)="filterAstrologers()"
+      />
     </div>
     <div class="astrologer-list">
       <div class="astrologer" *ngFor="let astrologer of filteredAstrologers">
-        <img [src]="'data:image/png;base64,' + astrologer.astrologerImages.imageData" alt="Astrologer Image" class="astrologer-image" />
+        <img
+          [src]="
+            'data:image/png;base64,' + astrologer.astrologerImages.imageData
+          "
+          alt="Astrologer Image"
+          class="astrologer-image"
+        />
         <div class="astrologer-details">
-          <h3>{{ astrologer.firstName | uppercase }} {{ astrologer.lastName | uppercase }}</h3>
+          <h3>
+            {{ astrologer.firstName | uppercase }}
+            {{ astrologer.lastName | uppercase }}
+          </h3>
           <p>Skills: {{ astrologer.skills }}</p>
-          <p>Languages Known: <span *ngFor="let language of astrologer.languagesKnown">{{ language }}, </span></p>
-          <p>Rating: 
+          <p>ratePerMinute: {{ astrologer.ratePerMinute }}</p>
+          <p>
+            Languages Known:
+            <span *ngFor="let language of astrologer.languagesKnown"
+              >{{ language }},
+            </span>
+          </p>
+          <p>
+            Rating:
             <span class="star-rating">
-              <span *ngFor="let star of [1, 2, 3, 4, 5]; let i = index" 
-                    (mouseover)="hoverRating = i + 1" 
-                    (mouseleave)="hoverRating = null" 
-                    [class.filled]="astrologer.rating >= i + 1 || (hoverRating && hoverRating >= i + 1)">
+              <span
+                *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+                (mouseover)="hoverRating = i + 1"
+                (mouseleave)="hoverRating = null"
+                [class.filled]="
+                  astrologer.rating >= i + 1 ||
+                  (hoverRating && hoverRating >= i + 1)
+                "
+              >
                 &#9733;
               </span>
             </span>
@@ -24,8 +50,12 @@
           </p>
         </div>
         <div class="astrologer-actions">
-          <button class="btn-chat" (click)="navigateToCall(astrologer)">Call</button>
-          <button class="btn-call" (click)="navagate()">Chat</button>
+          <button class="btn-chat" (click)="navigateToCall(astrologer)">
+            Call
+          </button>
+          <button class="btn-call" (click)="navigateToChat(astrologer)">
+            Chat
+          </button>
         </div>
       </div>
     </div>

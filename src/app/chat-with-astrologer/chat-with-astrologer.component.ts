@@ -1,44 +1,51 @@
 import { Component, OnInit } from '@angular/core';
-import { AstrologerService } from '../astrologer.service';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
+interface Astrologer {
+  firstName: string;
+  lastName: string;
+  mobile: string;
+  ratePerMinute: number;
+}
 
 @Component({
   selector: 'app-chat-with-astrologer',
   templateUrl: './chat-with-astrologer.component.html',
-  styleUrls: ['./chat-with-astrologer.component.css']
+  styleUrls: ['./chat-with-astrologer.component.css'],
 })
 export class ChatWithAstrologerComponent implements OnInit {
-  astrologers: any[] = []; // Array of astrologers
-  filteredAstrologers: any[] = [];
-  filters = {
-    skills: '',
-    experience: ''
-  };
+  astrologer: Astrologer | null = null;
 
-  constructor(private astrologerService: AstrologerService) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.astrologerService.getAstrologers().subscribe(data => {
-      this.astrologers = data;
-      this.filteredAstrologers = data;
-    });
+    this.setCurrentDate();
+    this.getAstrologerData();
   }
 
-  applyFilters(): void {
-    this.filteredAstrologers = this.astrologers.filter(astrologer =>
-      (!this.filters.skills || astrologer.skills.includes(this.filters.skills)) &&
-      (!this.filters.experience || astrologer.experience === this.filters.experience)
-    );
+  setCurrentDate(): void {
+    const dateElement = document.getElementById('current-date');
+    if (dateElement) {
+      dateElement.textContent = new Date().toLocaleDateString();
+    }
   }
 
-  viewAstrologerDetails(id: number): void {
-    console.log(`Viewing details for astrologer with ID: ${id}`);
-  }
-
-  initiateChat(id: number): void {
-    console.log(`Initiating chat with astrologer with ID: ${id}`);
-  }
-
-  initiateCall(id: number): void {
-    console.log(`Initiating call with astrologer with ID: ${id}`);
+  getAstrologerData(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log('Fetching data for astrologer with id:', id); // Debugging line
+    if (id) {
+      this.http
+        .get<Astrologer>(`http://localhost:8080/api/astrologers/${id}`)
+        .subscribe(
+          (data) => {
+            console.log('Astrologer data received:', data); // Debugging line
+            this.astrologer = data;
+          },
+          (error) => {
+            console.error('Error fetching astrologer data', error);
+          }
+        );
+    }
   }
 }
