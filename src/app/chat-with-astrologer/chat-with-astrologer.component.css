@@ -32,7 +32,11 @@ body {
 
 .availability-status {
   font-size: 16px; /* Slightly larger font size */
-  color: #28a745;
+  color: #28a745; /* Default color for available status */
+}
+
+.availability-status.unavailable {
+  color: #dc3545; /* Color for unavailable status */
 }
 
 .card-body {
@@ -43,13 +47,17 @@ body {
   margin: 12px 0;
 }
 
-.mobile-number a, .rate-per-minute a {
+.mobile-number a {
   text-decoration: none;
   color: #007bff;
 }
 
-.mobile-number a:hover, .rate-per-minute a:hover {
+.mobile-number a:hover {
   text-decoration: underline;
+}
+
+.rate-per-minute {
+  margin-top: 12px;
 }
 
 .calculator {
@@ -62,7 +70,7 @@ body {
 }
 
 .calculator input {
-  width: calc(100% - 22px); /* Adjust input width to fit within the card */
+  width: calc(100% - 20px); /* Adjust input width to fit within the card */
   padding: 8px;
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -85,4 +93,18 @@ body {
 
 p {
   margin: 8px 0;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }

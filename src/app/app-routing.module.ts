@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -26,6 +25,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminastrologerComponent } from './adminastrologer/adminastrologer.component';
 import { ManageBlogsComponent } from './manage-blogs/manage-blogs.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { PaymentComponent } from './payment/payment.component';
 
 // import { NavbarComponent } from './navbar/navbar.component';
 
@@ -63,13 +63,11 @@ const routes: Routes = [
   { path: '', redirectTo: '/admin', pathMatch: 'full' },
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'admin-dashbord', component: AdminDashboardComponent },
-
-
-
+  { path: 'payment', component: PaymentComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

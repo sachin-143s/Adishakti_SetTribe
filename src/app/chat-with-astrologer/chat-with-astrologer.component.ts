@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { NgModel } from '@angular/forms';
 
 interface Astrologer {
+  id: number;
   firstName: string;
   lastName: string;
   mobile: string;
@@ -21,7 +21,11 @@ export class ChatWithAstrologerComponent implements OnInit {
   totalAmount: number | null = null;
   isAvailable: boolean = true; // Set availability status based on your logic
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.setCurrentDate();
@@ -37,13 +41,11 @@ export class ChatWithAstrologerComponent implements OnInit {
 
   getAstrologerData(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log('Fetching data for astrologer with id:', id); // Debugging line
     if (id) {
       this.http
         .get<Astrologer>(`http://localhost:8080/api/astrologers/${id}`)
         .subscribe(
           (data) => {
-            console.log('Astrologer data received:', data); // Debugging line
             this.astrologer = data;
           },
           (error) => {
@@ -56,6 +58,17 @@ export class ChatWithAstrologerComponent implements OnInit {
   calculateTotal(): void {
     if (this.astrologer && this.minutes !== null) {
       this.totalAmount = this.astrologer.ratePerMinute * this.minutes;
+    }
+  }
+
+  goToPayment(): void {
+    if (this.totalAmount !== null && this.astrologer) {
+      this.router.navigate(['/payment'], {
+        queryParams: {
+          mobile: this.astrologer.mobile,
+          amount: this.totalAmount
+        },
+      });
     }
   }
 }
