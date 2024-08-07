@@ -34,7 +34,7 @@ export class AdminLoginComponent {
           if (this.admin.password === this.password) {
             // Store Admin data in localStorage
             localStorage.setItem('currentUser', JSON.stringify(this.admin));
-            this.router.navigateByUrl("/");
+            this.router.navigateByUrl("/admin-dashbord");
           } else {
             this.errorMessage = 'Password does not match.';
           }
@@ -48,7 +48,7 @@ export class AdminLoginComponent {
       }
 
     );
-    this.router.navigate(['/admin-dashbord']);
+    this.router.navigate(['/admin-login']);
 
   }
 

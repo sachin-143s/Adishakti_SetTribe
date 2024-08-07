@@ -1,109 +1,55 @@
-/* Container Styling for the Video Background */
-.video-background {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Full viewport height */
-  overflow: hidden;
-}
-
-/* Video Styling */
-.video-background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
-  z-index: -1; /* Ensures video is behind content */
-  object-fit: cover;
-}
-
-/* Content Styling */
-.content {
-  position: relative;
-  z-index: 1;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: auto;
+  height: 100vh;
+  margin: 0;
 }
 
-/* Input and Select Styling */
-input[type="text"], select {
-  padding: 10px;
-  margin: 10px 0;
-  width: 100%;
-  max-width: 300px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: border-color 0.3s;
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow */
+  width: 400px; /* Increased width */
+  height: 300px; /* Increased height */
+  padding: 50px; /* Padding from all sides */
+  box-sizing: border-box;
+  margin: 50px;
+
 }
 
-input[type="text"]:focus, select:focus {
-  border-color: #3f51b5;
-  outline: none;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-/* Button Styling */
-button {
-  padding: 10px 20px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 5px;
-  background: #3f51b5;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.astrologer-name {
+  font-size: 20px; /* Slightly larger font size */
+  font-weight: bold;
 }
 
-button:hover {
-  background-color: #303f9f;
+.availability-status {
+  font-size: 16px; /* Slightly larger font size */
+  color: #28a745;
 }
 
-/* Astrologer Card Styling */
-.astrologer-card {
-  background: #fff;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
-  transition: transform 0.3s;
+.card-body {
+  font-size: 16px; /* Slightly larger font size */
 }
 
-.astrologer-card:hover {
-  transform: translateY(-5px);
+.current-date, .mobile-number {
+  margin: 12px 0;
 }
 
-.astrologer-card h4 {
-  margin: 0 0 10px;
-  color: #3f51b5;
-  cursor: pointer;
-  transition: color 0.3s;
+.mobile-number a {
+  text-decoration: none;
+  color: #007bff;
 }
 
-.astrologer-card h4:hover {
-  color: #303f9f;
-}
-
-.astrologer-card p {
-  margin: 0 0 10px;
-  font-size: 14px;
-  color: #555;
-}
-
-.astrologer-card button {
-  margin: 5px 5px 0 0;
-  padding: 8px 16px;
-  font-size: 14px;
+.mobile-number a:hover {
+  text-decoration: underline;
 }
