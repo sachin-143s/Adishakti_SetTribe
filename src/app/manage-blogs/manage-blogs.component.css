@@ -1,0 +1,51 @@
+.container {
+    padding: 20px;
+    background: url('/bann.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff; /* Ensure all text color is white by default */
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .blog-entry {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly increased opacity */
+    border-radius: 4px;
+    color: #000; /* Set text color to black for better readability */
+  }
+  
+  button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff; /* Ensure text color is white */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+  }
+  
+  button:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover for better visibility */
+  }
+  
+  button.accept {
+    background-color: #4caf50; /* Green background */
+  }
+  
+  button.reject {
+    background-color: #f44336; /* Red background */
+  }
+  
+  h3, p {
+    color: #000; /* Ensure heading and paragraph text is black for readability */
+  }
