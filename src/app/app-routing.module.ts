@@ -25,6 +25,7 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminastrologerComponent } from './adminastrologer/adminastrologer.component';
 import { ManageBlogsComponent } from './manage-blogs/manage-blogs.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 // import { NavbarComponent } from './navbar/navbar.component';
 
@@ -52,14 +53,17 @@ const routes: Routes = [
   { path: 'astrologer-login', component: AstrologerLoginComponent },
   { path: 'insert-blog', component: InsertblogComponent },
 
-  { path: 'admin',component:AdminDashboardComponent},
+  { path: 'admin', component: AdminDashboardComponent },
   { path: '', component: AdminDashboardComponent },
-  {path:'manageskills', component:ManageSkillsComponent},
-  {path:'manageastrologer', component:ManageAstrologersComponent},
-  {path:'manageusers', component:ManageUsersComponent},
-  {path:'manageblog', component:ManageBlogsComponent},
-  {path:'adminastrologer',component:AdminastrologerComponent},
-  { path: '', redirectTo: '/admin', pathMatch: 'full' }
+  { path: 'manageskills', component: ManageSkillsComponent },
+  { path: 'manageastrologer', component: ManageAstrologersComponent },
+  { path: 'manageusers', component: ManageUsersComponent },
+  { path: 'manageblog', component: ManageBlogsComponent },
+  { path: 'adminastrologer', component: AdminastrologerComponent },
+  { path: '', redirectTo: '/admin', pathMatch: 'full' },
+  { path: 'admin-login', component: AdminLoginComponent },
+  { path: 'admin-dashbord', component: AstrologerDashboardComponent },
+
 
 
 ];

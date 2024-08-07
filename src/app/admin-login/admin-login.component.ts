@@ -13,15 +13,15 @@ interface Admin {
   styleUrl: './admin-login.component.css'
 })
 export class AdminLoginComponent {
-  
+
   email: string = '';
   password: string = '';
   admin: Admin | null = null;
   errorMessage: string = '';
-  data:any=[]
+  data: any = []
   apiUrl = 'http://localhost:8080/';
 
-  constructor(private http: HttpClient, private router: Router) { 
+  constructor(private http: HttpClient, private router: Router) {
 
   }
 
@@ -48,9 +48,9 @@ export class AdminLoginComponent {
       }
 
     );
-    this.router.navigate(['/login']);
-  
+    this.router.navigate(['/admin-dashbord']);
+
   }
-  
+
 
 }

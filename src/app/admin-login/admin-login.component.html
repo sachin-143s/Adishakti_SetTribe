@@ -1,5 +1,4 @@
-<app-navbar></app-navbar> 
-<p>admin-login works!</p>
+<app-navbar></app-navbar>
 <body>
     <div class="container mt-5">
         <div class="login-container">
@@ -14,8 +13,6 @@
             </div>
             <div class="buttons-container">
                 <button class="btn btn-primary login-button" (click)="validateCredentials()">Login</button>
-                <!-- Apply btn-primary styling to Register button -->
-                <a class="btn btn-primary register-button" routerLink="/signup">signup</a>
             </div>
             <div *ngIf="errorMessage" class="error-message mt-3">
                 {{ errorMessage }}
@@ -26,5 +23,3 @@
         </div>
     </div>
 </body>
-
-
