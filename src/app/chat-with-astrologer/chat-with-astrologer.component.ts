@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { NgModel } from '@angular/forms';
 
 interface Astrologer {
   firstName: string;
@@ -16,6 +17,9 @@ interface Astrologer {
 })
 export class ChatWithAstrologerComponent implements OnInit {
   astrologer: Astrologer | null = null;
+  minutes: number | null = null;
+  totalAmount: number | null = null;
+  isAvailable: boolean = true; // Set availability status based on your logic
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
@@ -46,6 +50,12 @@ export class ChatWithAstrologerComponent implements OnInit {
             console.error('Error fetching astrologer data', error);
           }
         );
+    }
+  }
+
+  calculateTotal(): void {
+    if (this.astrologer && this.minutes !== null) {
+      this.totalAmount = this.astrologer.ratePerMinute * this.minutes;
     }
   }
 }

@@ -12,12 +12,10 @@ body {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow */
-  width: 400px; /* Increased width */
-  height: 300px; /* Increased height */
-  padding: 50px; /* Padding from all sides */
+  width: 400px; /* Fixed width */
+  padding: 20px; /* Adjusted padding */
   box-sizing: border-box;
-  margin: 50px;
-
+  margin: 20px; /* Reduced margin */
 }
 
 .card-header {
@@ -41,15 +39,50 @@ body {
   font-size: 16px; /* Slightly larger font size */
 }
 
-.current-date, .mobile-number {
+.current-date, .mobile-number, .rate-per-minute {
   margin: 12px 0;
 }
 
-.mobile-number a {
+.mobile-number a, .rate-per-minute a {
   text-decoration: none;
   color: #007bff;
 }
 
-.mobile-number a:hover {
+.mobile-number a:hover, .rate-per-minute a:hover {
   text-decoration: underline;
+}
+
+.calculator {
+  margin-top: 20px;
+}
+
+.calculator label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.calculator input {
+  width: calc(100% - 22px); /* Adjust input width to fit within the card */
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.calculator button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.calculator button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  margin: 8px 0;
 }
