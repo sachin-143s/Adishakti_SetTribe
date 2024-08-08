@@ -1,86 +1,83 @@
-
-  <div class="dashboard-container">
-    <nav class="sidebar">
-      <div class="sidebar-header">
-        <h2>Home</h2>
-      </div>
-      <ul class="sidebar-menu">
-        <li><a routerLink="/astrodash">Dashboard</a></li>
-        <li><a routerLink="/astroprofile">Profile</a></li>
-        <li><a routerLink="/astroclient">Client Lists</a></li>
-        <li><a routerLink="/astroreport">Reports</a></li>
-        <li><a routerLink="/insert-blog">Add Blogs</a></li>
-      </ul>
-    </nav>
-    <div class="main-content">
-      <header class="topbar">
-        <h1>Dashboard</h1>
-        <div class="user-info">
-          <p>Welcome, <strong>Username</strong></p>
-          <a href="#">Logout</a>
-        </div>
-      </header>
-
-      <div class="profile">
-        <div class="profile1">
-          <figure>
-            <img src="//s3-us-west-2.amazonaws.com/s.cdpn.io/55758/random-user-31.jpg" />
-            <div class="image-buttons">
-              <button class="update-btn" title="Update Image"><i class="fa-solid fa-pen"></i></button>
-              <button class="remove-btn" title="Remove Image"><i class="fa-solid fa-trash"></i></button>
-            </div>
-          </figure>
-          <p>Dr. Anita Rai</p>
-          <div class="col-md-4">
-            <h4>Social Media</h4>
-            <ul class="social-icon">
-              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      
-        <div class="profile2">
-          <form>
-            <table cellspacing="9" cellpadding="9">
-              <tr>
-                <td colspan="2"><h2>Profile Information</h2></td>
-              </tr>
-              <tr>
-                <td><label for="firstName">First Name</label></td>
-                <td><input type="text" id="firstName" class="form-control" name="firstName"></td>
-              </tr>
-              <tr>
-                <td><label for="lastName">Last Name</label></td>
-                <td><input type="text" id="lastName" class="form-control" name="lastName"></td>
-              </tr>
-              <tr>
-                <td><label for="fullName">Full Name</label></td>
-                <td><input type="text" id="fullName" class="form-control" name="fullName"></td>
-              </tr>
-              <tr>
-                <td><label for="birthdate">Birth Date</label></td>
-                <td><input type="text" id="birthdate" class="form-control" name="birthdate"></td>
-              </tr>
-              <tr>
-                <td><label for="mobnumber">Mobile Number</label></td>
-                <td><input type="number" id="mobnumber" class="form-control" name="mobnumber"></td>
-              </tr>
-              <tr>
-                <td><label for="emailid">Email ID</label></td>
-                <td><input type="email" id="emailid" class="form-control" name="emailid"></td>
-              </tr>
-              <tr>
-                <td colspan="2" class="submit-row">
-                  <button type="submit" class="submit-btn">Update Info</button>
-                </td>
-              </tr>
-            </table>
-          </form>
-        </div>
-      </div>
-</div>
+<div class="dashboard-container">
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h2>Home</h2>
     </div>
-  
-  
+    <ul class="sidebar-menu">
+      <li><a routerLink="/astrodash">Dashboard</a></li>
+      <li><a routerLink="/astroprofile">Profile</a></li>
+      <li><a routerLink="/astroclient">Client Lists</a></li>
+      <li><a routerLink="/astroreport">Reports</a></li>
+      <li><a routerLink="/insert-blog">Add Blogs</a></li>
+    </ul>
+  </nav>
+  <div class="main-content">
+    <header class="topbar">
+      <h1>Dashboard</h1>
+      <div class="user-info">
+        <p>Welcome, <strong>{{user.fullName || 'Username'}}</strong></p>
+        <a href="#" (click)="logout()">Logout</a>
+      </div>
+    </header>
+
+    <div class="profile">
+      <div class="profile1">
+        <figure>
+          <img [src]="user.profileImage || '//s3-us-west-2.amazonaws.com/s.cdpn.io/55758/random-user-31.jpg'" />
+          <div class="image-buttons">
+            <button class="update-btn" title="Update Image" (click)="updateImage()"><i class="fa-solid fa-pen"></i></button>
+            <button class="remove-btn" title="Remove Image" (click)="removeImage()"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        </figure>
+        <p>{{user.fullName}}</p>
+        <div class="col-md-4">
+          <h4>Social Media</h4>
+          <ul class="social-icon">
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="profile2">
+        <form (ngSubmit)="updateProfile()">
+          <table cellspacing="9" cellpadding="9">
+            <tr>
+              <td colspan="2"><h2>Profile Information</h2></td>
+            </tr>
+            <tr>
+              <td><label for="firstName">First Name</label></td>
+              <td><input type="text" id="firstName" class="form-control" [(ngModel)]="user.firstName" name="firstName"></td>
+            </tr>
+            <tr>
+              <td><label for="lastName">Last Name</label></td>
+              <td><input type="text" id="lastName" class="form-control" [(ngModel)]="user.lastName" name="lastName"></td>
+            </tr>
+            <tr>
+              <td><label for="fullName">Full Name</label></td>
+              <td><input type="text" id="fullName" class="form-control" [(ngModel)]="user.fullName" name="fullName"></td>
+            </tr>
+            <tr>
+              <td><label for="birthdate">Birth Date</label></td>
+              <td><input type="text" id="birthdate" class="form-control" [(ngModel)]="user.birthdate" name="birthdate"></td>
+            </tr>
+            <tr>
+              <td><label for="mobnumber">Mobile Number</label></td>
+              <td><input type="number" id="mobnumber" class="form-control" [(ngModel)]="user.mobile" name="mobnumber"></td>
+            </tr>
+            <tr>
+              <td><label for="emailid">Email ID</label></td>
+              <td><input type="email" id="emailid" class="form-control" [(ngModel)]="user.email" name="emailid"></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="submit-row">
+                <button type="submit" class="submit-btn">Update Info</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
