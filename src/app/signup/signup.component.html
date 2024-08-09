@@ -17,7 +17,11 @@
       <b *ngIf="lastName?.errors?.['required']">Last Name is required</b>
     </div>
   </div>
-
+  <img *ngIf="image!=''"  [src]="'data:image/png;base64,'+image.body.imageData" alt="Norway" [width]="50" >
+  <div class="form-group">
+    <label for="filr">Upload Images</label>
+    <input type="file" accept="image/png, image/gif, image/jpeg"  (change)="onImageUpload($event)">
+  </div>
   <div class="form-group">
     <label for="dob">Date of Birth</label>
     <input type="date" id="dob" formControlName="dob" required />
@@ -101,3 +105,4 @@
   <button type="submit">Sign Up</button>
   <p class="login-link">Already have an account? <a routerLink="/login">Login</a></p>
 </form>
+{{signupForm.value|json}}

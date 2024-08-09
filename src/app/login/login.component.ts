@@ -44,15 +44,15 @@ export class LoginComponent implements OnInit{
     this.errMass=!this.errMass
     this.errorMessage = '';
     
-    if (!this.email || !this.password) {
-      this.errorMessage = 'Please fill in both fields.';
-      return;
-    }
+    // if (!this.email || !this.password) {
+    //   this.errorMessage = 'Please fill in both fields.';
+    //   return;
+    // }
 
-    this.http.get<User>(`${this.apiUrl}api/users/email/${this.email}`).subscribe(
+    this.http.get<User>(`${this.apiUrl}api/users/email/${this.getuser.value}`).subscribe(
       user => {
         if (user) {
-          if (user.password === this.password) {
+          if (user.password === this.getpass.value) {
             
             localStorage.setItem('currentUser', JSON.stringify(user));
             this.user = user; 

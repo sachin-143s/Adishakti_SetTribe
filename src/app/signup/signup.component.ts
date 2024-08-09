@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   signupForm!: FormGroup;
   hidePassword: boolean = true;
+  uploadedImage!: File;
+  image: any = []
   backEndUrl: string = 'http://localhost:8080/api/users';
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -30,6 +32,7 @@ export class SignupComponent implements OnInit {
       birthPlace: new FormControl('', Validators.required),
       birthTime: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
+      profile_img: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)])
     });
   }
@@ -39,11 +42,29 @@ export class SignupComponent implements OnInit {
   get email() { return this.signupForm.get('email'); }
   get password() { return this.signupForm.get('password'); }
   get mobileNumber() { return this.signupForm.get('mobileNumber'); }
+  get imageInsert() { return this.signupForm.get('profile_img'); }
 
   togglePasswordVisibility() {
     this.hidePassword = !this.hidePassword;
   }
-
+  public onImageUpload(event: any) {
+    this.uploadedImage = event.target.files[0];
+    alert("insert image")
+    this.imageUploadAction()
+  }
+  imageUploadAction() {
+    const imageFormData = new FormData();
+    imageFormData.append('image', this.uploadedImage, this.uploadedImage.name);
+    this.http.post('http://localhost:8080/api/astrologers/convert-image', imageFormData, { observe: 'response' })
+      .subscribe((response) => {
+        this.image = response;
+        this.imageInsert?.setValue(this.image.body.imageData);
+      }
+        , (error) => {
+          alert("Something Went Wrong")
+        }
+      );
+  }
   signup() {
     if (this.signupForm.invalid) {
       if (this.firstName?.errors?.['required']) {

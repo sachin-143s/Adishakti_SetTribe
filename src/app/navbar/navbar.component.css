@@ -146,7 +146,12 @@ body {
   margin-left: 15px; /* Space between links */
   position: relative;
 }
-
+.col a{
+  color: #f4f4f4;
+}
+.dropdown-menu{
+  background-color: #420E57;
+}
 .nav-links a {
   color: #ffffff;
   text-decoration: none;
