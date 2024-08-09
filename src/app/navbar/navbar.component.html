@@ -66,11 +66,12 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item navbar-light" href="#"><li><a routerLink="/feedback"><i class="fas fa-comment-dots"></i> Feedback</a></li></a>
-          <a class="dropdown-item" href="#"> <li *ngIf="!isLoggedIn"><a routerLink="/admin-login"><i class="fas fa-user-plus"></i>Admin login</a></li></a>
           <a class="dropdown-item" href="#"><li *ngIf="!isLoggedIn"><a routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li></a>
-          <a class="dropdown-item" href="#"><li *ngIf="!isLoggedIn"><a routerLink="/login">  <li *ngIf="!isLoggedIn"><a routerLink="/astrologer-login"><i class="fas fa-user-plus"></i> Astrologer login</a></li></a></a>
+          <a class="dropdown-item" href="#"><li *ngIf="!isLoggedIn">  <li *ngIf="!isLoggedIn"><a routerLink="/astrologer-login"><i class="fas fa-user-plus"></i> Astrologer login</a></li></a>
           <a class="dropdown-item" href="#"> <li *ngIf="!isLoggedIn"><i class="fas fa-user"></i> Profile</a>
           <a class="dropdown-item" href="#"><li *ngIf="!isLoggedIn"><a (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li></a>
+          <hr>
+          <a class="dropdown-item" href="#"> <li *ngIf="!isLoggedIn"><a routerLink="/admin-login"><i class="fas fa-user-plus"></i>Admin login</a></li></a>
         </div>
       </li>
     </ul>
