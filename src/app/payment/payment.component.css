@@ -17,7 +17,8 @@ body {
   padding: 20px;
   box-sizing: border-box;
   margin: 20px; /* Margin around the card */
-  overflow: hidden; /* Ensure content does not overflow */
+  overflow: hidden;
+  margin-left: 550px; /* Ensure content does not overflow */
 }
 
 .payment-card img {
